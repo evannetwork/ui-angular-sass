@@ -1,0 +1,13 @@
+{
+  "license": "AGPL-3.0-only",
+  "author": "Contractus",
+  "dependencies": {},
+  "description": "Root angular sass styling and styling variables",
+  "name": "@evan.network/angular-sass",
+  "scripts": {},
+  "version": "1.0.1",
+  "keywords": [
+    "API",
+    "SASS"
+  ]
+}

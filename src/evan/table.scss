@@ -1,0 +1,79 @@
+/*
+  Copyright (C) 2018-present evan GmbH. 
+  
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3, 
+  as published by the Free Software Foundation. 
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details. 
+  
+  You should have received a copy of the GNU Affero General Public License along with this program.
+  If not, see http://www.gnu.org/licenses/ or write to the
+  
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
+  
+  or download the license from the following URL: https://evan.network/license/ 
+  
+  You can be released from the requirements of the GNU Affero General Public License
+  by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts of it
+  on other blockchains than evan.network. 
+  
+  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+*/
+
+@import '../variables/colors';
+
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  min-height: 0.01%;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  background-color: transparent;
+
+  thead, tbody, tfoot {
+    tr {
+      td, th {
+        font-size: 14px;
+        line-height: 1.42857143;
+
+        padding: 12px 8px;
+
+        text-align: left;
+        vertical-align: middle;
+        white-space: nowrap;
+
+        color: $light-gray;
+        border-top: 1px solid $border-color;
+      }
+
+      th {
+        vertical-align: bottom;
+
+        border-top: 1px solid rgba(120, 130, 140, 0.2) !important;
+        border-bottom: 1px solid rgba(120, 130, 140, 0.2);
+      }
+    }
+  }
+
+  &.table-hover {
+    tbody {
+      tr:hover {
+        background-color: $border-color !important;
+      }
+    }
+  }
+}

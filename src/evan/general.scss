@@ -1,0 +1,389 @@
+/*
+  Copyright (C) 2018-present evan GmbH. 
+  
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3, 
+  as published by the Free Software Foundation. 
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details. 
+  
+  You should have received a copy of the GNU Affero General Public License along with this program.
+  If not, see http://www.gnu.org/licenses/ or write to the
+  
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
+  
+  or download the license from the following URL: https://evan.network/license/ 
+  
+  You can be released from the requirements of the GNU Affero General Public License
+  by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts of it
+  on other blockchains than evan.network. 
+  
+  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+*/
+
+@import '../variables/colors';
+@import '../variables/positions';
+@import '../open-sans';
+
+ion-app {
+  overflow: hidden;
+
+  ion-app {
+    background-color: $background-color-2;
+  }
+}
+
+ion-content.content-md {
+  background-color: $background-color-2;
+}
+
+ion-content {
+  .scroll-content {
+    padding-bottom: 0 !important;
+  }
+}
+
+// custom scroll's
+.scroll-content {
+  overflow-y: auto !important;
+
+  &.no-overflow {
+    overflow-y: hidden !important;
+  }
+
+  @media (max-width: 768px) {
+    &.no-overflow-small {
+      overflow-y: hidden !important;
+    }
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+
+  background-color: #eeeeee;
+}
+
+*::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:active, *::-webkit-scrollbar-thumb:hover {
+  border: 1px solid #b5b5b5;
+  background-color: #b5b5b5;
+}
+
+// Use other button color
+button[ion-item] {
+  ion-icon {
+    font-size: 24px;
+  }
+}
+
+button[icon-only] {
+  [icon-left], [icon-start] {
+    ion-icon {
+      padding-right: 0 !important;
+    }
+  }
+}
+
+button {
+  ion-spinner {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+
+    vertical-align: middle;
+  }
+
+  .ng-star-inserted {
+    ion-icon {
+      vertical-align: top;
+    }
+  }
+
+  &.block-button {
+    height: 60px;
+
+    .button-inner {
+      display: block;
+
+      ion-icon {
+        font-size: 30px;
+
+        display: block;
+
+        margin-top: 8px;
+        margin-bottom: 10px;
+        padding-right: 0;
+      }
+    }
+  }
+
+  span[color='medium-gray'] {
+    color: $medium-gray;
+  }
+
+  span[color='light'] {
+    color: $light;
+  }
+}
+
+button[round][icon-only] {
+  width: 37px;
+  height: 37px;
+
+  .greate {
+    width: 50px;
+    height: 50px;
+  }
+
+  ion-icon {
+    font-size: 20px;
+  }
+}
+
+// Custom Menu two lined menu title 
+ion-title {
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  &.two-lines {
+    & {
+      margin-bottom: 1.6rem;
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    small {
+      margin-bottom: 0;
+
+      opacity: 0.7;
+    }
+  }
+}
+
+// absolute center
+.evan-no-elements, evan-empty-dapp {
+  display: block;
+
+  padding-top: 100px;
+  padding-bottom: 100px !important;
+
+  text-align: center;
+
+  background-color: transparent;
+
+  h1, h2, h3, h4 {
+    color: $light;
+  }
+
+  img {
+    height: 120px;
+
+    opacity: 0.3;
+    border-radius: 50%;
+
+    filter: grayscale(1);
+  }
+}
+
+// greater alert size
+.alert-md .alert-wrapper {
+  max-width: 30% !important;
+
+  @media (max-width: 1200px) {
+    max-width: 50% !important;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 80% !important;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 90% !important;
+  }
+}
+
+.evan-relative {
+  position: relative;
+}
+
+.evan-seperator {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+  margin: 30px 0;
+
+  background-color: $light-gray;
+
+  &.small {
+    margin: 25px 0;
+  }
+}
+
+.evan-small-seperator {
+  width: 100%;
+  height: 1px;
+
+  background-color: $light-gray;
+}
+
+.evan-spacing {
+  width: 100%;
+  height: 0;
+  margin: 20px 0;
+
+  @media (min-width: 769px) {
+    margin: 40px 0;
+  }
+}
+
+h1, h2, h3, h4, span, p {
+  &.evan-gray-text {
+    color: $medium-gray;
+  }
+}
+
+ion-item {
+  .item-inner {
+    ion-label {
+      span {
+        font-size: 12px;
+
+        color: $dark-gray;
+      }
+    }
+  }
+}
+
+.item-md {
+  background-color: $list-background-color !important;
+}
+
+.continuous-text span, .continuous-text p, span.continuous-text, p.continuous-text, .continuous-text {
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.no-padding-top, .p-t-0 {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom, .p-b-0 {
+  padding-bottom: 0 !important;
+}
+
+.no-padding-left, .p-l-0 {
+  padding-left: 0 !important;
+}
+
+.no-padding-right, .p-r-0 {
+  padding-right: 0 !important;
+}
+
+.no-margin-top, .m-t-0 {
+  margin-top: 0 !important;
+}
+
+.no-margin-bottom, .m-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.no-margin-left, .m-l-0 {
+  margin-left: 0 !important;
+}
+
+.no-margin-right, .m-r-0 {
+  margin-right: 0 !important;
+}
+
+.font-medium {
+  font-weight: 600;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.display-flex-justify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.clear-both {
+  clear: both;
+}
+
+ion-fab {
+  button[clear] {
+    box-shadow: none;
+  }
+
+  &.ion-fab-no-margin {
+    ion-fab-list {
+      margin-top: 44px;
+      margin-left: -3px;
+
+      .fab[mini] {
+        margin: 2px;
+      }
+    }
+  }
+}
+
+.copy-container {
+  position: relative;
+
+  cursor: pointer;
+
+  button {
+    margin: 0;
+    padding: 0;
+
+    vertical-align: sub;
+
+    @media(max-width: 768px) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+
+      margin: auto;
+    }
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+*[margin] {
+  margin: $content-margin !important;
+}
+
+*[padding] {
+  padding: $content-margin !important;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  border: 0;
+  border-top: 1px solid $border-color;
+}
+
+.z-index-100 {
+  z-index: 100;
+}

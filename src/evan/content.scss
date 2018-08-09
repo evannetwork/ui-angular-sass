@@ -1,0 +1,278 @@
+/*
+  Copyright (C) 2018-present evan GmbH. 
+  
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3, 
+  as published by the Free Software Foundation. 
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details. 
+  
+  You should have received a copy of the GNU Affero General Public License along with this program.
+  If not, see http://www.gnu.org/licenses/ or write to the
+  
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
+  
+  or download the license from the following URL: https://evan.network/license/ 
+  
+  You can be released from the requirements of the GNU Affero General Public License
+  by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts of it
+  on other blockchains than evan.network. 
+  
+  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+*/
+
+.evan-content {
+  background-color: $background-color;
+
+  &.loading {
+    height: 300px;
+
+    @media (min-width: 769px) {
+      height: 380px;
+
+      evan-loading {
+        width: calc(100vw - 270px - 10%);
+      }
+    }
+  }
+
+  @media (min-width: 769px) {
+    width: calc(100% - 50px);
+    margin: 25px;
+    padding: 25px;
+  }
+
+  @media (max-width: 769px) {
+    width: 100%;
+    margin: 16px 0;
+    padding: 16px;
+  }
+
+  &.transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &.evan-full-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  &.evan-small-content {
+    @media (min-width: 993px) {
+      width: 70%;
+      margin-left: 15%;
+    }
+    @media (min-width: 1201px) {
+      width: 60%;
+      margin-left: 20%;
+    }
+    @media (min-width: 1501px) {
+      width: 50%;
+      margin-left: 25%;
+    }
+  }
+
+  &.evan-mini-content {
+    @media (min-width: 1201px) {
+      width: 40%;
+      margin-left: 30%;
+    }
+  }
+
+  &.evan-mini-left, &.evan-mini-right {
+    @media (min-width: 1201px) {
+      position: fixed;
+      top: 56px;
+
+      overflow-y: auto;
+
+      width: calc(30% - 100px);
+      height: calc(100% - 90px);
+      margin-top: 25px;
+      margin-left: 0;
+    }
+  }
+
+  &.evan-mini-left {
+    @media (min-width: 1201px) {
+      left: 25px;
+    }
+  }
+
+  &.evan-mini-right {
+    @media (min-width: 1201px) {
+      right: 25px;
+    }
+  }
+
+  &.evan-twoline-content {
+    @media (min-width: 993px) {
+      display: inline-block;
+
+      width: calc(50% - 48px);
+      margin-left: 32px;
+
+      vertical-align: top;
+    }
+  }
+
+  &.evan-threeline-content {
+    @media (min-width: 993px) {
+      display: inline-block;
+
+      width: calc(50% - 48px);
+      margin-left: 32px;
+
+      vertical-align: top;
+    }
+
+    @media (min-width: 1201px) {
+      display: inline-block;
+
+      width: calc(33% - 48px);
+      margin-left: 32px;
+
+      vertical-align: top;
+    }
+  }
+
+  & > .evan-no-elements {
+    border-bottom: 0;
+    background-color: transparent;
+  }
+
+  & > .footer {
+    padding: 8px;
+
+    border-top: 1px solid #dedede;
+    background-color: $background-color;
+  }
+
+  ion-list.evan-grid {
+    margin-top: 0;
+  }
+
+  form.negative-position {
+    margin-top: -25px;
+    padding-top: 0;
+  }
+
+  .evan-info-button {
+    font-size: 20px;
+
+    position: absolute;
+    top: 4px;
+    right: 8px;
+
+    width: 35px;
+    height: 35px;
+    padding: 0;
+  }
+
+  button.top-right {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 4px;
+  }
+
+  button.bottom-right {
+    position: absolute;
+    z-index: 10;
+    right: 4px;
+    bottom: 0;
+  }
+
+  button.bottom-center {
+    position: absolute;
+    z-index: 10;
+    bottom: -10px;
+    left: calc(50% - 10px);
+  }
+}
+
+.evan-content .content-header, .content-header.standalone {
+  font-size: 16px;
+  font-weight: 600;
+
+  margin: 0 0 12px;
+
+  text-transform: uppercase;
+
+  color: $primary;
+}
+
+.evan-content .content-heading, .content-heading.standalone {
+  font-size: 16px;
+  font-weight: 600;
+
+  padding-bottom: 25px;
+
+  color: $primary;
+  border-radius: 0;
+}
+
+.evan-container-1-2-1 {
+  @media (min-width: 993px) {
+    display: flex;
+    flex-direction: row;
+
+    .evan-content {
+      margin: 0;
+    }
+
+    .evan-content-left {
+      order: 1;
+    }
+
+    .evan-content-center {
+      order: 2;
+    }
+
+    .evan-content-right {
+      order: 3;
+    }
+  }
+}
+
+ion-content.sortable {
+  background-color: unset !important;
+
+  contain: unset;
+
+  .scroll-content {
+    position: unset;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    left: unset;
+
+    overflow: unset;
+    overflow-y: hidden !important;
+
+    padding: 0 !important;
+
+    contain: unset;
+  }
+}
+
+ion-refresher {
+  ion-refresher-content {
+    .refresher-pulling-text, .refresher-refreshing-text, .refresher-pulling-icon, .refresher-refreshing-icon {
+      color: $light;
+
+      circle {
+        stroke: $light;
+      }
+    }
+  }
+}
+
+.has-refresher > .scroll-content {
+  border-top: 0 !important;
+}

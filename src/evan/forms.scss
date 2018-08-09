@@ -1,0 +1,335 @@
+/*
+  Copyright (C) 2018-present evan GmbH. 
+  
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3, 
+  as published by the Free Software Foundation. 
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details. 
+  
+  You should have received a copy of the GNU Affero General Public License along with this program.
+  If not, see http://www.gnu.org/licenses/ or write to the
+  
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
+  
+  or download the license from the following URL: https://evan.network/license/ 
+  
+  You can be released from the requirements of the GNU Affero General Public License
+  by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts of it
+  on other blockchains than evan.network. 
+  
+  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+*/
+
+@import '../variables/colors';
+@import '../variables/positions';
+
+
+h1, h2, h3, h4, h5, span, p {
+  color: $light;
+}
+
+ion-item ion-label[stacked], ion-item ion-label[floating], ion-label.standalone, button[ion-item] ion-label[stacked], button[ion-item] ion-label[floating] {
+  margin: 24px 8px 8px 0 !important;
+}
+
+ion-label {
+  &, h1, h2, h3, h4, h5, span {
+    font-weight: 400 !important;
+
+    color: $light !important;
+  }
+
+  &.standalone {
+    font-size: 14px;
+    font-weight: 600 !important;
+  }
+}
+
+::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+  color: $medium-blue !important;
+}
+
+ion-item, button[ion-item] {
+  padding-left: 0 !important;
+
+  &.item-input {
+    ion-label {
+      &, h1, h2, h3, h4, h5, span {
+        font-weight: 600 !important;
+      }
+    }
+  }
+
+  ion-input {
+    * {
+      font-size: 14px;
+
+      color: $light-gray;
+    }
+  }
+
+  ion-datetime {
+    height: 35px;
+    padding: 8px 0 7px 0 !important;
+
+    .datetime-text {
+      font-size: 14px;
+
+      color: $light-gray;
+    }
+  }
+
+  &.item-md.item-block .item-inner {
+    border-bottom: 1px solid $medium-blue;
+    border-bottom-color: $medium-blue;
+    box-shadow: none !important;
+  }
+}
+
+form {
+  position: relative;
+
+  background-color: $background-color;
+
+  &, & ion-item.item-md, & button[ion-item] {
+    background-color: $list-background-color;
+  }
+
+  ion-item.item-md, button[ion-item] {
+    padding-left: 0;
+  }
+
+  ion-list {
+    ion-item.item-md, button[ion-item] {
+      padding-left: 0;
+
+      background-color: transparent !important;
+
+      .item-inner {
+        margin-left: 0 !important;
+      }
+    }
+
+    & > button, & > ion-item-sliding, & > ion-item {
+      &:first-child {
+        border-top: 0 solid $light-gray !important;
+      }
+    }
+  }
+
+  .ion-tags-input-container {
+    ion-label {
+      font-size: 13px;
+
+      color: #999999;
+    }
+  }
+}
+
+.evan-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  border-bottom: 1px solid $light-gray;
+
+  & > span {
+    line-height: 30px;
+
+    margin-right: 5px;
+
+    vertical-align: middle;
+
+    color: $medium-gray;
+  }
+}
+
+.evan-tag {
+  line-height: 30px;
+
+  position: relative;
+
+  width: auto;
+  height: 30px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  padding: 0 30px 0 12px;
+
+  color: $light;
+  border-radius: 20px;
+  background-color: $medium-blue;
+
+  span {
+    color: $light !important;
+  }
+
+  ion-icon {
+    position: absolute;
+    top: 7px;
+    right: 13px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $light-gray;
+    }
+  }
+}
+
+ion-item, button[ion-item] {
+  padding-left: 0;
+}
+
+.input-error {
+  font-size: 12px;
+
+  display: block;
+
+  text-align: left;
+
+  opacity: 0.8;
+  color: $red;
+}
+
+.input-hint {
+  font-size: 12px;
+
+  display: block;
+
+  text-align: justify;
+
+  opacity: 0.8;
+
+  &.checkbox-hint {
+    margin-top: 8px;
+    padding-left: 70px;
+  }
+}
+
+ion-tags-input {
+  &, * {
+    font-size: 25px;
+  }
+
+  .ion-tags-input {
+    padding: 0;
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid $light-gray;
+
+    input.iti-input {
+      font-size: 25px;
+
+      height: 26px;
+      padding: 0;
+
+      color: #000000;
+
+      &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
+        color: #999999;
+      }
+    }
+
+    span.iti-tag {
+      margin-right: 10px;
+
+      border-radius: 20px !important;
+      background-color: $medium-blue;
+    }
+  }
+
+  &[readonly] {
+    .ion-tags-input {
+      span.iti-tag {
+        display: inline-block;
+        float: none;
+      }
+
+      span:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.focus-outline:focus, .focus-outline :focus {
+  outline: none !important;
+}
+
+ion-item.item, button[ion-item] {
+  ion-input {
+    .input-cover {
+      display: none !important;
+    }
+  }
+
+  ion-checkbox {
+    margin: 0 25px 0 0 !important;
+
+    .checkbox-icon {
+      width: 20px;
+      height: 20px;
+
+      border: 0;
+      background-color: $medium-blue;
+
+      &.checkbox-checked {
+        background-color: $green;
+
+        .checkbox-inner {
+          top: 3px;
+          left: 7px;
+        }
+      }
+    }
+  }
+}
+
+ion-item.item.bordered, button[ion-item].bordered {
+  border: 2px solid $border-color;
+
+  .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
+ion-list[radio-group] {
+  ion-radio {
+    order: 1;
+  }
+
+  .input-wrapper {
+    order: 2;
+  }
+}
+
+.group-icon-form {
+  ion-item, button[ion-item] {
+    padding-left: 50px !important;
+
+    ion-label {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 10px;
+
+      &, & * {
+        color: $primary;
+      }
+    }
+  }
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+       appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

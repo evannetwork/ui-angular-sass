@@ -1,0 +1,328 @@
+/*
+  Copyright (C) 2018-present evan GmbH. 
+  
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3, 
+  as published by the Free Software Foundation. 
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details. 
+  
+  You should have received a copy of the GNU Affero General Public License along with this program.
+  If not, see http://www.gnu.org/licenses/ or write to the
+  
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
+  
+  or download the license from the following URL: https://evan.network/license/ 
+  
+  You can be released from the requirements of the GNU Affero General Public License
+  by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts of it
+  on other blockchains than evan.network. 
+  
+  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+*/
+
+@import '../variables/colors';
+@import '../variables/positions';
+
+// remove strange line behavior of list items
+ion-list {
+  button[ion-item], ion-item {
+    &.active {
+      background-color: rgba(0, 0, 0, 0.1) !important;
+
+      &, ion-label {
+        h1, h2, h3, h4, span {
+          color: $primary !important;
+        }
+      };
+    }
+
+    &.item-hover:hover {
+      background-color: $border-color !important;
+    }
+
+    ion-avatar {
+      margin: 0 !important;
+    }
+
+    .item-inner {
+      margin-left: 10px !important;
+
+      border-bottom: 0 !important;
+
+      .top-right {
+        font-size: 12px;
+
+        position: absolute;
+        z-index: 10;
+        top: 11px;
+        right: 25px;
+
+        color: $medium-gray;
+
+        @media (max-width: 768px) {
+          top: 18px !important;
+        }
+      }
+
+      ion-label {
+        & > h2 {
+          font-size: 17px;
+        }
+
+        & > h3, & > span {
+          font-size: 12px;
+        }
+
+        & > h2, & > h3, & > h4, & > span, & > p {
+          overflow: hidden;
+
+          text-overflow: ellipsis;
+        }
+
+        & > span {
+          color: $light;
+        }
+      }
+    }
+
+    &[padding], &[padding-horizontal] {
+      .item-inner {
+        .top-right {
+          z-index: 10;
+          top: 11px;
+          right: 30px;
+
+          color: gray;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 993px) {
+    ion-item-sliding {
+      ion-item-options {
+        display: none !important;
+      }
+    }
+  }
+}
+
+ion-list {
+  ion-item-sliding[col] {
+    padding: 0 !important;
+  }
+}
+
+ion-split-pane {
+  ion-menu {
+    ion-content.content-md {
+      background-color: $background-color;
+    }
+
+    ion-list {
+      margin-top: 20px !important;
+
+      button[ion-item], ion-item {
+        padding: 0 10px !important;
+
+        img {
+          max-height: 40px;
+        }
+      }
+    }
+  }
+}
+
+ion-label.label.standalone {
+  &, &[stacked], &[floating] {
+    margin: 24px 8px 8px 0 !important;
+
+    color: #999999;
+  }
+}
+
+ion-item.item {
+  ion-label {
+    max-width: unset;
+  }
+}
+
+ion-list.evan-list, ion-list.evan-grid {
+  @media (max-width: 768px) {
+    margin-top: -1px !important;
+
+    ion-searchbar {
+      padding: 25px 8px;
+    }
+  }
+}
+
+ion-list.evan-list {
+  ion-item-sliding {
+    padding-left: 0;
+
+    ion-fab {
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      ion-fab {
+        display: none;
+      }
+    }
+
+    &:first-child {
+      border-top: 1px solid $light-gray;
+    }
+
+    &.header-list-item {
+      @media (max-width: 768px) {
+        width: calc(100% - 25px);
+        margin-left: 8px;
+      }
+
+      ion-item.item {
+        &, & > .item-inner, ion-label {
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        .header {
+          & {
+            position: relative;
+
+            border-bottom: 1px solid $light-gray;
+            background-color: $background-color;
+          }
+
+          &, .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            min-height: 45px;
+
+            button {
+              margin-top: 0;
+              margin-bottom: 0;
+              padding: 0;
+            }
+          }
+
+          .text-container {
+            margin-left: 25px;
+
+            h2 {
+              font-size: 17px;
+            }
+
+            h3, span {
+              font-size: 12px;
+            }
+          }
+
+          .button-container {
+            margin-right: 25px;
+          }
+        }
+
+        .body {
+          display: flex;
+          flex-wrap: wrap;
+
+          padding: 25px;
+
+          & > div {
+            margin-bottom: 25px;
+            padding-right: 25px;
+
+            @media (min-width: 769px) {
+              width: 50%;
+            }
+            @media (max-width: 768px) {
+              width: 100%;
+            }
+          }
+
+          b {
+            font-size: 15px;
+
+            display: block;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    button[ion-item], ion-item {
+      .item-inner {
+        button {
+          font-size: 2rem;
+        }
+      }
+
+      ion-avatar {
+        img {
+          border-radius: 0;
+
+          @media (max-width: 768px) {
+            background-color: $light;
+          }
+        }
+
+        blockie-component {
+          &, & > canvas {
+            width: 48px;
+            height: 48px;
+          }
+
+          @media (min-width: 769px) {
+            & {
+              width: 50px;
+              height: 50px;
+
+              canvas {
+                width: 50px;
+                height: 50px;
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hover-button {
+    display: none;
+  }
+
+  .list-item-attachment {
+    position: relative;
+    z-index: 9;
+
+    margin-top: -3px;
+    padding: 4px 25px 0 25px;
+  }
+
+  @media (min-width: 769px) {
+    ion-item-sliding:hover {
+      .hover-button {
+        display: block;
+      }
+    }
+  }
+}
+
+.list-md .item-input:last-child {
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,135 @@
+/*
+  Copyright (C) 2018-present evan GmbH. 
+  
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3, 
+  as published by the Free Software Foundation. 
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details. 
+  
+  You should have received a copy of the GNU Affero General Public License along with this program.
+  If not, see http://www.gnu.org/licenses/ or write to the
+  
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
+  
+  or download the license from the following URL: https://evan.network/license/ 
+  
+  You can be released from the requirements of the GNU Affero General Public License
+  by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts of it
+  on other blockchains than evan.network. 
+  
+  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+*/
+
+.evan-popover {
+  &.top-right {
+    button {
+      position: absolute;
+      top: -9px;
+      right: -13px;
+    }
+
+    .popover-content {
+      top: 45px;
+      right: 5%;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    cursor: pointer;
+
+    opacity: 0.001;
+    background-color: #ffffff;
+  }
+
+  .popover-content {
+    position: fixed;
+    z-index: 1000;
+
+    width: 90%;
+    padding: 0;
+  }
+}
+
+.evan-callout {
+  .popover-content {
+    overflow: visible;
+
+    margin-top: 10px;
+
+    &::before {
+      position: absolute;
+
+      width: 0;
+      height: 0;
+
+      content: '';
+
+      border: 0.8em solid transparent;
+    }
+
+    ion-radio {
+      .radio-icon {
+        display: none;
+      }
+    }
+
+    ion-item {
+      background-color: $background-color-2 !important;
+    }
+
+    ion-item:hover {
+      background-color: $primary !important;
+    }
+  }
+
+  &.top {
+    .popover-content::before {
+      top: -20px;
+      right: 17%;
+
+      border-bottom: 10px solid $background-color-2;
+    }
+  }
+
+  &.bottom {
+    .popover-content {
+      margin-top: -30px !important;
+      margin-left: -40px !important;
+    }
+
+    .popover-content::before {
+      bottom: -20px;
+      left: 17%;
+
+      border-top: 10px solid $background-color-2;
+    }
+  }
+}
+
+ion-select.evan-callout {
+  overflow: hidden;
+
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+
+  &.no-button {
+    button {
+      width: 0;
+      height: 0;
+    }
+  }
+}

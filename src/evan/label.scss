@@ -1,0 +1,87 @@
+/*
+  Copyright (C) 2018-present evan GmbH. 
+  
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3, 
+  as published by the Free Software Foundation. 
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details. 
+  
+  You should have received a copy of the GNU Affero General Public License along with this program.
+  If not, see http://www.gnu.org/licenses/ or write to the
+  
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
+  
+  or download the license from the following URL: https://evan.network/license/ 
+  
+  You can be released from the requirements of the GNU Affero General Public License
+  by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts of it
+  on other blockchains than evan.network. 
+  
+  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+*/
+
+@import '../variables/colors';
+
+.evan-label {
+  font-weight: 400;
+
+  padding: 4px 12px 3px;
+
+  letter-spacing: 0.05em;
+
+  border-radius: 60px;
+
+  &.label-rouded, &.label-rounded {
+    font-weight: 400;
+
+    padding: 6px 12px 5px;
+
+    border-radius: 60px;
+  }
+
+  &.label-info {
+    background-color: $medium-blue;
+  }
+
+  &.label-success {
+    color: $background-color;
+    background-color: $green;
+  }
+
+  &.label-danger {
+    background-color: $red;
+  }
+}
+
+.evan-circle {
+  font-size: 14px!important;
+  font-weight: 400;
+  line-height: 1.2;
+
+  display: inline-block;
+
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  padding-top: 12px;
+
+  text-align: center;
+
+  border-radius: 50%;
+  background-color: $background-color-2;
+
+  &.bg-success {
+    background-color: $green;
+  }
+
+  ion-spinner {
+    margin-top: -5px;
+    margin-left: 5px;
+  }
+}

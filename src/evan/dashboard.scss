@@ -1,0 +1,158 @@
+/*
+  Copyright (C) 2018-present evan GmbH. 
+  
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3, 
+  as published by the Free Software Foundation. 
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details. 
+  
+  You should have received a copy of the GNU Affero General Public License along with this program.
+  If not, see http://www.gnu.org/licenses/ or write to the
+  
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
+  
+  or download the license from the following URL: https://evan.network/license/ 
+  
+  You can be released from the requirements of the GNU Affero General Public License
+  by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts of it
+  on other blockchains than evan.network. 
+  
+  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+*/
+
+@import '../variables/colors';
+@import '../variables/positions';
+
+dashboard-top-buttons {
+  line-height: 46px;
+
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+
+  width: auto;
+  height: $toolbar-height;
+
+  transition: right 0.2s linear;
+
+  button {
+    box-sizing: border-box;
+    height: 48px;
+
+    vertical-align: middle;
+
+    color: $light;
+    border-radius: 0;
+
+    .button-inner {
+      ion-icon {
+        font-size: 3rem;
+
+        color: $light;
+      }
+      span {
+        margin-left: 10px;
+
+        color: $light;
+      }
+    }
+  }
+
+  ion-searchbar {
+    display: inline-block;
+
+    width: 300px;
+    padding: 6px 0 0 0 !important;
+
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    right: 0;
+  }
+
+  &.on-small-move-down {
+    @media (max-width: 768px) {
+      top: unset;
+      right: 5px !important;
+      bottom: 5px !important;
+
+      background-color: transparent;
+
+      button {
+        width: 50px;
+        height: 50px;
+        margin-left: 5px;
+        padding: 0;
+
+        border-radius: 50%;
+
+        .button-inner {
+          span {
+            display: none;
+          }
+          ion-icon {
+            padding-right: 0;
+          }
+        }
+
+        ion-spinner {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    ion-searchbar {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    button {
+      background-color: transparent !important;
+    }
+
+    button[color='danger'] {
+      background-color: $red !important;
+    }
+  }
+}
+
+.queue-button-active dashboard-top-buttons {
+  right: 54px;
+}
+
+.queue-button-active-2 dashboard-top-buttons {
+  right: 108px;
+}
+
+.queue-button-active-2 dashboard-top-buttons {
+  right: 162px;
+}
+
+ion-split-pane {
+  & > ion-content {
+    ion-header {
+      ion-navbar {
+        ion-buttons[start] {
+          order: 2;
+        }
+      }
+    }
+  }
+}
+
+.ng-animating {
+  dashboard-top-buttons {
+    display: none;
+  }
+}
