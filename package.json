@@ -3,11 +3,11 @@
   "author": "Contractus",
   "dependencies": {},
   "description": "Root angular sass styling and styling variables",
-  "name": "@evan.network/angular-sass",
-  "scripts": {},
-  "version": "1.0.1",
   "keywords": [
     "API",
     "SASS"
-  ]
+  ],
+  "name": "@evan.network/ui-angular-sass",
+  "scripts": {},
+  "version": "1.0.2"
 }

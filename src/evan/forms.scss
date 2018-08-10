@@ -1,28 +1,28 @@
 /*
-  Copyright (C) 2018-present evan GmbH. 
-  
+  Copyright (C) 2018-present evan GmbH.
+
   This program is free software: you can redistribute it and/or modify it
-  under the terms of the GNU Affero General Public License, version 3, 
-  as published by the Free Software Foundation. 
-  
-  This program is distributed in the hope that it will be useful, 
-  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Affero General Public License for more details. 
-  
+  See the GNU Affero General Public License for more details.
+
   You should have received a copy of the GNU Affero General Public License along with this program.
   If not, see http://www.gnu.org/licenses/ or write to the
-  
+
   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
-  
-  or download the license from the following URL: https://evan.network/license/ 
-  
+
+  or download the license from the following URL: https://evan.network/license/
+
   You can be released from the requirements of the GNU Affero General Public License
   by purchasing a commercial license.
   Buying such a license is mandatory as soon as you use this software or parts of it
-  on other blockchains than evan.network. 
-  
-  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+  on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address: https://evan.network/license/
 */
 
 @import '../variables/colors';
@@ -57,7 +57,7 @@ ion-label {
 ion-item, button[ion-item] {
   padding-left: 0 !important;
 
-  &.item-input {
+  &.item-input, &.item-datetime, &.item-range, &.item-label-stacked {
     ion-label {
       &, h1, h2, h3, h4, h5, span {
         font-weight: 600 !important;
@@ -84,9 +84,15 @@ ion-item, button[ion-item] {
     }
   }
 
+  ion-textarea {
+    textarea {
+      font-size: 14px;
+    }
+  }
+
   &.item-md.item-block .item-inner {
-    border-bottom: 1px solid $medium-blue;
-    border-bottom-color: $medium-blue;
+    border-bottom: 1px solid #3c7f80;
+    border-bottom-color: #3c7f80;
     box-shadow: none !important;
   }
 }
@@ -94,9 +100,7 @@ ion-item, button[ion-item] {
 form {
   position: relative;
 
-  background-color: $background-color;
-
-  &, & ion-item.item-md, & button[ion-item] {
+  & ion-item.item-md, & button[ion-item] {
     background-color: $list-background-color;
   }
 
@@ -163,6 +167,10 @@ form {
   border-radius: 20px;
   background-color: $medium-blue;
 
+  &.disable-delete {
+    padding: 0 12px 0 12px;
+  }
+
   span {
     color: $light !important;
   }
@@ -219,15 +227,21 @@ ion-tags-input {
     padding: 0;
     padding-bottom: 8px;
 
-    border-bottom: 1px solid $light-gray;
+    border-bottom: 1px solid $background-color-2;
+
+    &.active.tit-border-color {
+      border-bottom-color: $background-color-2;
+    }
 
     input.iti-input {
-      font-size: 25px;
+      font-size: 17px;
 
-      height: 26px;
+      height: 34px;
       padding: 0;
 
-      color: #000000;
+      vertical-align: bottom;
+
+      color: $light;
 
       &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
         color: #999999;
@@ -235,10 +249,26 @@ ion-tags-input {
     }
 
     span.iti-tag {
+      line-height: 24px;
+
+      position: relative;
+
+      height: 30px;
       margin-right: 10px;
+      padding-right: 30px;
+
+      vertical-align: middle;
 
       border-radius: 20px !important;
-      background-color: $medium-blue;
+      background-color: #24545e;
+
+      .iti-tag-rm {
+        font-size: 20px;
+
+        position: absolute;
+        top: 2px;
+        right: 11px;
+      }
     }
   }
 
@@ -275,7 +305,7 @@ ion-item.item, button[ion-item] {
       height: 20px;
 
       border: 0;
-      background-color: $medium-blue;
+      background-color: $background-color;
 
       &.checkbox-checked {
         background-color: $green;
@@ -298,6 +328,16 @@ ion-item.item.bordered, button[ion-item].bordered {
   }
 }
 
+ion-item.item.semi-transparent {
+  background: rgba($background-color, $background-opacity);
+}
+
+ion-item.item.no-border {
+  .item-inner {
+    border-bottom: 0 !important;
+  }
+}
+
 ion-list[radio-group] {
   ion-radio {
     order: 1;
@@ -310,16 +350,18 @@ ion-list[radio-group] {
 
 .group-icon-form {
   ion-item, button[ion-item] {
-    padding-left: 50px !important;
+    &.label-left {
+      padding-left: 50px !important;
 
-    ion-label {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 10px;
+      ion-label {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 10px;
 
-      &, & * {
-        color: $primary;
+        &, & * {
+          color: $primary;
+        }
       }
     }
   }
@@ -332,4 +374,10 @@ input[type=number] {
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+
+.evan-dapp {
+  .picker-md .picker-wrapper {
+    background: $background-color;
+  }
 }

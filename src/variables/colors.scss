@@ -1,28 +1,28 @@
 /*
-  Copyright (C) 2018-present evan GmbH. 
-  
+  Copyright (C) 2018-present evan GmbH.
+
   This program is free software: you can redistribute it and/or modify it
-  under the terms of the GNU Affero General Public License, version 3, 
-  as published by the Free Software Foundation. 
-  
-  This program is distributed in the hope that it will be useful, 
-  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Affero General Public License for more details. 
-  
+  See the GNU Affero General Public License for more details.
+
   You should have received a copy of the GNU Affero General Public License along with this program.
   If not, see http://www.gnu.org/licenses/ or write to the
-  
+
   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
-  
-  or download the license from the following URL: https://evan.network/license/ 
-  
+
+  or download the license from the following URL: https://evan.network/license/
+
   You can be released from the requirements of the GNU Affero General Public License
   by purchasing a commercial license.
   Buying such a license is mandatory as soon as you use this software or parts of it
-  on other blockchains than evan.network. 
-  
-  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+  on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address: https://evan.network/license/
 */
 
 // evan colors
@@ -68,8 +68,8 @@ $colors: (
   light-gray:           $light-gray,
   medium-gray:          $medium-gray,
   dark-gray:            $dark-gray,
-  evan-blue-dark: $dark-blue,
-  green:              $green,
+  evan-blue-dark:       $dark-blue,
+  green:                $green,
   light-green:          $green,
   dark-blue:            $dark-blue,
   alert:                $yellow
@@ -78,7 +78,7 @@ $colors: (
 /**************************************************************************************************/
 
 // general
-$border-color: #24545e;
+$border-color: #29757b;
 $refresher-border-color: transparent;
 
 // text
@@ -90,14 +90,17 @@ $label-text-color: $light;
 // backgrounds
 $background-color: $dark-blue;
 $background-color-2: $medium-blue;
-$background-gradient: linear-gradient(-134deg, #3b9c97 0%, #0c3140 100%);
+$background-gradient: linear-gradient($dark-blue, $primary);
 $background-gradient-reverse: linear-gradient(-134deg, #0c3140 0%, #3b9c97 100%);
 $background-backdrop: rgba(0, 0, 0, 0.5);
 $hover: $medium-blue;
+$background-opacity: 0.5;
 
 // toolbar
-$background-toolbar-wide: $light-cyan;
-$background-toolbar-small: $light-cyan;
+// $background-toolbar-wide: $light-cyan;
+$background-toolbar-wide: transparent;
+// $background-toolbar-small: $light-cyan;
+$background-toolbar-small: transparent;
 $toolbar-height: 56px;
 
 // components
@@ -111,7 +114,7 @@ $grid-list-item-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
 
 // list
 $list-text-color: $text-color !default;
-$list-background-color: $background-color !default;
+$list-background-color: transparent !default;
 $list-border-color: $medium-cyan !default;
 
 // sizing

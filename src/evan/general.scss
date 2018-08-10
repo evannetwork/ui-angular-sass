@@ -1,44 +1,47 @@
 /*
-  Copyright (C) 2018-present evan GmbH. 
-  
+  Copyright (C) 2018-present evan GmbH.
+
   This program is free software: you can redistribute it and/or modify it
-  under the terms of the GNU Affero General Public License, version 3, 
-  as published by the Free Software Foundation. 
-  
-  This program is distributed in the hope that it will be useful, 
-  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Affero General Public License for more details. 
-  
+  See the GNU Affero General Public License for more details.
+
   You should have received a copy of the GNU Affero General Public License along with this program.
   If not, see http://www.gnu.org/licenses/ or write to the
-  
+
   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
-  
-  or download the license from the following URL: https://evan.network/license/ 
-  
+
+  or download the license from the following URL: https://evan.network/license/
+
   You can be released from the requirements of the GNU Affero General Public License
   by purchasing a commercial license.
   Buying such a license is mandatory as soon as you use this software or parts of it
-  on other blockchains than evan.network. 
-  
-  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+  on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address: https://evan.network/license/
 */
 
 @import '../variables/colors';
 @import '../variables/positions';
 @import '../open-sans';
 
-ion-app {
+ion-app.evan-dapp {
   overflow: hidden;
 
+  background: $background-gradient;
+
   ion-app {
-    background-color: $background-color-2;
+    background: transparent;
+    background-color: transparent;
   }
 }
 
 ion-content.content-md {
-  background-color: $background-color-2;
+  background-color: transparent;
 }
 
 ion-content {
@@ -66,12 +69,16 @@ ion-content {
   width: 10px;
   height: 5px;
 
-  background-color: #eeeeee;
+  background-color: rgba($background-color, 0.5);
 }
 
 *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:active, *::-webkit-scrollbar-thumb:hover {
-  border: 1px solid #b5b5b5;
-  background-color: #b5b5b5;
+  border: 1px solid $background-color;
+  background-color: $background-color;
+}
+
+input::placeholder {
+  color: #cacaca;
 }
 
 // Use other button color
@@ -221,7 +228,7 @@ ion-title {
   height: 2px;
   margin: 30px 0;
 
-  background-color: $light-gray;
+  background-color: $background-color-2;
 
   &.small {
     margin: 25px 0;
@@ -232,7 +239,7 @@ ion-title {
   width: 100%;
   height: 1px;
 
-  background-color: $light-gray;
+  background-color: $background-color-2;
 }
 
 .evan-spacing {
@@ -264,7 +271,7 @@ ion-item {
 }
 
 .item-md {
-  background-color: $list-background-color !important;
+  background-color: $list-background-color;
 }
 
 .continuous-text span, .continuous-text p, span.continuous-text, p.continuous-text, .continuous-text {
