@@ -381,3 +381,12 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     background: $background-color;
   }
 }
+
+ion-chip.error-hint {
+  border-radius: 0;
+  background-color: rgba(map-get($colors, danger), 0.5);
+
+  ion-icon {
+    background-color: transparent !important;
+  }
+}
