@@ -2,11 +2,13 @@
 
 ## Next Version
 ### Features
+- add ion-chip error-hint for inputs
+- Add documentation links to readme files; correct install documentation
+
 ### Fixes
 - Fix qr code camera on mobile devices
 
 ### Deprecations
-
 
 ## Version 1.0.2
 ### Features
