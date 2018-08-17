@@ -1,28 +1,28 @@
 /*
-  Copyright (C) 2018-present evan GmbH. 
-  
+  Copyright (C) 2018-present evan GmbH.
+
   This program is free software: you can redistribute it and/or modify it
-  under the terms of the GNU Affero General Public License, version 3, 
-  as published by the Free Software Foundation. 
-  
-  This program is distributed in the hope that it will be useful, 
-  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Affero General Public License for more details. 
-  
-  You should have received a copy of the GNU Affero General Public License along with this program.
-  If not, see http://www.gnu.org/licenses/ or write to the
-  
-  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301 USA,
-  
-  or download the license from the following URL: https://evan.network/license/ 
-  
-  You can be released from the requirements of the GNU Affero General Public License
-  by purchasing a commercial license.
-  Buying such a license is mandatory as soon as you use this software or parts of it
-  on other blockchains than evan.network. 
-  
-  For more information, please contact evan GmbH at this address: https://evan.network/license/ 
+  See the GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program. If not, see http://www.gnu.org/licenses/ or
+  write to the Free Software Foundation, Inc., 51 Franklin Street,
+  Fifth Floor, Boston, MA, 02110-1301 USA, or download the license from
+  the following URL: https://evan.network/license/
+
+  You can be released from the requirements of the GNU Affero General Public
+  License by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts
+  of it on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address:
+  https://evan.network/license/
 */
 
 @import '../variables/colors';
@@ -36,19 +36,33 @@ dashboard-top-buttons {
   top: 0;
   right: 0;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: auto;
   height: $toolbar-height;
+  padding-right: 5px;
 
   transition: right 0.2s linear;
 
-  button {
+  ion-searchbar {
+    margin-right: 10px;
+    padding: 0 !important;
+  }
+
+  button[icon-only] {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  button, button[icon-only] {
     box-sizing: border-box;
-    height: 48px;
 
     vertical-align: middle;
 
     color: $light;
-    border-radius: 0;
+    background-color: rgba($primary, 0.5);
 
     .button-inner {
       ion-icon {
@@ -68,7 +82,7 @@ dashboard-top-buttons {
     display: inline-block;
 
     width: 300px;
-    padding: 6px 0 0 0 !important;
+    padding: 0 0 0 0 !important;
 
     vertical-align: middle;
   }
@@ -85,9 +99,9 @@ dashboard-top-buttons {
 
       background-color: transparent;
 
-      button {
-        width: 50px;
-        height: 50px;
+      button, button[icon-only] {
+        width: 50px !important;
+        height: 50px !important;
         margin-left: 5px;
         padding: 0;
 
@@ -98,7 +112,9 @@ dashboard-top-buttons {
             display: none;
           }
           ion-icon {
+            margin-left: 0;
             padding-right: 0;
+            padding-left: 0;
           }
         }
 
@@ -117,10 +133,6 @@ dashboard-top-buttons {
   }
 
   @media (min-width: 769px) {
-    button {
-      background-color: transparent !important;
-    }
-
     button[color='danger'] {
       background-color: $red !important;
     }
@@ -139,12 +151,32 @@ dashboard-top-buttons {
   right: 162px;
 }
 
-ion-split-pane {
-  & > ion-content {
-    ion-header {
-      ion-navbar {
-        ion-buttons[start] {
-          order: 2;
+.evan-dapp {
+  ion-split-pane {
+    ion-menu {
+      @media (min-width: 769px) {
+        .menu-inner {
+          background: transparent;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu-inner {
+          background: $background-gradient;
+        }
+      }
+
+      ion-content.content-md {
+        background-color: rgba($background-color, $background-opacity);
+      }
+
+      & > ion-content {
+        ion-header {
+          ion-navbar {
+            ion-buttons[start] {
+              order: 2;
+            }
+          }
         }
       }
     }
