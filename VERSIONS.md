@@ -2,6 +2,11 @@
 
 ## Next Version
 ### Features
+### Fixes
+### Deprecations
+
+##  Version 1.1.0
+### Features
 - add ion-chip error-hint for inputs
 - Add documentation links to readme files; correct install documentation
 
