@@ -48,6 +48,10 @@
     background-color: $medium-blue;
   }
 
+  &.label-warning {
+    background-color: $yellow;
+  }
+
   &.label-success {
     color: $background-color;
     background-color: $green;
