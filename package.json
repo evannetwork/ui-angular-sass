@@ -3,11 +3,16 @@
   "author": "evan GmbH",
   "dependencies": {},
   "description": "Root angular sass styling and styling variables",
+  "homepage": "https://evannetwork.github.io/",
   "keywords": [
     "API",
     "SASS"
   ],
   "name": "@evan.network/ui-angular-sass",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:evannetwork/ui-angular-sass.git"
+  },
   "scripts": {},
   "version": "1.1.0"
 }
