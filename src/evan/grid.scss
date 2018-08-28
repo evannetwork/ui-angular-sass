@@ -265,6 +265,7 @@ ion-grid, ion-row, ion-col {
 
   &.no-padding, ion-row, ion-col:first-child {
     padding: 0 !important;
+    padding-right: 5px !important;
     padding-left: 0 !important;
   }
 }
