@@ -268,4 +268,10 @@ ion-grid, ion-row, ion-col {
     padding-right: 5px !important;
     padding-left: 0 !important;
   }
+
+  @media (max-width: 768px) {
+    &.no-padding, ion-row, ion-col:first-child {
+      padding-right: 0px !important;
+    }
+  }
 }
