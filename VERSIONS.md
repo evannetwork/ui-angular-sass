@@ -2,7 +2,10 @@
 
 ## Next Version
 ### Features
+- add evan-label label-warning class
+
 ### Fixes
+
 ### Deprecations
 
 ##  Version 1.1.0
