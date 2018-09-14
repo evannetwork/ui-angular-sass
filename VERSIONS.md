@@ -5,6 +5,11 @@
 ### Fixes
 ### Deprecations
 
+## Version 1.2.0
+### Features
+- add evan-label label-warning class
+- add transparency button style
+
 ##  Version 1.1.0
 ### Features
 - add ion-chip error-hint for inputs

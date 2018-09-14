@@ -119,11 +119,11 @@ form {
       }
     }
 
-    & > button, & > ion-item-sliding, & > ion-item {
+/*     & > button, & > ion-item-sliding, & > ion-item {
       &:first-child {
         border-top: 0 solid $light-gray !important;
       }
-    }
+    } */
   }
 
   .ion-tags-input-container {
@@ -383,6 +383,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 ion-chip.error-hint {
+  max-width: 100%;
+
   border-radius: 0;
   background-color: rgba(map-get($colors, danger), 0.5);
 

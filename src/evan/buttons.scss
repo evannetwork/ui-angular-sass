@@ -54,6 +54,20 @@ button {
     }
   }
 
+  &[color=transparency] {
+    background-color: rgba(2,56,69,0.3) !important;
+    color: $light !important;
+
+    &:hover {
+      color: $light !important;
+      background-color: rgba(2,56,69,0.7) !important;
+
+      ion-icon, ion-spinner {
+        color: $light !important;
+      }
+    }
+  }
+
   span {
     color: unset;
   }
