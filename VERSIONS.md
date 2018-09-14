@@ -2,12 +2,13 @@
 
 ## Next Version
 ### Features
+### Fixes
+### Deprecations
+
+## Version 1.2.0
+### Features
 - add evan-label label-warning class
 - add transparency button style
-
-### Fixes
-
-### Deprecations
 
 ##  Version 1.1.0
 ### Features
