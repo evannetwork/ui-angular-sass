@@ -60,19 +60,20 @@ $light: #ffffff;
 $dark: #222222;
 $primary: $medium-cyan;
 $colors: (
-  primary:              $primary,
-  secondary:            $green,
+  alert:                $yellow,
   danger:               $red,
-  light:                $light,
-  dark:                 $dark,
-  light-gray:           $light-gray,
-  medium-gray:          $medium-gray,
+  dark-blue:            $dark-blue,
   dark-gray:            $dark-gray,
+  dark:                 $dark,
   evan-blue-dark:       $dark-blue,
   green:                $green,
+  light-gray:           $light-gray,
   light-green:          $green,
-  dark-blue:            $dark-blue,
-  alert:                $yellow
+  light:                $light,
+  medium-gray:          $medium-gray,
+  primary:              $primary,
+  secondary:            $green,
+  transparency:         rgba(2,56,69,0.3)
 );
 
 /**************************************************************************************************/
