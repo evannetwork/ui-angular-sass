@@ -3,6 +3,7 @@
 ## Next Version
 ### Features
 - add evan-label label-warning class
+- add transparency button style
 
 ### Fixes
 
