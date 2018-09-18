@@ -3,6 +3,8 @@
 ## Next Version
 ### Features
 ### Fixes
+- Fix label-success inner span color
+
 ### Deprecations
 
 ## Version 1.2.0
