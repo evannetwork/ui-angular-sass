@@ -30,6 +30,8 @@
 .evan-modal {
   padding-top: 5%;
 
+  transition: 0.3s ease-out transform;
+  transform: scale(0);
   text-align: left;
 
   &, .backdrop {
@@ -45,9 +47,6 @@
 
     background-color: $background-backdrop;
   }
-
-  transform: scale(0);
-  transition: 0.3s ease-out transform;
 
   &.show-modal {
     transform: scale(1);
@@ -65,6 +64,8 @@
     overflow-y: auto;
 
     max-height: 80%;
+
+    background-color: #023845;
 
     @media (max-width: 768px) {
       width: calc(100% - 25px);
