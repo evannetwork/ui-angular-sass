@@ -28,6 +28,8 @@
 @import '../variables/colors';
 
 .evan-modal {
+  z-index: 1000;
+
   padding-top: 5%;
 
   transition: 0.3s ease-out transform;
