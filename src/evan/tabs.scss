@@ -70,7 +70,7 @@
 
     margin-bottom: 0;
 
-    background-color: rgba($background-color, 0.8) !important;
+    background-color: $background-color !important;
 
     button {
       transition: border-top 0.1s linear;

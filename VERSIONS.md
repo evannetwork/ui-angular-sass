@@ -2,12 +2,17 @@
 
 ## Next Version
 ### Features
+- add `ion-chip`.`warning-hint`
+
 ### Fixes
 - Fix label-success inner span color
 - add `z-index` to `evan-model`, not only to `evan-backdrop`
 - add `m-t-100` class
+- add correct border color to transparency buttons
+- remove transparency from tabs
 
 ### Deprecations
+- remove continuous text
 
 ## Version 1.2.0
 ### Features
