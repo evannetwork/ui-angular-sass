@@ -392,3 +392,14 @@ ion-chip.error-hint {
     background-color: transparent !important;
   }
 }
+
+ion-chip.warning-hint {
+  max-width: 100%;
+
+  border-radius: 0;
+  background-color: rgba($yellow, 0.5);
+
+  ion-icon {
+    background-color: transparent !important;
+  }
+}

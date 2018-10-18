@@ -53,8 +53,11 @@
   }
 
   &.label-success {
-    color: $background-color;
     background-color: $green;
+
+    &, & > span {
+      color: $background-color;
+    }
   }
 
   &.label-danger {

@@ -55,8 +55,9 @@ button {
   }
 
   &[color=transparency] {
-    background-color: rgba(2,56,69,0.3) !important;
     color: $light !important;
+    border-color: $background-color;
+    background-color: rgba(2,56,69,0.3) !important;
 
     &:hover {
       color: $light !important;
