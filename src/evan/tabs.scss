@@ -39,18 +39,8 @@
   @media (min-width: 768px) {
     padding-bottom: 1px;
 
-    background-color: rgba($dark-blue, 0.5);
-
     button {
       transition: border-bottom 0.1s linear;
-
-      color: $light;
-      background-color: transparent !important;
-
-      &.active, &.active:hover {
-        color: $light;
-        background-color: rgba($primary, 0.7) !important;
-      }
 
       .button-inner {
         font-size: 12px;
@@ -70,16 +60,8 @@
 
     margin-bottom: 0;
 
-    background-color: $background-color !important;
-
     button {
       transition: border-top 0.1s linear;
-
-      background-color: transparent !important;
-
-      &.active {
-        border-top: 3px solid $light;
-      }
     }
   }
 
@@ -94,7 +76,6 @@
     margin: 0;
     padding: 0 !important;
 
-    color: $light;
     border-radius: 0;
 
     .button-inner {
@@ -122,6 +103,66 @@
 
     @media (max-width: 768px) {
       margin-bottom: 70px;
+    }
+  }
+}
+
+/* color theme dark */
+.evan-tabs {
+  @media (min-width: 768px) {
+    background-color: rgba($dark-blue, 0.5);
+
+    button {
+      color: $light;
+      background-color: transparent !important;
+
+      &.active, &.active:hover {
+        color: $light;
+        background-color: rgba($primary, 0.7) !important;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    background-color: $background-color !important;
+
+    button {
+      background-color: transparent !important;
+    }
+  }
+
+  ion-row, ion-col, button {
+    color: $light;
+  }
+}
+
+/* color theme light */
+.evan-light {
+  .evan-tabs {
+    @media (min-width: 768px) {
+      background-color: rgba($dark-blue, 0.5);
+
+      button {
+        color: $light;
+        background-color: transparent !important;
+
+        &.active, &.active:hover {
+          color: $light;
+          background-color: rgba($primary, 0.7) !important;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      background-color: $background-color !important;
+
+      button {
+        background-color: transparent !important;
+      }
+    }
+
+    ion-row, ion-col, button {
+      color: $light;
     }
   }
 }

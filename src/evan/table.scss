@@ -42,8 +42,6 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 
-  background-color: transparent;
-
   thead, tbody, tfoot {
     tr {
       td, th {
@@ -55,14 +53,35 @@ table {
         text-align: left;
         vertical-align: middle;
         white-space: nowrap;
+      }
 
+      th {
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  &.table-hover {
+    tbody {
+      tr:hover {
+        background-color: rgba(7, 58, 69, 0.5) !important;
+      }
+    }
+  }
+}
+
+/* color theme dark */
+table {
+  background-color: transparent;
+
+  thead, tbody, tfoot {
+    tr {
+      td, th {
         color: $light-gray;
         border-top: 1px solid $border-color;
       }
 
       th {
-        vertical-align: bottom;
-
         border-top: 1px solid rgba(120, 130, 140, 0.2) !important;
         border-bottom: 1px solid rgba(120, 130, 140, 0.2);
       }
@@ -73,6 +92,35 @@ table {
     tbody {
       tr:hover {
         background-color: rgba(7, 58, 69, 0.5) !important;
+      }
+    }
+  }
+}
+
+/* color theme light */
+.evan-light {
+  table {
+    background-color: transparent;
+
+    thead, tbody, tfoot {
+      tr {
+        td, th {
+          color: $light-gray;
+          border-top: 1px solid $border-color;
+        }
+
+        th {
+          border-top: 1px solid rgba(120, 130, 140, 0.2) !important;
+          border-bottom: 1px solid rgba(120, 130, 140, 0.2);
+        }
+      }
+    }
+
+    &.table-hover {
+      tbody {
+        tr:hover {
+          background-color: rgba(7, 58, 69, 0.5) !important;
+        }
       }
     }
   }

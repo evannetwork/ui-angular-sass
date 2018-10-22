@@ -30,37 +30,20 @@
 
 ion-alert {
   position: fixed;
-
-  .alert-wrapper {
-    background-color: $background-color !important;
-
-    h2 {
-      color: $light !important;
-    }
-
-    .alert-checkbox-label, .alert-radio-label, .alert-input {
-      color: $light !important;
-    }
-  }
 }
 
 .alert-md .alert-message {
   overflow-y: auto;
 
   max-height: 80% !important;
-
-  color: $light;
 }
 
 .advanced-alert {
-  box-shadow: $grid-list-item-shadow;
-
   .alert-img-container {
     margin: 0 !important;
     padding: 20px 0 20px 0;
 
     border-bottom: 1px solid gray;
-    background-color: $dark-blue;
 
     .alert-img {
       width: 120px;
@@ -68,7 +51,6 @@ ion-alert {
       margin: 0 auto;
 
       border-radius: 50%;
-      background-color: $light-blue;
       background-repeat: no-repeat;
       background-position: center;
       background-size: 70px;
@@ -83,8 +65,80 @@ ion-alert {
 
     h1, h2, h3, h4 {
       margin-top: 0;
+    }
+  }
+}
 
+/* color theme dark */
+ion-alert {
+  .alert-wrapper {
+    background-color: $background-color !important;
+
+    h2 {
+      color: $light !important;
+    }
+
+    .alert-checkbox-label, .alert-radio-label, .alert-input {
+      color: $light !important;
+    }
+  }
+}
+
+.alert-md .alert-message {
+  color: $light;
+}
+
+.advanced-alert {
+  box-shadow: $grid-list-item-shadow;
+
+  .alert-img-container {
+    background-color: $dark-blue;
+
+    .alert-img {
+      background-color: $light-blue;
+    }
+  }
+  .alert-body {
+    h1, h2, h3, h4 {
       color: $light;
+    }
+  }
+}
+
+/* color theme light */
+.evan-light {
+  ion-alert {
+    .alert-wrapper {
+      background-color: $background-color !important;
+
+      h2 {
+        color: $light !important;
+      }
+
+      .alert-checkbox-label, .alert-radio-label, .alert-input {
+        color: $light !important;
+      }
+    }
+  }
+
+  .alert-md .alert-message {
+    color: $light;
+  }
+
+  .advanced-alert {
+    box-shadow: $grid-list-item-shadow;
+
+    .alert-img-container {
+      background-color: $dark-blue;
+
+      .alert-img {
+        background-color: $light-blue;
+      }
+    }
+    .alert-body {
+      h1, h2, h3, h4 {
+        color: $light;
+      }
     }
   }
 }

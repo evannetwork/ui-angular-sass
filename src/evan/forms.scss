@@ -28,11 +28,6 @@
 @import '../variables/colors';
 @import '../variables/positions';
 
-
-h1, h2, h3, h4, h5, span, p {
-  color: $light;
-}
-
 ion-item ion-label[stacked], ion-item ion-label[floating], ion-label.standalone, button[ion-item] ion-label[stacked], button[ion-item] ion-label[floating] {
   margin: 24px 8px 8px 0 !important;
 }
@@ -40,18 +35,12 @@ ion-item ion-label[stacked], ion-item ion-label[floating], ion-label.standalone,
 ion-label {
   &, h1, h2, h3, h4, h5, span {
     font-weight: 400 !important;
-
-    color: $light !important;
   }
 
   &.standalone {
     font-size: 14px;
     font-weight: 600 !important;
   }
-}
-
-::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
-  color: $medium-blue !important;
 }
 
 ion-item, button[ion-item] {
@@ -65,11 +54,9 @@ ion-item, button[ion-item] {
     }
   }
 
-  ion-input {
-    * {
+  ion-input, ion-select {
+    *, .select-text {
       font-size: 14px;
-
-      color: $light-gray;
     }
   }
 
@@ -79,8 +66,6 @@ ion-item, button[ion-item] {
 
     .datetime-text {
       font-size: 14px;
-
-      color: $light-gray;
     }
   }
 
@@ -89,20 +74,10 @@ ion-item, button[ion-item] {
       font-size: 14px;
     }
   }
-
-  &.item-md.item-block .item-inner {
-    border-bottom: 1px solid #3c7f80;
-    border-bottom-color: #3c7f80;
-    box-shadow: none !important;
-  }
 }
 
 form {
   position: relative;
-
-  & ion-item.item-md, & button[ion-item] {
-    background-color: $list-background-color;
-  }
 
   ion-item.item-md, button[ion-item] {
     padding-left: 0;
@@ -112,25 +87,15 @@ form {
     ion-item.item-md, button[ion-item] {
       padding-left: 0;
 
-      background-color: transparent !important;
-
       .item-inner {
         margin-left: 0 !important;
       }
     }
-
-/*     & > button, & > ion-item-sliding, & > ion-item {
-      &:first-child {
-        border-top: 0 solid $light-gray !important;
-      }
-    } */
   }
 
   .ion-tags-input-container {
     ion-label {
       font-size: 13px;
-
-      color: #999999;
     }
   }
 }
@@ -139,16 +104,12 @@ form {
   display: flex;
   flex-wrap: wrap;
 
-  border-bottom: 1px solid $light-gray;
-
   & > span {
     line-height: 30px;
 
     margin-right: 5px;
 
     vertical-align: middle;
-
-    color: $medium-gray;
   }
 }
 
@@ -162,18 +123,12 @@ form {
   margin-right: 10px;
   margin-bottom: 8px;
   padding: 0 30px 0 12px;
-
-  color: $light;
   border-radius: 20px;
-  background-color: $medium-blue;
 
   &.disable-delete {
     padding: 0 12px 0 12px;
   }
 
-  span {
-    color: $light !important;
-  }
 
   ion-icon {
     position: absolute;
@@ -181,10 +136,6 @@ form {
     right: 13px;
 
     cursor: pointer;
-
-    &:hover {
-      color: $light-gray;
-    }
   }
 }
 
@@ -200,7 +151,6 @@ ion-item, button[ion-item] {
   text-align: left;
 
   opacity: 0.8;
-  color: $red;
 }
 
 .input-hint {
@@ -227,12 +177,6 @@ ion-tags-input {
     padding: 0;
     padding-bottom: 8px;
 
-    border-bottom: 1px solid $background-color-2;
-
-    &.active.tit-border-color {
-      border-bottom-color: $background-color-2;
-    }
-
     input.iti-input {
       font-size: 17px;
 
@@ -240,12 +184,6 @@ ion-tags-input {
       padding: 0;
 
       vertical-align: bottom;
-
-      color: $light;
-
-      &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
-        color: #999999;
-      }
     }
 
     span.iti-tag {
@@ -260,7 +198,6 @@ ion-tags-input {
       vertical-align: middle;
 
       border-radius: 20px !important;
-      background-color: #24545e;
 
       .iti-tag-rm {
         font-size: 20px;
@@ -304,12 +241,7 @@ ion-item.item, button[ion-item] {
       width: 20px;
       height: 20px;
 
-      border: 0;
-      background-color: $background-color;
-
       &.checkbox-checked {
-        background-color: $green;
-
         .checkbox-inner {
           top: 3px;
           left: 7px;
@@ -319,18 +251,6 @@ ion-item.item, button[ion-item] {
   }
 }
 
-ion-item.item.bordered, button[ion-item].bordered {
-  border: 2px solid $border-color;
-
-  .item-inner {
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-  }
-}
-
-ion-item.item.semi-transparent {
-  background: rgba($background-color, $background-opacity);
-}
 
 ion-item.item.no-border {
   .item-inner {
@@ -358,10 +278,6 @@ ion-list[radio-group] {
         top: 0;
         bottom: 0;
         left: 10px;
-
-        &, & * {
-          color: $primary;
-        }
       }
     }
   }
@@ -376,6 +292,167 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   -webkit-appearance: none;
 }
 
+ion-chip.error-hint {
+  max-width: 100%;
+
+  border-radius: 0;
+}
+
+ion-chip.warning-hint {
+  max-width: 100%;
+
+  border-radius: 0;
+}
+
+/* color theme dark */
+h1, h2, h3, h4, h5, span, p {
+  color: $light;
+}
+
+ion-label {
+  &, h1, h2, h3, h4, h5, span {
+    color: $light !important;
+  }
+}
+
+::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+  color: $medium-blue !important;
+}
+
+ion-item, button[ion-item] {
+  ion-input, ion-select {
+    *, .select-text {
+      color: $light-gray;
+    }
+  }
+
+  ion-datetime {
+    .datetime-text {
+      color: $light-gray;
+    }
+  }
+
+  &.item-md.item-block .item-inner {
+    border-bottom: 1px solid #3c7f80;
+    border-bottom-color: #3c7f80;
+    box-shadow: none !important;
+  }
+}
+
+form {
+  & ion-item.item-md, & button[ion-item] {
+    background-color: $list-background-color;
+  }
+
+  ion-list {
+    ion-item.item-md, button[ion-item] {
+      background-color: transparent !important;
+    }
+  }
+
+  .ion-tags-input-container {
+    ion-label {
+      color: #999999;
+    }
+  }
+}
+
+.evan-tag-container {
+  border-bottom: 1px solid $light-gray;
+
+  & > span {
+    color: $medium-gray;
+  }
+}
+
+.evan-tag {
+  color: $light;
+  border-radius: 20px;
+  background-color: $medium-blue;
+
+  span {
+    color: $light !important;
+  }
+
+  ion-icon {
+    &:hover {
+      color: $light-gray;
+    }
+  }
+}
+
+.input-error {
+  color: $red;
+}
+
+ion-tags-input {
+  .ion-tags-input {
+    border-bottom: 1px solid $background-color-2;
+
+    &.active.tit-border-color {
+      border-bottom-color: $background-color-2;
+    }
+
+    input.iti-input {
+      color: $light;
+
+      &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
+        color: #999999;
+      }
+    }
+
+    span.iti-tag {
+      border-radius: 20px !important;
+      background-color: #24545e;
+    }
+  }
+}
+
+ion-item.item, button[ion-item] {
+  ion-checkbox {
+    .checkbox-icon {
+      border: 0;
+      background-color: $background-color;
+
+      &.checkbox-checked {
+        background-color: $green;
+      }
+    }
+  }
+}
+
+ion-item.item.bordered, button[ion-item].bordered {
+  border: 2px solid $border-color;
+
+  .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
+ion-item.item.semi-transparent {
+  background: rgba($background-color, $background-opacity);
+}
+
+ion-item.item.no-border {
+  .item-inner {
+    border-bottom: 0 !important;
+  }
+}
+
+.group-icon-form {
+  ion-item, button[ion-item] {
+    &.label-left {
+      ion-label {
+        &, & * {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+
 .evan-dapp {
   .picker-md .picker-wrapper {
     background: $background-color;
@@ -383,8 +460,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 ion-chip.error-hint {
-  max-width: 100%;
-
   border-radius: 0;
   background-color: rgba(map-get($colors, danger), 0.5);
 
@@ -394,12 +469,185 @@ ion-chip.error-hint {
 }
 
 ion-chip.warning-hint {
-  max-width: 100%;
-
   border-radius: 0;
   background-color: rgba($yellow, 0.5);
 
   ion-icon {
     background-color: transparent !important;
+  }
+}
+
+/* color theme light */
+.evan-light {
+  h1, h2, h3, h4, h5, span, p {
+    color: $light;
+  }
+
+  ion-label {
+    &, h1, h2, h3, h4, h5, span {
+      color: $light !important;
+    }
+  }
+
+  ::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+    color: $medium-blue !important;
+  }
+
+  ion-item, button[ion-item] {
+    ion-input, ion-select {
+      * {
+        color: $light-gray;
+      }
+    }
+
+    ion-datetime {
+      .datetime-text {
+        color: $light-gray;
+      }
+    }
+
+    &.item-md.item-block .item-inner {
+      border-bottom: 1px solid #3c7f80;
+      border-bottom-color: #3c7f80;
+      box-shadow: none !important;
+    }
+  }
+
+  form {
+    & ion-item.item-md, & button[ion-item] {
+      background-color: $list-background-color;
+    }
+
+    ion-list {
+      ion-item.item-md, button[ion-item] {
+        background-color: transparent !important;
+      }
+    }
+
+    .ion-tags-input-container {
+      ion-label {
+        color: #999999;
+      }
+    }
+  }
+
+  .evan-tag-container {
+    border-bottom: 1px solid $light-gray;
+
+    & > span {
+      color: $medium-gray;
+    }
+  }
+
+  .evan-tag {
+    color: $light;
+    border-radius: 20px;
+    background-color: $medium-blue;
+
+    span {
+      color: $light !important;
+    }
+
+    ion-icon {
+      &:hover {
+        color: $light-gray;
+      }
+    }
+  }
+
+  .input-error {
+    color: $red;
+  }
+
+  ion-tags-input {
+    .ion-tags-input {
+      border-bottom: 1px solid $background-color-2;
+
+      &.active.tit-border-color {
+        border-bottom-color: $background-color-2;
+      }
+
+      input.iti-input {
+        color: $light;
+
+        &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
+          color: #999999;
+        }
+      }
+
+      span.iti-tag {
+        border-radius: 20px !important;
+        background-color: #24545e;
+      }
+    }
+  }
+
+  ion-item.item, button[ion-item] {
+    ion-checkbox {
+      .checkbox-icon {
+        border: 0;
+        background-color: $background-color;
+
+        &.checkbox-checked {
+          background-color: $green;
+        }
+      }
+    }
+  }
+
+  ion-item.item.bordered, button[ion-item].bordered {
+    border: 2px solid $border-color;
+
+    .item-inner {
+      border-bottom-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+
+  ion-item.item.semi-transparent {
+    background: rgba($background-color, $background-opacity);
+  }
+
+  ion-item.item.no-border {
+    .item-inner {
+      border-bottom: 0 !important;
+    }
+  }
+
+  .group-icon-form {
+    ion-item, button[ion-item] {
+      &.label-left {
+        ion-label {
+          &, & * {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+
+
+  .evan-dapp {
+    .picker-md .picker-wrapper {
+      background: $background-color;
+    }
+  }
+
+  ion-chip.error-hint {
+    border-radius: 0;
+    background-color: rgba(map-get($colors, danger), 0.5);
+
+    ion-icon {
+      background-color: transparent !important;
+    }
+  }
+
+  ion-chip.warning-hint {
+    border-radius: 0;
+    background-color: rgba($yellow, 0.5);
+
+    ion-icon {
+      background-color: transparent !important;
+    }
   }
 }

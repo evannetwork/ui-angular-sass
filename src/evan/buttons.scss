@@ -27,6 +27,7 @@
 
 @import '../variables/colors';
 
+/* color theme dark */
 button {
   &.button-md {
     text-transform: unset;
@@ -71,5 +72,55 @@ button {
 
   span {
     color: unset;
+  }
+}
+
+/* color theme light */
+.evan-light {
+  button {
+    &.button-md {
+      text-transform: unset;
+    }
+
+    &[outline] {
+      &:hover {
+        color: $light !important;
+        background-color: $primary !important;
+
+        ion-icon, ion-spinner {
+          color: $light !important;
+        }
+      }
+    }
+
+    &[outline][color=danger] {
+      &:hover {
+        color: $light !important;
+        background-color: $red !important;
+
+        ion-icon, ion-spinner {
+          color: $light !important;
+        }
+      }
+    }
+
+    &[color=transparency] {
+      color: $light !important;
+      border-color: $background-color;
+      background-color: rgba(2,56,69,0.3) !important;
+
+      &:hover {
+        color: $light !important;
+        background-color: rgba(2,56,69,0.7) !important;
+
+        ion-icon, ion-spinner {
+          color: $light !important;
+        }
+      }
+    }
+
+    span {
+      color: unset;
+    }
   }
 }

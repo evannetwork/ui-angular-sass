@@ -46,8 +46,6 @@
 
   .backdrop {
     z-index: 1000;
-
-    background-color: $background-backdrop;
   }
 
   &.show-modal {
@@ -67,8 +65,6 @@
 
     max-height: 80%;
 
-    background-color: #023845;
-
     @media (max-width: 768px) {
       width: calc(100% - 25px);
       margin-left: 8px;
@@ -79,14 +75,50 @@
 
       margin: 25px 0;
       padding: 8px;
-
-      background-color: $yellow;
     }
 
     .button-container {
       padding: 8px 0;
+    }
+  }
+}
 
+/* color theme dark */
+.evan-modal {
+  .backdrop {
+    background-color: $background-backdrop;
+  }
+
+  .evan-content {
+    background-color: #023845;
+
+    .alert-text {
+      background-color: $yellow;
+    }
+
+    .button-container {
       background-color: $background-color;
+    }
+  }
+}
+
+/* color theme light */
+.evan-light {
+  .evan-modal {
+    .backdrop {
+      background-color: $background-backdrop;
+    }
+
+    .evan-content {
+      background-color: #023845;
+
+      .alert-text {
+        background-color: $yellow;
+      }
+
+      .button-container {
+        background-color: $background-color;
+      }
     }
   }
 }

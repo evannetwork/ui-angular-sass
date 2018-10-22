@@ -26,8 +26,6 @@
 */
 
 .evan-content {
-  background: rgba($background-color, $background-opacity);
-
   &.loading {
     height: 300px;
 
@@ -50,11 +48,6 @@
     width: 100%;
     margin: 16px 0;
     padding: 16px;
-  }
-
-  &.transparent {
-    background-color: transparent;
-    box-shadow: none;
   }
 
   &.evan-full-content {
@@ -141,16 +134,8 @@
     }
   }
 
-  & > .evan-no-elements {
-    border-bottom: 0;
-    background-color: transparent;
-  }
-
   & > .footer {
     padding: 8px;
-
-    border-top: 1px solid #dedede;
-    background-color: $background-color;
   }
 
   ion-list.evan-grid {
@@ -203,8 +188,6 @@
   margin: 0 0 12px;
 
   text-transform: uppercase;
-
-  color: $primary;
 }
 
 .evan-content .content-heading, .content-heading.standalone {
@@ -213,7 +196,6 @@
 
   padding-bottom: 25px;
 
-  color: $primary;
   border-radius: 0;
 }
 
@@ -241,8 +223,6 @@
 }
 
 ion-content.sortable {
-  background-color: unset !important;
-
   contain: unset;
 
   .scroll-content {
@@ -261,6 +241,39 @@ ion-content.sortable {
   }
 }
 
+
+
+/* color theme dark */
+.evan-content {
+  background: rgba($background-color, $background-opacity);
+
+  &.transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  & > .evan-no-elements {
+    background-color: transparent;
+  }
+
+  & > .footer {
+    border-top: 1px solid #dedede;
+    background-color: $background-color;
+  }
+}
+
+.evan-content .content-header, .content-header.standalone {
+  color: $primary;
+}
+
+.evan-content .content-heading, .content-heading.standalone {
+  color: $primary;
+}
+
+ion-content.sortable {
+  background-color: unset !important;
+}
+
 ion-refresher {
   ion-refresher-content {
     .refresher-pulling-text, .refresher-refreshing-text, .refresher-pulling-icon, .refresher-refreshing-icon {
@@ -273,6 +286,47 @@ ion-refresher {
   }
 }
 
-.has-refresher > .scroll-content {
-  border-top: 0 !important;
+/* color theme light */
+.evan-light {
+  .evan-content {
+    background: rgba($background-color, $background-opacity);
+
+    &.transparent {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    & > .evan-no-elements {
+      background-color: transparent;
+    }
+
+    & > .footer {
+      border-top: 1px solid #dedede;
+      background-color: $background-color;
+    }
+  }
+
+  .evan-content .content-header, .content-header.standalone {
+    color: $primary;
+  }
+
+  .evan-content .content-heading, .content-heading.standalone {
+    color: $primary;
+  }
+
+  ion-content.sortable {
+    background-color: unset !important;
+  }
+
+  ion-refresher {
+    ion-refresher-content {
+      .refresher-pulling-text, .refresher-refreshing-text, .refresher-pulling-icon, .refresher-refreshing-icon {
+        color: $light;
+
+        circle {
+          stroke: $light;
+        }
+      }
+    }
+  }
 }

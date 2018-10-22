@@ -57,7 +57,35 @@ ion-split-pane {
       & > ion-content {
         & > .scroll-content {
           z-index: 12;
+        }
+      }
+    }
+  }
+}
 
+ion-header {
+  ion-navbar {
+    ion-title {
+      .toolbar-title {
+        width: auto;
+      }
+    }
+  }
+}
+
+/* color theme dark */
+@media (min-width: 769px) {
+  & > .split-pane-side {
+    border-right: 0 !important;
+  }
+}
+
+ion-split-pane {
+  // add box-shadow for inner shadow on wide screens
+  & > ion-content {
+    & > .scroll-content {
+      & > ion-content {
+        & > .scroll-content {
           @media (min-width: 769px) {
             box-shadow: inset 4px 4px 25px -1px $light-gray;
           }
@@ -76,12 +104,6 @@ ion-header {
 
       @media (min-width: 769px) {
         background: $background-toolbar-wide;
-      }
-    }
-
-    ion-title {
-      .toolbar-title {
-        width: auto;
       }
     }
   }
@@ -104,7 +126,57 @@ ion-menu {
   }
 }
 
-// Add smooth color change to top toolbar
-.toolbar-background {
-  transition: background 1s linear, background-image 1s linear;
+/* color theme light */
+.evan-light {
+  @media (min-width: 769px) {
+    & > .split-pane-side {
+      border-right: 0 !important;
+    }
+  }
+
+  ion-split-pane {
+    // add box-shadow for inner shadow on wide screens
+    & > ion-content {
+      & > .scroll-content {
+        & > ion-content {
+          & > .scroll-content {
+            @media (min-width: 769px) {
+              box-shadow: inset 4px 4px 25px -1px $light-gray;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ion-header {
+    ion-navbar {
+      .toolbar-background {
+        @media (max-width: 768px) {
+          background: $background-toolbar-small;
+        }
+
+        @media (min-width: 769px) {
+          background: $background-toolbar-wide;
+        }
+      }
+    }
+  }
+
+  // Use gradient for left menu header
+  ion-menu {
+    ion-header {
+      ion-toolbar {
+        .toolbar-background {
+          @media (max-width: 768px) {
+            background: $background-toolbar-small;
+          }
+
+          @media (min-width: 769px) {
+            background: $background-toolbar-wide;
+          }
+        }
+      }
+    }
+  }
 }

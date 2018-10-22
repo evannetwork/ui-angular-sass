@@ -61,19 +61,12 @@ dashboard-top-buttons {
 
     vertical-align: middle;
 
-    color: $light;
-    background-color: rgba($primary, 0.5);
-
     .button-inner {
       ion-icon {
         font-size: 3rem;
-
-        color: $light;
       }
       span {
         margin-left: 10px;
-
-        color: $light;
       }
     }
   }
@@ -96,8 +89,6 @@ dashboard-top-buttons {
       top: unset;
       right: 5px !important;
       bottom: 5px !important;
-
-      background-color: transparent;
 
       button, button[icon-only] {
         width: 50px !important;
@@ -131,12 +122,6 @@ dashboard-top-buttons {
       display: none;
     }
   }
-
-  @media (min-width: 769px) {
-    button[color='danger'] {
-      background-color: $red !important;
-    }
-  }
 }
 
 .queue-button-active dashboard-top-buttons {
@@ -149,6 +134,57 @@ dashboard-top-buttons {
 
 .queue-button-active-2 dashboard-top-buttons {
   right: 162px;
+}
+
+.evan-dapp {
+  ion-split-pane {
+    ion-menu {
+      & > ion-content {
+        ion-header {
+          ion-navbar {
+            ion-buttons[start] {
+              order: 2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ng-animating {
+  dashboard-top-buttons {
+    display: none;
+  }
+}
+
+
+/* color theme dark */
+dashboard-top-buttons {
+  button, button[icon-only] {
+    color: $light;
+    background-color: rgba($primary, 0.5);
+
+    .button-inner {
+      ion-icon {
+        color: $light;
+      }
+      span {
+        color: $light;
+      }
+    }
+  }
+  &.on-small-move-down {
+    @media (max-width: 768px) {
+      background-color: transparent;
+    }
+  }
+
+  @media (min-width: 769px) {
+    button[color='danger'] {
+      background-color: $red !important;
+    }
+  }
 }
 
 .evan-dapp {
@@ -169,22 +205,58 @@ dashboard-top-buttons {
       ion-content.content-md {
         background-color: rgba($background-color, $background-opacity);
       }
-
-      & > ion-content {
-        ion-header {
-          ion-navbar {
-            ion-buttons[start] {
-              order: 2;
-            }
-          }
-        }
-      }
     }
   }
 }
 
-.ng-animating {
+/* color theme light */
+.evan-light {
   dashboard-top-buttons {
-    display: none;
+    button, button[icon-only] {
+      color: $light;
+      background-color: rgba($primary, 0.5);
+
+      .button-inner {
+        ion-icon {
+          color: $light;
+        }
+        span {
+          color: $light;
+        }
+      }
+    }
+    &.on-small-move-down {
+      @media (max-width: 768px) {
+        background-color: transparent;
+      }
+    }
+
+    @media (min-width: 769px) {
+      button[color='danger'] {
+        background-color: $red !important;
+      }
+    }
+  }
+
+  .evan-dapp {
+    ion-split-pane {
+      ion-menu {
+        @media (min-width: 769px) {
+          .menu-inner {
+            background: transparent;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .menu-inner {
+            background: $background-gradient;
+          }
+        }
+
+        ion-content.content-md {
+          background-color: rgba($background-color, $background-opacity);
+        }
+      }
+    }
   }
 }

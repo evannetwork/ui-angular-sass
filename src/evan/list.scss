@@ -31,28 +31,12 @@
 // remove strange line behavior of list items
 ion-list {
   button[ion-item], ion-item {
-    &.active {
-      background-color: rgba(0, 0, 0, 0.1) !important;
-
-      &, ion-label {
-        h1, h2, h3, h4, span {
-          color: $primary !important;
-        }
-      };
-    }
-
-    &.item-hover:hover {
-      background-color: $border-color !important;
-    }
-
     ion-avatar {
       margin: 0 !important;
     }
 
     .item-inner {
       margin-left: 10px !important;
-
-      border-bottom: 0 !important;
 
       .top-right {
         font-size: 12px;
@@ -61,8 +45,6 @@ ion-list {
         z-index: 10;
         top: 11px;
         right: 25px;
-
-        color: $medium-gray;
 
         @media (max-width: 768px) {
           top: 18px !important;
@@ -83,10 +65,6 @@ ion-list {
 
           text-overflow: ellipsis;
         }
-
-        & > span {
-          color: $light;
-        }
       }
     }
 
@@ -96,8 +74,6 @@ ion-list {
           z-index: 10;
           top: 11px;
           right: 30px;
-
-          color: gray;
         }
       }
     }
@@ -137,8 +113,6 @@ ion-split-pane {
 ion-label.label.standalone {
   &, &[stacked], &[floating] {
     margin: 24px 8px 8px 0 !important;
-
-    color: #999999;
   }
 }
 
@@ -158,12 +132,6 @@ ion-list.evan-list, ion-list.evan-grid {
   }
 }
 
-ion-list.list-md {
-  ion-item-sliding {
-    background: transparent;
-  }
-}
-
 ion-list.evan-list {
   ion-item-sliding {
     padding-left: 0;
@@ -176,10 +144,6 @@ ion-list.evan-list {
       ion-fab {
         display: none;
       }
-    }
-
-    &:first-child {
-      border-top: 1px solid $light-gray;
     }
 
     &.header-list-item {
@@ -197,9 +161,6 @@ ion-list.evan-list {
         .header {
           & {
             position: relative;
-
-            border-bottom: 1px solid $light-gray;
-            background-color: $background-color;
           }
 
           &, .button-container {
@@ -274,10 +235,6 @@ ion-list.evan-list {
       ion-avatar {
         img {
           border-radius: 0;
-
-          @media (max-width: 768px) {
-            background-color: $light;
-          }
         }
 
         blockie-component {
@@ -324,7 +281,180 @@ ion-list.evan-list {
   }
 }
 
+/* color theme dark */
+// remove strange line behavior of list items
+ion-list {
+  button[ion-item], ion-item {
+    &.active {
+      background-color: rgba(0, 0, 0, 0.1) !important;
+
+      &, ion-label {
+        h1, h2, h3, h4, span {
+          color: $primary !important;
+        }
+      };
+    }
+
+    &.item-hover:hover {
+      background-color: $border-color !important;
+    }
+
+    .item-inner {
+      border-bottom: 0 !important;
+
+      .top-right {
+        color: $medium-gray;
+      }
+
+      ion-label {
+        & > span {
+          color: $light;
+        }
+      }
+    }
+
+    &[padding], &[padding-horizontal] {
+      .item-inner {
+        .top-right {
+          color: gray;
+        }
+      }
+    }
+  }
+}
+
+ion-label.label.standalone {
+  &, &[stacked], &[floating] {
+    color: #999999;
+  }
+}
+
+ion-list.list-md {
+  ion-item-sliding {
+    background: transparent;
+  }
+}
+
+ion-list.evan-list {
+  ion-item-sliding {
+    &:first-child {
+      border-top: 1px solid $light-gray;
+    }
+
+    &.header-list-item {
+      ion-item.item {
+        .header {
+          & {
+            border-bottom: 1px solid $light-gray;
+            background-color: $background-color;
+          }
+        }
+      }
+    }
+
+    button[ion-item], ion-item {
+      ion-avatar {
+        img {
+          @media (max-width: 768px) {
+            background-color: $light;
+          }
+        }
+      }
+    }
+  }
+}
+
 .list-md .item-input:last-child {
   border-bottom: 0 !important;
   box-shadow: none !important;
+}
+
+/* color theme light */
+.evan-light {
+  // remove strange line behavior of list items
+  ion-list {
+    button[ion-item], ion-item {
+      &.active {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+
+        &, ion-label {
+          h1, h2, h3, h4, span {
+            color: $primary !important;
+          }
+        };
+      }
+
+      &.item-hover:hover {
+        background-color: $border-color !important;
+      }
+
+      .item-inner {
+        border-bottom: 0 !important;
+
+        .top-right {
+          color: $medium-gray;
+        }
+
+        ion-label {
+          & > span {
+            color: $light;
+          }
+        }
+      }
+
+      &[padding], &[padding-horizontal] {
+        .item-inner {
+          .top-right {
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+
+  ion-label.label.standalone {
+    &, &[stacked], &[floating] {
+      color: #999999;
+    }
+  }
+
+  ion-list.list-md {
+    ion-item-sliding {
+      background: transparent;
+    }
+  }
+
+  ion-list.evan-list {
+    ion-item-sliding {
+      &:first-child {
+        border-top: 1px solid $light-gray;
+      }
+
+      &.header-list-item {
+        ion-item.item {
+          .header {
+            & {
+              border-bottom: 1px solid $light-gray;
+              background-color: $background-color;
+            }
+          }
+        }
+      }
+
+      button[ion-item], ion-item {
+        ion-avatar {
+          img {
+            @media (max-width: 768px) {
+              background-color: $light;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .list-md .item-input:last-child {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
 }

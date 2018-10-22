@@ -38,9 +38,25 @@ ion-slides {
 
   .swiper-pagination-bullet {
     margin: 0 5px;
+  }
+}
 
+/* color theme dark */
+.swiper-pagination {
+  .swiper-pagination-bullet {
     &.swiper-pagination-bullet-active {
       background-color: $dark-blue;
+    }
+  }
+}
+
+/* color theme light */
+.evan-light {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      &.swiper-pagination-bullet-active {
+        background-color: $dark-blue;
+      }
     }
   }
 }

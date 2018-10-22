@@ -28,25 +28,12 @@
 @import '../variables/colors';
 
 body.qr-code-scanning {
-  &, * {
-    background-color: transparent !important;
-    background: transparent !important;
-  }
-
   ion-app * {
     display: none !important;
   }
 
   ion-app {
     button.qr-code-close {
-      &, & * {
-        line-height: 32px;
-
-        display: inline-block !important;
-
-        vertical-align: middle;
-      }
-      
       position: fixed;
       right: 0;
       bottom: 30px;
@@ -55,7 +42,43 @@ body.qr-code-scanning {
       width: 190px;
       margin: auto;
 
+      &, & * {
+        line-height: 32px;
+
+        display: inline-block !important;
+
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/* color theme dark */
+body.qr-code-scanning {
+  &, * {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  ion-app {
+    button.qr-code-close {
       background-color: $medium-gray !important;
+    }
+  }
+}
+
+/* color theme light */
+.evan-light {
+  body.qr-code-scanning {
+    &, * {
+      background: transparent !important;
+      background-color: transparent !important;
+    }
+
+    ion-app {
+      button.qr-code-close {
+        background-color: $medium-gray !important;
+      }
     }
   }
 }

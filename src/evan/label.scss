@@ -43,7 +43,33 @@
 
     border-radius: 60px;
   }
+}
 
+.evan-circle {
+  font-size: 14px!important;
+  font-weight: 400;
+  line-height: 1.2;
+
+  display: inline-block;
+
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  padding-top: 12px;
+
+  text-align: center;
+
+  border-radius: 50%;
+
+  ion-spinner {
+    margin-top: -5px;
+    margin-left: 5px;
+  }
+}
+
+/* color theme dark */
+.evan-label {
   &.label-info {
     background-color: $medium-blue;
   }
@@ -66,29 +92,42 @@
 }
 
 .evan-circle {
-  font-size: 14px!important;
-  font-weight: 400;
-  line-height: 1.2;
-
-  display: inline-block;
-
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
-  min-height: 40px;
-  padding-top: 12px;
-
-  text-align: center;
-
-  border-radius: 50%;
   background-color: $background-color-2;
 
   &.bg-success {
     background-color: $green;
   }
+}
 
-  ion-spinner {
-    margin-top: -5px;
-    margin-left: 5px;
+/* color theme light */
+.evan-light {
+  .evan-label {
+    &.label-info {
+      background-color: $medium-blue;
+    }
+
+    &.label-warning {
+      background-color: $yellow;
+    }
+
+    &.label-success {
+      background-color: $green;
+
+      &, & > span {
+        color: $background-color;
+      }
+    }
+
+    &.label-danger {
+      background-color: $red;
+    }
+  }
+
+  .evan-circle {
+    background-color: $background-color-2;
+
+    &.bg-success {
+      background-color: $green;
+    }
   }
 }
