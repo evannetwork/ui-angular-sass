@@ -281,123 +281,34 @@ ion-list.evan-list {
   }
 }
 
-/* color theme dark */
-// remove strange line behavior of list items
-ion-list {
-  button[ion-item], ion-item {
-    &.active {
-      background-color: rgba(0, 0, 0, 0.1) !important;
-
-      &, ion-label {
-        h1, h2, h3, h4, span {
-          color: $primary !important;
-        }
-      };
-    }
-
-    &.item-hover:hover {
-      background-color: $border-color !important;
-    }
-
-    .item-inner {
-      border-bottom: 0 !important;
-
-      .top-right {
-        color: $medium-gray;
-      }
-
-      ion-label {
-        & > span {
-          color: $light;
-        }
-      }
-    }
-
-    &[padding], &[padding-horizontal] {
-      .item-inner {
-        .top-right {
-          color: gray;
-        }
-      }
-    }
-  }
-}
-
-ion-label.label.standalone {
-  &, &[stacked], &[floating] {
-    color: #999999;
-  }
-}
-
-ion-list.list-md {
-  ion-item-sliding {
-    background: transparent;
-  }
-}
-
-ion-list.evan-list {
-  ion-item-sliding {
-    &:first-child {
-      border-top: 1px solid $light-gray;
-    }
-
-    &.header-list-item {
-      ion-item.item {
-        .header {
-          & {
-            border-bottom: 1px solid $light-gray;
-            background-color: $background-color;
-          }
-        }
-      }
-    }
-
-    button[ion-item], ion-item {
-      ion-avatar {
-        img {
-          @media (max-width: 768px) {
-            background-color: $light;
-          }
-        }
-      }
-    }
-  }
-}
-
-.list-md .item-input:last-child {
-  border-bottom: 0 !important;
-  box-shadow: none !important;
-}
-
-/* color theme light */
-.evan-light {
+@mixin colorTheme($colors, $theme) {
   // remove strange line behavior of list items
   ion-list {
     button[ion-item], ion-item {
       &.active {
-        background-color: rgba(0, 0, 0, 0.1) !important;
+        background-color: map-get($theme, hover) !important;
 
         &, ion-label {
           h1, h2, h3, h4, span {
-            color: $primary !important;
+            color: map-get($theme, hover-color) !important;
           }
-        };
+        }
       }
 
       &.item-hover:hover {
-        background-color: $border-color !important;
+        background-color: map-get($theme, border-color) !important;
       }
 
       .item-inner {
         border-bottom: 0 !important;
 
         .top-right {
-          color: $medium-gray;
+          color: map-get($theme, text-color);
         }
 
         ion-label {
           & > span {
-            color: $light;
+            color: map-get($theme, text-color);
           }
         }
       }
@@ -409,12 +320,18 @@ ion-list.evan-list {
           }
         }
       }
+
+      ion-avatar {
+        ion-icon {
+          color: map-get($theme, text-color);
+        }
+      }
     }
   }
 
   ion-label.label.standalone {
     &, &[stacked], &[floating] {
-      color: #999999;
+      color: map-get($theme, text-color);
     }
   }
 
@@ -427,15 +344,15 @@ ion-list.evan-list {
   ion-list.evan-list {
     ion-item-sliding {
       &:first-child {
-        border-top: 1px solid $light-gray;
+        border-top: 1px solid map-get($theme, border-color);
       }
 
       &.header-list-item {
         ion-item.item {
           .header {
             & {
-              border-bottom: 1px solid $light-gray;
-              background-color: $background-color;
+              border-bottom: 1px solid map-get($theme, border-color);
+              background-color: map-get($theme, background-color);
             }
           }
         }
@@ -445,7 +362,7 @@ ion-list.evan-list {
         ion-avatar {
           img {
             @media (max-width: 768px) {
-              background-color: $light;
+              background-color: map-get($colors, light);
             }
           }
         }
@@ -457,4 +374,14 @@ ion-list.evan-list {
     border-bottom: 0 !important;
     box-shadow: none !important;
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

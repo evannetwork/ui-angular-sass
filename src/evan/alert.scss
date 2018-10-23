@@ -69,67 +69,30 @@ ion-alert {
   }
 }
 
-/* color theme dark */
-ion-alert {
-  .alert-wrapper {
-    background-color: $background-color !important;
-
-    h2 {
-      color: $light !important;
-    }
-
-    .alert-checkbox-label, .alert-radio-label, .alert-input {
-      color: $light !important;
-    }
-  }
-}
-
-.alert-md .alert-message {
-  color: $light;
-}
-
-.advanced-alert {
-  box-shadow: $grid-list-item-shadow;
-
-  .alert-img-container {
-    background-color: $dark-blue;
-
-    .alert-img {
-      background-color: $light-blue;
-    }
-  }
-  .alert-body {
-    h1, h2, h3, h4 {
-      color: $light;
-    }
-  }
-}
-
-/* color theme light */
-.evan-light {
+@mixin colorTheme($colors, $theme) {
   ion-alert {
     .alert-wrapper {
-      background-color: $background-color !important;
+      background-color: map-get($theme, background-color) !important;
 
       h2 {
-        color: $light !important;
+        color: map-get($theme, text-color) !important;
       }
 
       .alert-checkbox-label, .alert-radio-label, .alert-input {
-        color: $light !important;
+        color: map-get($theme, text-color) !important;
       }
     }
   }
 
   .alert-md .alert-message {
-    color: $light;
+    color: map-get($theme, text-color);
   }
 
   .advanced-alert {
-    box-shadow: $grid-list-item-shadow;
+    box-shadow: map-get($theme, grid-list-item-shadow);
 
     .alert-img-container {
-      background-color: $dark-blue;
+      background-color: map-get($theme, background-color);
 
       .alert-img {
         background-color: $light-blue;
@@ -137,8 +100,19 @@ ion-alert {
     }
     .alert-body {
       h1, h2, h3, h4 {
-        color: $light;
+        color: map-get($theme,$text-color);
       }
     }
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  
+  @include colorTheme($colors, $evan-styles);
 }

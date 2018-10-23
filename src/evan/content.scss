@@ -241,55 +241,9 @@ ion-content.sortable {
   }
 }
 
-
-
-/* color theme dark */
-.evan-content {
-  background: rgba($background-color, $background-opacity);
-
-  &.transparent {
-    background-color: transparent;
-    box-shadow: none;
-  }
-
-  & > .evan-no-elements {
-    background-color: transparent;
-  }
-
-  & > .footer {
-    border-top: 1px solid #dedede;
-    background-color: $background-color;
-  }
-}
-
-.evan-content .content-header, .content-header.standalone {
-  color: $primary;
-}
-
-.evan-content .content-heading, .content-heading.standalone {
-  color: $primary;
-}
-
-ion-content.sortable {
-  background-color: unset !important;
-}
-
-ion-refresher {
-  ion-refresher-content {
-    .refresher-pulling-text, .refresher-refreshing-text, .refresher-pulling-icon, .refresher-refreshing-icon {
-      color: $light;
-
-      circle {
-        stroke: $light;
-      }
-    }
-  }
-}
-
-/* color theme light */
-.evan-light {
+@mixin colorTheme($colors, $theme) {
   .evan-content {
-    background: rgba($background-color, $background-opacity);
+    background: map-get($theme, background-color-opacity);
 
     &.transparent {
       background-color: transparent;
@@ -301,17 +255,17 @@ ion-refresher {
     }
 
     & > .footer {
-      border-top: 1px solid #dedede;
-      background-color: $background-color;
+      border-top: 1px solid map-get($theme, border-color);
+      background-color: map-get($theme, background-color);
     }
   }
 
   .evan-content .content-header, .content-header.standalone {
-    color: $primary;
+    color: map-get($colors, content-header-color);
   }
 
   .evan-content .content-heading, .content-heading.standalone {
-    color: $primary;
+    color: map-get($colors, content-header-color);
   }
 
   ion-content.sortable {
@@ -321,12 +275,22 @@ ion-refresher {
   ion-refresher {
     ion-refresher-content {
       .refresher-pulling-text, .refresher-refreshing-text, .refresher-pulling-icon, .refresher-refreshing-icon {
-        color: $light;
+        color: map-get($theme, text-color);
 
         circle {
-          stroke: $light;
+          stroke: map-get($theme, text-color);
         }
       }
     }
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

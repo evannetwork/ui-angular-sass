@@ -79,33 +79,31 @@ $colors: (
 /**************************************************************************************************/
 
 // general
-$border-color: #29757b;
+$border-color: #dcdee0;
 $refresher-border-color: transparent;
 
 // text
-$text-color: $light;
-$placeholder-color: $light-gray;
+$text-color: $dark-gray;
+$placeholder-color: $medium-gray;
 $link-color: $medium-cyan;
 $subdued-text-color: #c6d1d5;
-$label-text-color: $light;
-$content-header-color: $primary;
+$label-text-color: $dark-gray;
+$content-header-color: $dark-gray;
 
 // backgrounds
 $background-opacity: 0.5;
-$background-color: $dark-blue;
-$background-color-opacity: rgba($background-color, $background-opacity);
-$background-color-2: $medium-blue;
-$background-gradient: linear-gradient($dark-blue, $primary);
-$background-gradient-reverse: linear-gradient(-134deg, #0c3140 0%, #3b9c97 100%);
+$background-color: #eeeeee;
+$background-color-2: $light-gray;
+$background-color-opacity: $background-color;
+$background-gradient: $light;
+$background-gradient-reverse: $light;
 $background-backdrop: rgba(0, 0, 0, 0.5);
 $hover: rgba(0,0,0,0.1);
-$hover-color: $primary;
+$hover-color: $text-color;
 
 // toolbar
-// $background-toolbar-wide: $light-cyan;
-$background-toolbar-wide: transparent;
-// $background-toolbar-small: $light-cyan;
-$background-toolbar-small: transparent;
+$background-toolbar-wide: $background-color;
+$background-toolbar-small: $background-color;
 $toolbar-height: 56px;
 
 // components
@@ -118,13 +116,13 @@ $grid-list-item-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 
 // list
-$list-text-color: $text-color !default;
-$list-background-color: transparent !default;
-$list-border-color: $medium-cyan !default;
+$list-text-color: $text-color;
+$list-background-color: transparent;
+$list-border-color: $medium-cyan;
 
 // sizing
-$content-margin: 25px !default;
-$content-padding: 25px !default;
+$content-margin: 25px;
+$content-padding: 25px;
 
 // map the colors so they can be used within mixins
 $evan-styles: (
@@ -155,5 +153,5 @@ $evan-styles: (
   refresher-border-color: $refresher-border-color,
   subdued-text-color: $subdued-text-color,
   text-color: $text-color,
-  toolbar-height: $toolbar-height
+  toolbar-height: $toolbar-height,
 );

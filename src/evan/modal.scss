@@ -83,42 +83,32 @@
   }
 }
 
-/* color theme dark */
-.evan-modal {
-  .backdrop {
-    background-color: $background-backdrop;
-  }
-
-  .evan-content {
-    background-color: #023845;
-
-    .alert-text {
-      background-color: $yellow;
+@mixin colorTheme($colors, $theme) {
+  .evan-modal {
+    .backdrop {
+      background-color: map-get($theme, background-backdrop);
     }
 
-    .button-container {
-      background-color: $background-color;
+    .evan-content {
+      background-color: map-get($theme, background-color);
+
+      .alert-text {
+        background-color: map-get($colors, yellow);
+      }
+
+      .button-container {
+        background-color: map-get($theme, background-color);
+      }
     }
   }
 }
 
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
 /* color theme light */
 .evan-light {
-  .evan-modal {
-    .backdrop {
-      background-color: $background-backdrop;
-    }
-
-    .evan-content {
-      background-color: #023845;
-
-      .alert-text {
-        background-color: $yellow;
-      }
-
-      .button-container {
-        background-color: $background-color;
-      }
-    }
-  }
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

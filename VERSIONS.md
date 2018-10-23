@@ -2,6 +2,8 @@
 
 ## Next Version
 ### Features
+- add evan-light design
+
 ### Fixes
 ### Deprecations
 

@@ -68,66 +68,44 @@
   }
 }
 
-/* color theme dark */
-.evan-label {
-  &.label-info {
-    background-color: $medium-blue;
-  }
-
-  &.label-warning {
-    background-color: $yellow;
-  }
-
-  &.label-success {
-    background-color: $green;
-
-    &, & > span {
-      color: $background-color;
-    }
-  }
-
-  &.label-danger {
-    background-color: $red;
-  }
-}
-
-.evan-circle {
-  background-color: $background-color-2;
-
-  &.bg-success {
-    background-color: $green;
-  }
-}
-
-/* color theme light */
-.evan-light {
+@mixin colorTheme($colors, $theme) {
   .evan-label {
     &.label-info {
-      background-color: $medium-blue;
+      background-color: map-get($colors, medium-blue);
     }
 
     &.label-warning {
-      background-color: $yellow;
+      background-color: map-get($colors, yellow);
     }
 
     &.label-success {
-      background-color: $green;
+      background-color: map-get($colors, green);
 
       &, & > span {
-        color: $background-color;
+        color: map-get($theme, background-color);
       }
     }
 
     &.label-danger {
-      background-color: $red;
+      background-color: map-get($colors, red);
     }
   }
 
   .evan-circle {
-    background-color: $background-color-2;
+    background-color: map-get($theme, background-color-2);
 
     &.bg-success {
-      background-color: $green;
+      background-color: map-get($colors, green);
     }
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

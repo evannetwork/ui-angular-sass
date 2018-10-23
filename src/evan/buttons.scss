@@ -27,56 +27,7 @@
 
 @import '../variables/colors';
 
-/* color theme dark */
-button {
-  &.button-md {
-    text-transform: unset;
-  }
-
-  &[outline] {
-    &:hover {
-      color: $light !important;
-      background-color: $primary !important;
-
-      ion-icon, ion-spinner {
-        color: $light !important;
-      }
-    }
-  }
-
-  &[outline][color=danger] {
-    &:hover {
-      color: $light !important;
-      background-color: $red !important;
-
-      ion-icon, ion-spinner {
-        color: $light !important;
-      }
-    }
-  }
-
-  &[color=transparency] {
-    color: $light !important;
-    border-color: $background-color;
-    background-color: rgba(2,56,69,0.3) !important;
-
-    &:hover {
-      color: $light !important;
-      background-color: rgba(2,56,69,0.7) !important;
-
-      ion-icon, ion-spinner {
-        color: $light !important;
-      }
-    }
-  }
-
-  span {
-    color: unset;
-  }
-}
-
-/* color theme light */
-.evan-light {
+@mixin colorTheme($colors, $theme) {
   button {
     &.button-md {
       text-transform: unset;
@@ -84,38 +35,44 @@ button {
 
     &[outline] {
       &:hover {
-        color: $light !important;
-        background-color: $primary !important;
+        color: map-get($theme, text-color) !important;
+        background-color: map-get($colors, primary) !important;
 
         ion-icon, ion-spinner {
-          color: $light !important;
+          color: map-get($theme, text-color) !important;
         }
       }
     }
 
     &[outline][color=danger] {
       &:hover {
-        color: $light !important;
-        background-color: $red !important;
+        color: map-get($theme, text-color) !important;
+        background-color: map-get($colors, danger) !important;
 
         ion-icon, ion-spinner {
-          color: $light !important;
+          color: map-get($theme, text-color) !important;
         }
       }
     }
 
     &[color=transparency] {
-      color: $light !important;
+      color: map-get($theme, text-color) !important;
       border-color: $background-color;
       background-color: rgba(2,56,69,0.3) !important;
 
       &:hover {
-        color: $light !important;
+        color: map-get($theme, text-color) !important;
         background-color: rgba(2,56,69,0.7) !important;
 
         ion-icon, ion-spinner {
-          color: $light !important;
+          color: map-get($theme, text-color) !important;
         }
+      }
+    }
+
+    &[icon-only] {
+      ion-icon {
+        color: map-get($theme, text-color);
       }
     }
 
@@ -123,4 +80,14 @@ button {
       color: unset;
     }
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

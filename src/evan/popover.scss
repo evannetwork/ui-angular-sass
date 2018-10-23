@@ -123,48 +123,56 @@ ion-select.evan-callout {
   }
 }
 
-/* color theme dark */
-.evan-popover {
-  &.top-right {
+@mixin colorTheme($colors, $theme) {
+  .evan-popover {
+    &.top-right {
+      .popover-content {
+        background-color: map-get($theme, background-color);
+      }
+    }
+
+    .backdrop {
+      background-color: map-get($theme, background-color);
+    }
+  }
+
+  .evan-callout {
     .popover-content {
-      background-color: $background-color;
-    }
-  }
+      background-color: map-get($theme, background-color);
 
-  .backdrop {
-    background-color: #ffffff;
-  }
-}
+      &::before {
+        border: 0.8em solid transparent;
+      }
 
-.evan-callout {
-  .popover-content {
-    &::before {
-      border: 0.8em solid transparent;
-    }
+      ion-item {
+        background-color: map-get($theme, background-color-2 !important);
+      }
 
-    ion-item {
-      background-color: $background-color-2 !important;
+      ion-item:hover {
+        background-color: map-get($colors, primary !important);
+      }
     }
 
-    ion-item:hover {
-      background-color: $primary !important;
+    &.top {
+      .popover-content::before {
+        border-bottom: 10px solid map-get($theme, background-color-2);
+      }
     }
-  }
 
-  &.top {
-    .popover-content::before {
-      border-bottom: 10px solid $background-color-2;
-    }
-  }
-
-  &.bottom {
-    .popover-content::before {
-      border-top: 10px solid $background-color-2;
+    &.bottom {
+      .popover-content::before {
+        border-top: 10px solid map-get($theme, background-color-2);
+      }
     }
   }
 }
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
 
 /* color theme light */
 .evan-light {
-  
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

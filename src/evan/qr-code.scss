@@ -53,7 +53,6 @@ body.qr-code-scanning {
   }
 }
 
-/* color theme dark */
 body.qr-code-scanning {
   &, * {
     background: transparent !important;
@@ -63,22 +62,6 @@ body.qr-code-scanning {
   ion-app {
     button.qr-code-close {
       background-color: $medium-gray !important;
-    }
-  }
-}
-
-/* color theme light */
-.evan-light {
-  body.qr-code-scanning {
-    &, * {
-      background: transparent !important;
-      background-color: transparent !important;
-    }
-
-    ion-app {
-      button.qr-code-close {
-        background-color: $medium-gray !important;
-      }
     }
   }
 }

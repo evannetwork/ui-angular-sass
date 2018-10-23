@@ -89,7 +89,6 @@ ion-list.evan-grid {
     }
 
     @media (max-width: 768px) {
-
       ion-avatar {
         opacity: 0.7;
         .evan-avatar-wrapper {
@@ -249,57 +248,13 @@ ion-grid, ion-row, ion-col {
   }
 }
 
-
-/* color theme dark */
-ion-list.evan-grid {
-  // size the list elements
-  ion-item-sliding {
-    @media (max-width: 768px) {
-      &:first-child {
-        border-top: 1px solid $light-gray;
-      }
-
-      ion-avatar {
-        opacity: 0.7;
-        background-color: transparent !important;
-
-        .evan-avatar-wrapper {
-          background-color: transparent !important;
-        }
-      }
-    }
-
-    // medium => break list items to cards
-    @media (min-width: 769px) {
-      box-shadow: $grid-list-item-shadow;
-
-      ion-fab {
-        & > button {
-          background-color: transparent;
-          box-shadow: none;
-        }
-      }
-
-      ion-avatar {
-        background-color: $dark-blue;
-
-        .evan-avatar-wrapper {
-          background-color: $light-blue;
-        }
-      }
-    }
-  }
-}
-
-
-/* color theme light */
-.evan-light {
+@mixin colorTheme($colors, $theme) {
   ion-list.evan-grid {
     // size the list elements
     ion-item-sliding {
       @media (max-width: 768px) {
         &:first-child {
-          border-top: 1px solid $light-gray;
+          border-top: 1px solid map-get($theme, border-color);
         }
 
         ion-avatar {
@@ -314,7 +269,7 @@ ion-list.evan-grid {
 
       // medium => break list items to cards
       @media (min-width: 769px) {
-        box-shadow: $grid-list-item-shadow;
+        box-shadow: map-get($theme, grid-list-item-shadow);
 
         ion-fab {
           & > button {
@@ -324,7 +279,7 @@ ion-list.evan-grid {
         }
 
         ion-avatar {
-          background-color: $dark-blue;
+          background-color: map-get($theme, background-color);
 
           .evan-avatar-wrapper {
             background-color: $light-blue;
@@ -333,4 +288,14 @@ ion-list.evan-grid {
       }
     }
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

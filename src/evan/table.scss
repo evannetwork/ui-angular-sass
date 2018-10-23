@@ -70,43 +70,15 @@ table {
   }
 }
 
-/* color theme dark */
-table {
-  background-color: transparent;
-
-  thead, tbody, tfoot {
-    tr {
-      td, th {
-        color: $light-gray;
-        border-top: 1px solid $border-color;
-      }
-
-      th {
-        border-top: 1px solid rgba(120, 130, 140, 0.2) !important;
-        border-bottom: 1px solid rgba(120, 130, 140, 0.2);
-      }
-    }
-  }
-
-  &.table-hover {
-    tbody {
-      tr:hover {
-        background-color: rgba(7, 58, 69, 0.5) !important;
-      }
-    }
-  }
-}
-
-/* color theme light */
-.evan-light {
+@mixin colorTheme($colors, $theme) {
   table {
     background-color: transparent;
 
     thead, tbody, tfoot {
       tr {
         td, th {
-          color: $light-gray;
-          border-top: 1px solid $border-color;
+          color: map-get($theme, text-color);
+          border-top: 1px solid map-get($theme, border-color);
         }
 
         th {
@@ -119,9 +91,19 @@ table {
     &.table-hover {
       tbody {
         tr:hover {
-          background-color: rgba(7, 58, 69, 0.5) !important;
+          background-color: map-get($theme, hover) !important;
         }
       }
     }
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

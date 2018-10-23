@@ -41,22 +41,22 @@ ion-slides {
   }
 }
 
-/* color theme dark */
-.swiper-pagination {
-  .swiper-pagination-bullet {
-    &.swiper-pagination-bullet-active {
-      background-color: $dark-blue;
+@mixin colorTheme($colors, $theme) {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      &.swiper-pagination-bullet-active {
+        background-color: map-get($theme, background-color);
+      }
     }
   }
 }
 
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
 /* color theme light */
 .evan-light {
-  .swiper-pagination {
-    .swiper-pagination-bullet {
-      &.swiper-pagination-bullet-active {
-        background-color: $dark-blue;
-      }
-    }
-  }
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

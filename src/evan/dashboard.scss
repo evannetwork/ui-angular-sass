@@ -158,70 +158,18 @@ dashboard-top-buttons {
   }
 }
 
-
-/* color theme dark */
-dashboard-top-buttons {
-  button, button[icon-only] {
-    color: $light;
-    background-color: rgba($primary, 0.5);
-
-    .button-inner {
-      ion-icon {
-        color: $light;
-      }
-      span {
-        color: $light;
-      }
-    }
-  }
-  &.on-small-move-down {
-    @media (max-width: 768px) {
-      background-color: transparent;
-    }
-  }
-
-  @media (min-width: 769px) {
-    button[color='danger'] {
-      background-color: $red !important;
-    }
-  }
-}
-
-.evan-dapp {
-  ion-split-pane {
-    ion-menu {
-      @media (min-width: 769px) {
-        .menu-inner {
-          background: transparent;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .menu-inner {
-          background: $background-gradient;
-        }
-      }
-
-      ion-content.content-md {
-        background-color: rgba($background-color, $background-opacity);
-      }
-    }
-  }
-}
-
-/* color theme light */
-.evan-light {
+@mixin colorTheme($colors, $theme) {
   dashboard-top-buttons {
     button, button[icon-only] {
-      color: $light;
-      background-color: rgba($primary, 0.5);
+      color: map-get($theme, text-color);
+      background-color: rgba(map-get($colors, primary), 0.5);
 
       .button-inner {
         ion-icon {
-          color: $light;
+          color: map-get($theme, text-color);
         }
         span {
-          color: $light;
+          color: map-get($theme, text-color);
         }
       }
     }
@@ -233,12 +181,12 @@ dashboard-top-buttons {
 
     @media (min-width: 769px) {
       button[color='danger'] {
-        background-color: $red !important;
+        background-color: map-get($colors, danger) !important;
       }
     }
   }
 
-  .evan-dapp {
+  &.evan-dapp, .evan-dapp {
     ion-split-pane {
       ion-menu {
         @media (min-width: 769px) {
@@ -249,14 +197,24 @@ dashboard-top-buttons {
 
         @media (max-width: 768px) {
           .menu-inner {
-            background: $background-gradient;
+            background: map-get($theme, background-gradient);
           }
         }
 
         ion-content.content-md {
-          background-color: rgba($background-color, $background-opacity);
+          background-color: map-get($theme, background-color-opacity);
         }
       }
     }
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }

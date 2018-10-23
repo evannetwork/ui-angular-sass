@@ -341,93 +341,9 @@ hr {
   z-index: 100;
 }
 
-
-/* color theme dark */
-ion-app.evan-dapp {
-  background: $background-gradient;
-
-  ion-app {
-    background: transparent;
-    background-color: transparent;
-  }
-}
-
-ion-content.content-md {
-  background-color: transparent;
-}
-
-
-*::-webkit-scrollbar {
-  background-color: rgba($background-color, 0.5);
-}
-
-*::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:active, *::-webkit-scrollbar-thumb:hover {
-  border: 1px solid $background-color;
-  background-color: $background-color;
-}
-
-input::placeholder {
-  color: #cacaca;
-}
-
-button {
-  &.block-button {
-    span[color='medium-gray'] {
-      color: $medium-gray;
-    }
-
-    span[color='light'] {
-      color: $light;
-    }
-  }
-}
-
-// absolute center
-.evan-no-elements, evan-empty-dapp {
-  background-color: transparent;
-
-  h1, h2, h3, h4 {
-    color: $light;
-  }
-}
-
-.evan-seperator {
-  background-color: $background-color-2;
-}
-
-.evan-small-seperator {
-  background-color: $background-color-2;
-}
-
-h1, h2, h3, h4, span, p {
-  &.evan-gray-text {
-    color: $medium-gray;
-  }
-}
-
-ion-item {
-  .item-inner {
-    ion-label {
-      span {
-        color: $dark-gray;
-      }
-    }
-  }
-}
-
-.item-md {
-  background-color: $list-background-color;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid $border-color;
-}
-
-/* color theme light */
-.evan-light {
-  ion-app.evan-dapp {
-    background: $background-gradient;
+@mixin colorTheme($colors, $theme) {
+  &.evan-dapp, ion-app.evan-dapp {
+    background: map-get($theme, background-gradient);
 
     ion-app {
       background: transparent;
@@ -436,17 +352,17 @@ hr {
   }
 
   ion-content.content-md {
+    color: map-get($theme, text-color);
     background-color: transparent;
   }
 
-
   *::-webkit-scrollbar {
-    background-color: rgba($background-color, 0.5);
+    background-color: rgba(map-get($theme, background-color), 0.5);
   }
 
   *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:active, *::-webkit-scrollbar-thumb:hover {
-    border: 1px solid $background-color;
-    background-color: $background-color;
+    border: 1px solid map-get($theme, background-color);
+    background-color: map-get($theme, background-color);
   }
 
   input::placeholder {
@@ -470,16 +386,16 @@ hr {
     background-color: transparent;
 
     h1, h2, h3, h4 {
-      color: $light;
+      color: map-get($theme, text-color);
     }
   }
 
   .evan-seperator {
-    background-color: $background-color-2;
+    background-color: map-get($theme, background-color-2);
   }
 
   .evan-small-seperator {
-    background-color: $background-color-2;
+    background-color: map-get($theme, background-color-2);
   }
 
   h1, h2, h3, h4, span, p {
@@ -492,18 +408,28 @@ hr {
     .item-inner {
       ion-label {
         span {
-          color: $dark-gray;
+          color: map-get($theme, text-color);
         }
       }
     }
   }
 
   .item-md {
-    background-color: $list-background-color;
+    background-color: map-get($theme, list-background-color);
   }
 
   hr {
     border: 0;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid map-get($theme, border-color);
   }
+}
+
+/* color theme dark */
+@import '../variables/colors';
+@include colorTheme($colors, $evan-styles);
+
+/* color theme light */
+.evan-light {
+  @import '../variables/colors-light';
+  @include colorTheme($colors, $evan-styles);
 }
