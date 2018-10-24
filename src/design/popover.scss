@@ -29,7 +29,7 @@
   .evan-popover {
     &.top-right {
       .popover-content {
-        background-color: map-get($theme, background-color);
+        background-color: map-get($theme, background-color-2);
       }
     }
 
@@ -40,18 +40,18 @@
 
   .evan-callout {
     .popover-content {
-      background-color: map-get($theme, background-color);
+      background-color: map-get($theme, background-color-2);
 
       &::before {
         border: 0.8em solid transparent;
       }
 
       ion-item {
-        background-color: map-get($theme, background-color-2 !important);
+        background-color: map-get($theme, background-color-2) !important;
       }
 
       ion-item:hover {
-        background-color: map-get($colors, primary !important);
+        background-color: map-get($colors, primary)  !important;
       }
     }
 

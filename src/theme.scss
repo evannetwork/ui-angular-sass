@@ -66,19 +66,19 @@ $evanThemes: (
  */
 @mixin evanTheme($colors, $evanStyles) {
   @include alertTheme($colors, $evanStyles);
-  @include labelTheme($colors, $evanStyles);
+  @include buttonTheme($colors, $evanStyles);
+  @include contentTheme($colors, $evanStyles);
   @include dashboardTheme($colors, $evanStyles);
+  @include formsTheme($colors, $evanStyles);
+  @include generalTheme($colors, $evanStyles);
+  @include gridTheme($colors, $evanStyles);
+  @include labelTheme($colors, $evanStyles);
+  @include listTheme($colors, $evanStyles);
+  @include menuTheme($colors, $evanStyles);
   @include modalTheme($colors, $evanStyles);
   @include popoverTheme($colors, $evanStyles);
-  @include gridTheme($colors, $evanStyles);
+  @include qrCodeTheme($colors, $evanStyles);
   @include slidesTheme($colors, $evanStyles);
   @include tableTheme($colors, $evanStyles);
-  @include contentTheme($colors, $evanStyles);
   @include tabsTheme($colors, $evanStyles);
-  @include buttonTheme($colors, $evanStyles);
-  @include generalTheme($colors, $evanStyles);
-  @include menuTheme($colors, $evanStyles);
-  @include formsTheme($colors, $evanStyles);
-  @include listTheme($colors, $evanStyles);
-  @include qrCodeTheme($colors, $evanStyles);
 }

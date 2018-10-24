@@ -32,7 +32,7 @@
     }
 
     &.label-warning {
-      background-color: map-get($colors, yellow);
+      background-color: map-get($colors, alert);
     }
 
     &.label-success {
@@ -44,7 +44,7 @@
     }
 
     &.label-danger {
-      background-color: map-get($colors, red);
+      background-color: map-get($colors, danger);
     }
   }
 
