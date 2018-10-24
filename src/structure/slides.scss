@@ -25,19 +25,18 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+ion-slides {
+  ion-slide {
+    width: 100% !important;
+  }
+}
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+.swiper-pagination {
+  width: 100%;
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+  text-align: center;
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+  .swiper-pagination-bullet {
+    margin: 0 5px;
+  }
+}

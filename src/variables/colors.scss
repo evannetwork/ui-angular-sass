@@ -25,88 +25,55 @@
   https://evan.network/license/
 */
 
-// evan colors
-// background
+/**************************************** color definitions ***************************************/
 $dark-blue: #023845;
-$medium-blue: #24545e;
-
-// top bar color
-$light-cyan: #64c6c1;
-$medium-cyan: #61cbc8;
-
-// font color
-$light-gray: #c6d1d5;
-
-// complementary
-$green: #53e69d;
-$red: #ff7676;
-
-// additional colors
 $dark-gray: #4a4a4a;
+$dark: #222222;
 $gray-blue: #556080;
 $gray-overlay: transparentize($dark-gray, 0.6);
+$green: #53e69d;
 $ligh-red: #fdeeee;
 $light-blue: #cce1ec;
+$light-cyan: #64c6c1;
+$light-gray: #c6d1d5;
+$light: #ffffff;
+$medium-blue: #24545e;
+$medium-cyan: #61cbc8;
 $medium-gray: #808080;
 $medium-light-gray: #b4b4b4;
 $medium-red: #e48991;
+$red: #ff7676;
 $white: #ffffff;
 $yellow: #fb7d00;
 
-/**************************************************************************************************/
-
-// ionic styles
-$light: #ffffff;
-$dark: #222222;
-$primary: $medium-cyan;
-$colors: (
-  alert:                $yellow,
-  danger:               $red,
-  dark-blue:            $dark-blue,
-  dark-gray:            $dark-gray,
-  dark:                 $dark,
-  evan-blue-dark:       $dark-blue,
-  green:                $green,
-  light-gray:           $light-gray,
-  light-green:          $green,
-  light:                $light,
-  medium-gray:          $medium-gray,
-  primary:              $primary,
-  secondary:            $green,
-  transparency:         rgba(2,56,69,0.3)
-);
-
-/**************************************************************************************************/
-
+/***************************************** evan definitions ***************************************/
 // general
 $border-color: #29757b;
+$primary: $medium-cyan;
 $refresher-border-color: transparent;
 
 // text
-$text-color: $light;
-$placeholder-color: $light-gray;
-$link-color: $medium-cyan;
-$subdued-text-color: #c6d1d5;
-$label-text-color: $light;
 $content-header-color: $primary;
+$label-text-color: $light;
+$link-color: $medium-cyan;
+$placeholder-color: $light-gray;
+$subdued-text-color: #c6d1d5;
+$text-color: $light;
 
 // backgrounds
-$background-opacity: 0.5;
-$background-color: $dark-blue;
-$background-color-opacity: rgba($background-color, $background-opacity);
-$background-color-2: $medium-blue;
-$background-gradient: linear-gradient($dark-blue, $primary);
-$background-gradient-reverse: linear-gradient(-134deg, #0c3140 0%, #3b9c97 100%);
 $background-backdrop: rgba(0, 0, 0, 0.5);
-$hover: rgba(0,0,0,0.1);
+$background-color: $dark-blue;
+$background-color-2: $medium-blue;
+$background-opacity: 0.5;
+$background-color-opacity: rgba($background-color, $background-opacity);
+$background-gradient-reverse: linear-gradient(-134deg, #0c3140 0%, #3b9c97 100%);
+$background-gradient: linear-gradient($dark-blue, $primary);
 $hover-color: $primary;
+$hover: rgba(0,0,0,0.1);
 
 // toolbar
-// $background-toolbar-wide: $light-cyan;
-$background-toolbar-wide: transparent;
-// $background-toolbar-small: $light-cyan;
 $background-toolbar-small: transparent;
-$toolbar-height: 56px;
+$background-toolbar-wide: transparent;
 
 // components
 $blockie-border: $white;
@@ -126,8 +93,27 @@ $list-border-color: $medium-cyan !default;
 $content-margin: 25px !default;
 $content-padding: 25px !default;
 
+/********************************************* exports ********************************************/
+// color definitions
+$colors: (
+  alert: $yellow,
+  danger: $red,
+  dark-blue: $dark-blue,
+  dark-gray: $dark-gray,
+  dark: $dark,
+  evan-blue-dark: $dark-blue,
+  green: $green,
+  light-gray: $light-gray,
+  light-green: $green,
+  light: $light,
+  medium-gray: $medium-gray,
+  primary: $primary,
+  secondary: $green,
+  transparency: rgba(2,56,69,0.3)
+);
+
 // map the colors so they can be used within mixins
-$evan-styles: (
+$evanStyles: (
   background-backdrop: $background-backdrop,
   background-color-2: $background-color-2,
   background-color-opacity: $background-color-opacity,
@@ -154,6 +140,5 @@ $evan-styles: (
   placeholder-color: $placeholder-color,
   refresher-border-color: $refresher-border-color,
   subdued-text-color: $subdued-text-color,
-  text-color: $text-color,
-  toolbar-height: $toolbar-height
+  text-color: $text-color
 );

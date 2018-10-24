@@ -25,52 +25,7 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-
-.table-responsive {
-  overflow-x: auto;
-  overflow-y: hidden;
-
-  min-height: 0.01%;
-}
-
-table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 10px;
-
-  border-spacing: 0;
-  border-collapse: collapse;
-
-  thead, tbody, tfoot {
-    tr {
-      td, th {
-        font-size: 14px;
-        line-height: 1.42857143;
-
-        padding: 12px 8px;
-
-        text-align: left;
-        vertical-align: middle;
-        white-space: nowrap;
-      }
-
-      th {
-        vertical-align: bottom;
-      }
-    }
-  }
-
-  &.table-hover {
-    tbody {
-      tr:hover {
-        background-color: rgba(7, 58, 69, 0.5) !important;
-      }
-    }
-  }
-}
-
-@mixin colorTheme($colors, $theme) {
+@mixin tableTheme($colors, $theme) {
   table {
     background-color: transparent;
 
@@ -96,14 +51,4 @@ table {
       }
     }
   }
-}
-
-/* color theme dark */
-@import '../variables/colors';
-@include colorTheme($colors, $evan-styles);
-
-/* color theme light */
-.evan-light {
-  @import '../variables/colors-light';
-  @include colorTheme($colors, $evan-styles);
 }

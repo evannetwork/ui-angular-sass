@@ -25,9 +25,6 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-@import '../variables/positions';
-
 // remove strange line behavior of list items
 ion-list {
   button[ion-item], ion-item {
@@ -279,109 +276,4 @@ ion-list.evan-list {
       }
     }
   }
-}
-
-@mixin colorTheme($colors, $theme) {
-  // remove strange line behavior of list items
-  ion-list {
-    button[ion-item], ion-item {
-      &.active {
-        background-color: map-get($theme, hover) !important;
-
-        &, ion-label {
-          h1, h2, h3, h4, span {
-            color: map-get($theme, hover-color) !important;
-          }
-        }
-      }
-
-      &.item-hover:hover {
-        background-color: map-get($theme, border-color) !important;
-      }
-
-      .item-inner {
-        border-bottom: 0 !important;
-
-        .top-right {
-          color: map-get($theme, text-color);
-        }
-
-        ion-label {
-          & > span {
-            color: map-get($theme, text-color);
-          }
-        }
-      }
-
-      &[padding], &[padding-horizontal] {
-        .item-inner {
-          .top-right {
-            color: gray;
-          }
-        }
-      }
-
-      ion-avatar {
-        ion-icon {
-          color: map-get($theme, text-color);
-        }
-      }
-    }
-  }
-
-  ion-label.label.standalone {
-    &, &[stacked], &[floating] {
-      color: map-get($theme, text-color);
-    }
-  }
-
-  ion-list.list-md {
-    ion-item-sliding {
-      background: transparent;
-    }
-  }
-
-  ion-list.evan-list {
-    ion-item-sliding {
-      &:first-child {
-        border-top: 1px solid map-get($theme, border-color);
-      }
-
-      &.header-list-item {
-        ion-item.item {
-          .header {
-            & {
-              border-bottom: 1px solid map-get($theme, border-color);
-              background-color: map-get($theme, background-color);
-            }
-          }
-        }
-      }
-
-      button[ion-item], ion-item {
-        ion-avatar {
-          img {
-            @media (max-width: 768px) {
-              background-color: map-get($colors, light);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .list-md .item-input:last-child {
-    border-bottom: 0 !important;
-    box-shadow: none !important;
-  }
-}
-
-/* color theme dark */
-@import '../variables/colors';
-@include colorTheme($colors, $evan-styles);
-
-/* color theme light */
-.evan-light {
-  @import '../variables/colors-light';
-  @include colorTheme($colors, $evan-styles);
 }

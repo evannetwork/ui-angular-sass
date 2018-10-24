@@ -25,86 +25,55 @@
   https://evan.network/license/
 */
 
-// evan colors
-// background
+/**************************************** color definitions ***************************************/
 $dark-blue: #023845;
-$medium-blue: #24545e;
-
-// top bar color
-$light-cyan: #64c6c1;
-$medium-cyan: #61cbc8;
-
-// font color
-$light-gray: #c6d1d5;
-
-// complementary
-$green: #53e69d;
-$red: #ff7676;
-
-// additional colors
 $dark-gray: #4a4a4a;
+$dark: #222222;
 $gray-blue: #556080;
 $gray-overlay: transparentize($dark-gray, 0.6);
+$green: #53e69d;
 $ligh-red: #fdeeee;
 $light-blue: #cce1ec;
+$light-cyan: #64c6c1;
+$light-gray: #c6d1d5;
+$light: #ffffff;
+$medium-blue: #24545e;
+$medium-cyan: #61cbc8;
 $medium-gray: #808080;
 $medium-light-gray: #b4b4b4;
 $medium-red: #e48991;
+$red: #ff7676;
 $white: #ffffff;
 $yellow: #fb7d00;
 
-/**************************************************************************************************/
-
-// ionic styles
-$light: #ffffff;
-$dark: #222222;
-$primary: $medium-cyan;
-$colors: (
-  alert:                $yellow,
-  danger:               $red,
-  dark-blue:            $dark-blue,
-  dark-gray:            $dark-gray,
-  dark:                 $dark,
-  evan-blue-dark:       $dark-blue,
-  green:                $green,
-  light-gray:           $light-gray,
-  light-green:          $green,
-  light:                $light,
-  medium-gray:          $medium-gray,
-  primary:              $primary,
-  secondary:            $green,
-  transparency:         rgba(2,56,69,0.3)
-);
-
-/**************************************************************************************************/
-
+/***************************************** evan definitions ***************************************/
 // general
 $border-color: #dcdee0;
+$primary: $medium-cyan;
 $refresher-border-color: transparent;
 
 // text
-$text-color: $dark-gray;
-$placeholder-color: $medium-gray;
-$link-color: $medium-cyan;
-$subdued-text-color: #c6d1d5;
-$label-text-color: $dark-gray;
 $content-header-color: $dark-gray;
+$label-text-color: $dark-gray;
+$link-color: $medium-cyan;
+$placeholder-color: $medium-gray;
+$subdued-text-color: #c6d1d5;
+$text-color: $dark-gray;
 
 // backgrounds
-$background-opacity: 0.5;
+$background-backdrop: rgba(0, 0, 0, 0.5);
 $background-color: #eeeeee;
 $background-color-2: $light-gray;
 $background-color-opacity: $background-color;
-$background-gradient: $light;
 $background-gradient-reverse: $light;
-$background-backdrop: rgba(0, 0, 0, 0.5);
-$hover: rgba(0,0,0,0.1);
+$background-gradient: $light;
+$background-opacity: 0.5;
 $hover-color: $text-color;
+$hover: rgba(0,0,0,0.1);
 
 // toolbar
-$background-toolbar-wide: $background-color;
 $background-toolbar-small: $background-color;
-$toolbar-height: 56px;
+$background-toolbar-wide: $background-color;
 
 // components
 $blockie-border: $white;
@@ -116,16 +85,35 @@ $grid-list-item-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 
 // list
-$list-text-color: $text-color;
 $list-background-color: transparent;
 $list-border-color: $medium-cyan;
+$list-text-color: $text-color;
 
 // sizing
 $content-margin: 25px;
 $content-padding: 25px;
 
+/********************************************* exports ********************************************/
+// color definitions
+$colors: (
+  alert: $yellow,
+  danger: $red,
+  dark-blue: $dark-blue,
+  dark-gray: $dark-gray,
+  dark: $dark,
+  evan-blue-dark: $dark-blue,
+  green: $green,
+  light-gray: $light-gray,
+  light-green: $green,
+  light: $light,
+  medium-gray: $medium-gray,
+  primary: $primary,
+  secondary: $green,
+  transparency: rgba(2,56,69,0.3)
+);
+
 // map the colors so they can be used within mixins
-$evan-styles: (
+$evanStyles: (
   background-backdrop: $background-backdrop,
   background-color-2: $background-color-2,
   background-color-opacity: $background-color-opacity,
@@ -141,8 +129,8 @@ $evan-styles: (
   content-margin: $content-margin,
   content-padding: $content-padding,
   grid-list-item-shadow: $grid-list-item-shadow,
-  hover: $hover,
   hover-color: $hover-color,
+  hover: $hover,
   label-text-color: $label-text-color,
   link-color: $link-color,
   list-background-color: $list-background-color,
@@ -152,6 +140,5 @@ $evan-styles: (
   placeholder-color: $placeholder-color,
   refresher-border-color: $refresher-border-color,
   subdued-text-color: $subdued-text-color,
-  text-color: $text-color,
-  toolbar-height: $toolbar-height,
+  text-color: $text-color
 );

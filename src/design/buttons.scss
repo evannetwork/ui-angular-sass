@@ -25,9 +25,7 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-
-@mixin colorTheme($colors, $theme) {
+@mixin buttonTheme($colors, $theme) {
   button {
     &.button-md {
       text-transform: unset;
@@ -71,7 +69,7 @@
     }
 
     &[icon-only] {
-      ion-icon {
+      ion-icon.icon {
         color: map-get($theme, text-color);
       }
     }
@@ -80,14 +78,4 @@
       color: unset;
     }
   }
-}
-
-/* color theme dark */
-@import '../variables/colors';
-@include colorTheme($colors, $evan-styles);
-
-/* color theme light */
-.evan-light {
-  @import '../variables/colors-light';
-  @include colorTheme($colors, $evan-styles);
 }

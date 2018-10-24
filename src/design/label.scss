@@ -25,19 +25,34 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+@mixin labelTheme($colors, $theme) {
+  .evan-label {
+    &.label-info {
+      background-color: map-get($colors, medium-blue);
+    }
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+    &.label-warning {
+      background-color: map-get($colors, yellow);
+    }
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+    &.label-success {
+      background-color: map-get($colors, green);
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+      &, & > span {
+        color: map-get($theme, background-color);
+      }
+    }
+
+    &.label-danger {
+      background-color: map-get($colors, red);
+    }
+  }
+
+  .evan-circle {
+    background-color: map-get($theme, background-color-2);
+
+    &.bg-success {
+      background-color: map-get($colors, green);
+    }
+  }
+}

@@ -25,105 +25,7 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-
-.evan-popover {
-  &.top-right {
-    button {
-      position: absolute;
-      top: -9px;
-      right: -13px;
-    }
-
-    .popover-content {
-      top: 45px;
-      right: 5%;
-    }
-  }
-
-  .backdrop {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    cursor: pointer;
-
-    opacity: 0.001;
-  }
-
-  .popover-content {
-    position: fixed;
-    z-index: 1000;
-
-    width: 90%;
-    padding: 0;
-  }
-}
-
-.evan-callout {
-  .popover-content {
-    overflow: visible;
-
-    margin-top: 10px;
-
-    &::before {
-      position: absolute;
-
-      width: 0;
-      height: 0;
-
-      content: '';
-
-      border: 0.8em solid transparent;
-    }
-
-    ion-radio {
-      .radio-icon {
-        display: none;
-      }
-    }
-  }
-
-  &.top {
-    .popover-content::before {
-      top: -20px;
-      right: 17%;
-    }
-  }
-
-  &.bottom {
-    .popover-content {
-      margin-top: -30px !important;
-      margin-left: -40px !important;
-    }
-
-    .popover-content::before {
-      bottom: -20px;
-      left: 17%;
-    }
-  }
-}
-
-ion-select.evan-callout {
-  overflow: hidden;
-
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-
-  &.no-button {
-    button {
-      width: 0;
-      height: 0;
-    }
-  }
-}
-
-@mixin colorTheme($colors, $theme) {
+@mixin popoverTheme($colors, $theme) {
   .evan-popover {
     &.top-right {
       .popover-content {
@@ -165,14 +67,4 @@ ion-select.evan-callout {
       }
     }
   }
-}
-
-/* color theme dark */
-@import '../variables/colors';
-@include colorTheme($colors, $evan-styles);
-
-/* color theme light */
-.evan-light {
-  @import '../variables/colors-light';
-  @include colorTheme($colors, $evan-styles);
 }

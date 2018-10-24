@@ -25,19 +25,46 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+@mixin contentTheme($colors, $theme) {
+  .evan-content {
+    background: map-get($theme, background-color-opacity);
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+    &.transparent {
+      background-color: transparent;
+      box-shadow: none;
+    }
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+    & > .evan-no-elements {
+      background-color: transparent;
+    }
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+    & > .footer {
+      border-top: 1px solid map-get($theme, border-color);
+      background-color: map-get($theme, background-color);
+    }
+  }
+
+  .evan-content .content-header, .content-header.standalone {
+    color: map-get($colors, content-header-color);
+  }
+
+  .evan-content .content-heading, .content-heading.standalone {
+    color: map-get($colors, content-header-color);
+  }
+
+  ion-content.sortable {
+    background-color: unset !important;
+  }
+
+  ion-refresher {
+    ion-refresher-content {
+      .refresher-pulling-text, .refresher-refreshing-text, .refresher-pulling-icon, .refresher-refreshing-icon {
+        color: map-get($theme, text-color);
+
+        circle {
+          stroke: map-get($theme, text-color);
+        }
+      }
+    }
+  }
+}

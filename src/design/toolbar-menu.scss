@@ -25,55 +25,7 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-@import '../variables/positions';
-
-ion-split-pane {
-  // Hide ion-navbar menuToggle when split-pane is used
-  @media (min-width: 769px) {
-    & > .split-pane-side {
-      border-right: 0 !important;
-    }
-
-    ion-navbar {
-      & > button[menuToggle] {
-        display: none;
-      }
-    }
-
-    // Increase size of generated blockie when we are looking at a wide screen
-    ion-menu {
-      z-index: 100;
-
-      margin-right: 0;
-
-      border-right: 0;
-    }
-  }
-
-  // add box-shadow for inner shadow on wide screens
-  & > ion-content {
-    & > .scroll-content {
-      & > ion-content {
-        & > .scroll-content {
-          z-index: 12;
-        }
-      }
-    }
-  }
-}
-
-ion-header {
-  ion-navbar {
-    ion-title {
-      .toolbar-title {
-        width: auto;
-      }
-    }
-  }
-}
-
-@mixin colorTheme($colors, $theme) {
+@mixin menuTheme($colors, $theme) {
   @media (min-width: 769px) {
     & > .split-pane-side {
       border-right: 0 !important;
@@ -137,14 +89,4 @@ ion-header {
       }
     }
   }
-}
-
-/* color theme dark */
-@import '../variables/colors';
-@include colorTheme($colors, $evan-styles);
-
-/* color theme light */
-.evan-light {
-  @import '../variables/colors-light';
-  @include colorTheme($colors, $evan-styles);
 }

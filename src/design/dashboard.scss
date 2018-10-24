@@ -25,19 +25,53 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+@mixin dashboardTheme($colors, $theme) {
+  dashboard-top-buttons {
+    button, button[icon-only] {
+      color: map-get($theme, text-color);
+      background-color: rgba(map-get($colors, primary), 0.5);
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+      .button-inner {
+        ion-icon {
+          color: map-get($theme, text-color);
+        }
+        span {
+          color: map-get($theme, text-color);
+        }
+      }
+    }
+    &.on-small-move-down {
+      @media (max-width: 768px) {
+        background-color: transparent;
+      }
+    }
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+    @media (min-width: 769px) {
+      button[color='danger'] {
+        background-color: map-get($colors, danger) !important;
+      }
+    }
+  }
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+  &.evan-dapp, .evan-dapp {
+    ion-split-pane {
+      ion-menu {
+        @media (min-width: 769px) {
+          .menu-inner {
+            background: transparent;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .menu-inner {
+            background: map-get($theme, background-gradient);
+          }
+        }
+
+        ion-content.content-md {
+          background-color: map-get($theme, background-color-opacity);
+        }
+      }
+    }
+  }
+}

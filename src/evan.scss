@@ -25,20 +25,24 @@
   https://evan.network/license/
 */
 
-@import 'evan/alert';
-@import 'evan/buttons';
-@import 'evan/content';
-@import 'evan/dashboard';
-@import 'evan/forms';
-@import 'evan/general';
-@import 'evan/grid';
-@import 'evan/ios';
-@import 'evan/label';
-@import 'evan/list';
-@import 'evan/modal';
-@import 'evan/popover';
-@import 'evan/qr-code';
-@import 'evan/slides';
-@import 'evan/table';
-@import 'evan/tabs';
-@import 'evan/toolbar-menu';
+// define the html structure design
+@import 'structure/alert';
+@import 'structure/content';
+@import 'structure/dashboard';
+@import 'structure/forms';
+@import 'structure/general';
+@import 'structure/grid';
+@import 'structure/ios';
+@import 'structure/label';
+@import 'structure/list';
+@import 'structure/modal';
+@import 'structure/popover';
+@import 'structure/qr-code';
+@import 'structure/slides';
+@import 'structure/table';
+@import 'structure/tabs';
+@import 'structure/toolbar-menu';
+
+// load color themes
+@import 'evan-themes/evan';
+@import 'evan-themes/light';
