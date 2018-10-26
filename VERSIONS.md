@@ -5,6 +5,8 @@
 - add evan-light design
 
 ### Fixes
+- unset `scroll-content` `contain` (fix `dashboard-top-buttons` in chrome 70+)
+
 ### Deprecations
 
 ## Version 1.3.0

@@ -222,21 +222,28 @@
   }
 }
 
-ion-content.sortable {
-  contain: unset;
+ion-content {
+  &.sortable {
+    contain: unset;
+
+    .scroll-content {
+      position: unset;
+      top: unset;
+      right: unset;
+      bottom: unset;
+      left: unset;
+
+      overflow: unset;
+      overflow-y: hidden !important;
+
+      padding: 0 !important;
+
+      contain: unset;
+      contain: unset;
+    }
+  }
 
   .scroll-content {
-    position: unset;
-    top: unset;
-    right: unset;
-    bottom: unset;
-    left: unset;
-
-    overflow: unset;
-    overflow-y: hidden !important;
-
-    padding: 0 !important;
-
     contain: unset;
   }
 }
