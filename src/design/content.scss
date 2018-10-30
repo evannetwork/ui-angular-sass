@@ -45,11 +45,11 @@
   }
 
   .evan-content .content-header, .content-header.standalone {
-    color: map-get($colors, content-header-color);
+    color: map-get($evanStyles, content-header-color);
   }
 
   .evan-content .content-heading, .content-heading.standalone {
-    color: map-get($colors, content-header-color);
+    color: map-get($evanStyles, content-header-color);
   }
 
   ion-content.sortable {

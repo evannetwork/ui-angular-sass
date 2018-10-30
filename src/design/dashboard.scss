@@ -71,6 +71,12 @@
         ion-content.content-md {
           background-color: map-get($theme, background-color-opacity);
         }
+
+        &[side='right'] {
+          .menu-inner {
+            background: map-get($theme, background-gradient);
+          }
+        }
       }
     }
   }
