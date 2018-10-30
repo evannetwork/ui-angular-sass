@@ -6,6 +6,9 @@
 
 ### Fixes
 - unset `scroll-content` `contain` (fix `dashboard-top-buttons` in chrome 70+)
+- fix right side panel background
+- use correct tabs color on small devices
+- remove text-transform uppercase
 
 ### Deprecations
 
