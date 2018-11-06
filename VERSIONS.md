@@ -3,6 +3,7 @@
 ## Next Version
 ### Features
 - add evan-light design
+- add class for `display-none`
 
 ### Fixes
 - unset `scroll-content` `contain` (fix `dashboard-top-buttons` in chrome 70+)

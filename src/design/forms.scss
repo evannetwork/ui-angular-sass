@@ -112,10 +112,10 @@
 
   ion-tags-input {
     .ion-tags-input {
-      border-bottom: 1px solid map-get($theme, background-color-2);
+      border-bottom: 1px solid map-get($theme, border-color);
 
       &.active.tit-border-color {
-        border-bottom-color: map-get($theme, background-color-2);
+        border-bottom-color: map-get($colors, primary);
       }
 
       input.iti-input {
