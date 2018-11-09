@@ -2,6 +2,11 @@
 
 ## Next Version
 ### Features
+### Fixes
+### Deprecations
+
+## Version 1.4.0
+### Features
 - add evan-light design
 - add class for `display-none`
 
@@ -10,8 +15,6 @@
 - fix right side panel background
 - use correct tabs color on small devices
 - remove text-transform uppercase
-
-### Deprecations
 
 ## Version 1.3.0
 ### Features
