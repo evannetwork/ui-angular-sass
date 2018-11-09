@@ -25,86 +25,68 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-@import '../variables/positions';
-
-ion-split-pane {
-  // Hide ion-navbar menuToggle when split-pane is used
+@mixin menuTheme($colors, $theme) {
   @media (min-width: 769px) {
     & > .split-pane-side {
       border-right: 0 !important;
     }
-
-    ion-navbar {
-      & > button[menuToggle] {
-        display: none;
-      }
-    }
-
-    // Increase size of generated blockie when we are looking at a wide screen
-    ion-menu {
-      z-index: 100;
-
-      margin-right: 0;
-
-      border-right: 0;
-    }
   }
 
-  // add box-shadow for inner shadow on wide screens
-  & > ion-content {
-    & > .scroll-content {
-      & > ion-content {
-        & > .scroll-content {
-          z-index: 12;
-
-          @media (min-width: 769px) {
-            box-shadow: inset 4px 4px 25px -1px $light-gray;
+  ion-split-pane {
+    // add box-shadow for inner shadow on wide screens
+    & > ion-content {
+      & > .scroll-content {
+        & > ion-content {
+          & > .scroll-content {
+            @media (min-width: 769px) {
+              box-shadow: inset 4px 4px 25px -1px $light-gray;
+            }
           }
         }
       }
     }
   }
-}
 
-ion-header {
-  ion-navbar {
-    .toolbar-background {
-      @media (max-width: 768px) {
-        background: $background-toolbar-small;
-      }
-
-      @media (min-width: 769px) {
-        background: $background-toolbar-wide;
-      }
-    }
-
-    ion-title {
-      .toolbar-title {
-        width: auto;
-      }
-    }
-  }
-}
-
-// Use gradient for left menu header
-ion-menu {
   ion-header {
-    ion-toolbar {
+    ion-navbar {
       .toolbar-background {
         @media (max-width: 768px) {
-          background: $background-toolbar-small;
+          background: map-get($theme, background-toolbar-small);
         }
 
         @media (min-width: 769px) {
-          background: $background-toolbar-wide;
+          background: map-get($theme, background-toolbar-wide);
         }
       }
     }
   }
-}
 
-// Add smooth color change to top toolbar
-.toolbar-background {
-  transition: background 1s linear, background-image 1s linear;
+  // Use gradient for left menu header
+  ion-menu {
+    ion-header {
+      ion-toolbar {
+        .toolbar-background {
+          @media (max-width: 768px) {
+            background: map-get($theme, background-toolbar-small);
+          }
+
+          @media (min-width: 769px) {
+            background: map-get($theme, background-toolbar-wide);
+          }
+        }
+      }
+    }
+  }
+
+  ion-header {
+    ion-navbar {
+      ion-title {
+        .toolbar-title {
+          &, ion-icon {
+            color: map-get($theme, text-color);
+          }
+        }
+      }
+    }
+  }
 }

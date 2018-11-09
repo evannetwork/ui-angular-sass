@@ -25,19 +25,44 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+@mixin gridTheme($colors, $theme) {
+  ion-list.evan-grid {
+    // size the list elements
+    ion-item-sliding {
+      @media (max-width: 768px) {
+        &:first-child {
+          border-top: 1px solid map-get($theme, border-color);
+        }
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+        ion-avatar {
+          opacity: 0.7;
+          background-color: transparent !important;
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+          .evan-avatar-wrapper {
+            background-color: transparent !important;
+          }
+        }
+      }
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+      // medium => break list items to cards
+      @media (min-width: 769px) {
+        box-shadow: map-get($theme, grid-list-item-shadow);
+
+        ion-fab {
+          & > button {
+            background-color: transparent;
+            box-shadow: none;
+          }
+        }
+
+        ion-avatar {
+          background-color: map-get($theme, background-color);
+
+          .evan-avatar-wrapper {
+            background-color: $light-blue;
+          }
+        }
+      }
+    }
+  }
+}

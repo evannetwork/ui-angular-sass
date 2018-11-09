@@ -25,19 +25,46 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+@mixin popoverTheme($colors, $theme) {
+  .evan-popover {
+    &.top-right {
+      .popover-content {
+        background-color: map-get($theme, background-color-2);
+      }
+    }
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+    .backdrop {
+      background-color: map-get($theme, background-color);
+    }
+  }
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+  .evan-callout {
+    .popover-content {
+      background-color: map-get($theme, background-color-2);
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+      &::before {
+        border: 0.8em solid transparent;
+      }
+
+      ion-item {
+        background-color: map-get($theme, background-color-2) !important;
+      }
+
+      ion-item:hover {
+        background-color: map-get($colors, primary)  !important;
+      }
+    }
+
+    &.top {
+      .popover-content::before {
+        border-bottom: 10px solid map-get($theme, background-color-2);
+      }
+    }
+
+    &.bottom {
+      .popover-content::before {
+        border-top: 10px solid map-get($theme, background-color-2);
+      }
+    }
+  }
+}

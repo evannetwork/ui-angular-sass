@@ -25,37 +25,81 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
+.evan-tabs {
+  display: flex;
 
-body.qr-code-scanning {
-  &, * {
-    background-color: transparent !important;
-    background: transparent !important;
-  }
+  box-sizing: border-box;
+  height: 50px;
+  margin-bottom: 25px;
+  padding: 0;
 
-  ion-app * {
-    display: none !important;
-  }
+  @media (min-width: 768px) {
+    padding-bottom: 1px;
 
-  ion-app {
-    button.qr-code-close {
-      &, & * {
-        line-height: 32px;
+    button {
+      transition: border-bottom 0.1s linear;
 
-        display: inline-block !important;
+      .button-inner {
+        font-size: 12px;
 
-        vertical-align: middle;
+        ion-icon {
+          margin-top: 9px;
+        }
       }
-      
-      position: fixed;
-      right: 0;
-      bottom: 30px;
-      left: 0;
+    }
+  }
 
-      width: 190px;
-      margin: auto;
+  @media (max-width: 768px) {
+    position: fixed;
+    z-index: 80;
+    z-index: 80;
+    bottom: 0;
 
-      background-color: $medium-gray !important;
+    margin-bottom: 0;
+
+    button {
+      transition: border-top 0.1s linear;
+    }
+  }
+
+  button {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  ion-row, ion-col, button {
+    height: 100%;
+    margin: 0;
+    padding: 0 !important;
+
+    border-radius: 0;
+
+    .button-inner {
+      display: block;
+
+      ion-icon {
+        display: block;
+
+        margin-top: 7px;
+        margin-bottom: 9px;
+      }
+    }
+  }
+}
+
+.evan-tabs-container {
+  position: relative;
+
+  & > div {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    margin-left: 0;
+
+    @media (max-width: 768px) {
+      margin-bottom: 70px;
     }
   }
 }

@@ -25,19 +25,43 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+ion-alert {
+  position: fixed;
+}
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+.alert-md .alert-message {
+  overflow-y: auto;
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+  max-height: 80% !important;
+}
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+.advanced-alert {
+  .alert-img-container {
+    margin: 0 !important;
+    padding: 20px 0 20px 0;
+
+    border-bottom: 1px solid gray;
+
+    .alert-img {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70px;
+    }
+  }
+  .alert-body {
+    padding: 10px;
+
+    &.centered-text {
+      text-align: center;
+    }
+
+    h1, h2, h3, h4 {
+      margin-top: 0;
+    }
+  }
+}

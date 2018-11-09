@@ -26,8 +26,6 @@
 */
 
 .evan-content {
-  background: rgba($background-color, $background-opacity);
-
   &.loading {
     height: 300px;
 
@@ -50,11 +48,6 @@
     width: 100%;
     margin: 16px 0;
     padding: 16px;
-  }
-
-  &.transparent {
-    background-color: transparent;
-    box-shadow: none;
   }
 
   &.evan-full-content {
@@ -141,16 +134,8 @@
     }
   }
 
-  & > .evan-no-elements {
-    border-bottom: 0;
-    background-color: transparent;
-  }
-
   & > .footer {
     padding: 8px;
-
-    border-top: 1px solid #dedede;
-    background-color: $background-color;
   }
 
   ion-list.evan-grid {
@@ -201,10 +186,6 @@
   font-weight: 600;
 
   margin: 0 0 12px;
-
-  text-transform: uppercase;
-
-  color: $primary;
 }
 
 .evan-content .content-heading, .content-heading.standalone {
@@ -213,7 +194,6 @@
 
   padding-bottom: 25px;
 
-  color: $primary;
   border-radius: 0;
 }
 
@@ -240,39 +220,28 @@
   }
 }
 
-ion-content.sortable {
-  background-color: unset !important;
-
-  contain: unset;
-
-  .scroll-content {
-    position: unset;
-    top: unset;
-    right: unset;
-    bottom: unset;
-    left: unset;
-
-    overflow: unset;
-    overflow-y: hidden !important;
-
-    padding: 0 !important;
-
+ion-content {
+  &.sortable {
     contain: unset;
-  }
-}
 
-ion-refresher {
-  ion-refresher-content {
-    .refresher-pulling-text, .refresher-refreshing-text, .refresher-pulling-icon, .refresher-refreshing-icon {
-      color: $light;
+    .scroll-content {
+      position: unset;
+      top: unset;
+      right: unset;
+      bottom: unset;
+      left: unset;
 
-      circle {
-        stroke: $light;
-      }
+      overflow: unset;
+      overflow-y: hidden !important;
+
+      padding: 0 !important;
+
+      contain: unset;
+      contain: unset;
     }
   }
-}
 
-.has-refresher > .scroll-content {
-  border-top: 0 !important;
+  .scroll-content {
+    contain: unset;
+  }
 }

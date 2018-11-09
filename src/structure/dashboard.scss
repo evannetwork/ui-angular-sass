@@ -25,7 +25,6 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
 @import '../variables/positions';
 
 dashboard-top-buttons {
@@ -61,19 +60,12 @@ dashboard-top-buttons {
 
     vertical-align: middle;
 
-    color: $light;
-    background-color: rgba($primary, 0.5);
-
     .button-inner {
       ion-icon {
         font-size: 3rem;
-
-        color: $light;
       }
       span {
         margin-left: 10px;
-
-        color: $light;
       }
     }
   }
@@ -96,8 +88,6 @@ dashboard-top-buttons {
       top: unset;
       right: 5px !important;
       bottom: 5px !important;
-
-      background-color: transparent;
 
       button, button[icon-only] {
         width: 50px !important;
@@ -131,12 +121,6 @@ dashboard-top-buttons {
       display: none;
     }
   }
-
-  @media (min-width: 769px) {
-    button[color='danger'] {
-      background-color: $red !important;
-    }
-  }
 }
 
 .queue-button-active dashboard-top-buttons {
@@ -154,22 +138,6 @@ dashboard-top-buttons {
 .evan-dapp {
   ion-split-pane {
     ion-menu {
-      @media (min-width: 769px) {
-        .menu-inner {
-          background: transparent;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .menu-inner {
-          background: $background-gradient;
-        }
-      }
-
-      ion-content.content-md {
-        background-color: rgba($background-color, $background-opacity);
-      }
-
       & > ion-content {
         ion-header {
           ion-navbar {

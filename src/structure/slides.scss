@@ -25,68 +25,18 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-
-.evan-modal {
-  z-index: 1000;
-
-  padding-top: 5%;
-
-  transition: 0.3s ease-out transform;
-  transform: scale(0);
-  text-align: left;
-
-  &, .backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+ion-slides {
+  ion-slide {
+    width: 100% !important;
   }
+}
 
-  .backdrop {
-    z-index: 1000;
+.swiper-pagination {
+  width: 100%;
 
-    background-color: $background-backdrop;
-  }
+  text-align: center;
 
-  &.show-modal {
-    transform: scale(1);
-  }
-
-  evan-loading {
-    position: absolute;
-    z-index: 1001;
-  }
-
-  .evan-content {
-    position: absolute;
-    z-index: 1001;
-
-    overflow-y: auto;
-
-    max-height: 80%;
-
-    background-color: #023845;
-
-    @media (max-width: 768px) {
-      width: calc(100% - 25px);
-      margin-left: 8px;
-    }
-
-    .alert-text {
-      font-size: 15px;
-
-      margin: 25px 0;
-      padding: 8px;
-
-      background-color: $yellow;
-    }
-
-    .button-container {
-      padding: 8px 0;
-
-      background-color: $background-color;
-    }
+  .swiper-pagination-bullet {
+    margin: 0 5px;
   }
 }

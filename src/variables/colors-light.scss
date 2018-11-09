@@ -48,32 +48,32 @@ $yellow: #fb7d00;
 
 /***************************************** evan definitions ***************************************/
 // general
-$border-color: #29757b;
+$border-color: #dcdee0;
 $primary: $medium-cyan;
 $refresher-border-color: transparent;
 
 // text
-$content-header-color: $primary;
-$label-text-color: $light;
+$content-header-color: $dark-gray;
+$label-text-color: $dark-gray;
 $link-color: $medium-cyan;
-$placeholder-color: $light-gray;
+$placeholder-color: $medium-gray;
 $subdued-text-color: #c6d1d5;
-$text-color: $light;
+$text-color: $dark-gray;
 
 // backgrounds
 $background-backdrop: rgba(0, 0, 0, 0.5);
-$background-color: $dark-blue;
-$background-color-2: $medium-blue;
+$background-color: #eeeeee;
+$background-color-2: $light-gray;
+$background-color-opacity: $background-color;
+$background-gradient-reverse: $light;
+$background-gradient: $light;
 $background-opacity: 0.5;
-$background-color-opacity: rgba($background-color, $background-opacity);
-$background-gradient-reverse: linear-gradient(-134deg, #0c3140 0%, #3b9c97 100%);
-$background-gradient: linear-gradient($dark-blue, $primary);
-$hover-color: $primary;
+$hover-color: $text-color;
 $hover: rgba(0,0,0,0.1);
 
 // toolbar
-$background-toolbar-small: transparent;
-$background-toolbar-wide: transparent;
+$background-toolbar-small: $background-color;
+$background-toolbar-wide: $background-color;
 
 // components
 $blockie-border: $white;
@@ -85,13 +85,13 @@ $grid-list-item-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 
 // list
-$list-text-color: $text-color !default;
-$list-background-color: transparent !default;
-$list-border-color: $medium-cyan !default;
+$list-background-color: transparent;
+$list-border-color: $medium-cyan;
+$list-text-color: $text-color;
 
 // sizing
-$content-margin: 25px !default;
-$content-padding: 25px !default;
+$content-margin: 25px;
+$content-padding: 25px;
 
 /********************************************* exports ********************************************/
 // color definitions
@@ -142,8 +142,8 @@ $evanStyles: (
   content-margin: $content-margin,
   content-padding: $content-padding,
   grid-list-item-shadow: $grid-list-item-shadow,
-  hover: $hover,
   hover-color: $hover-color,
+  hover: $hover,
   label-text-color: $label-text-color,
   link-color: $link-color,
   list-background-color: $list-background-color,

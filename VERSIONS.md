@@ -5,6 +5,17 @@
 ### Fixes
 ### Deprecations
 
+## Version 1.4.0
+### Features
+- add evan-light design
+- add class for `display-none`
+
+### Fixes
+- unset `scroll-content` `contain` (fix `dashboard-top-buttons` in chrome 70+)
+- fix right side panel background
+- use correct tabs color on small devices
+- remove text-transform uppercase
+
 ## Version 1.3.0
 ### Features
 - add `ion-chip`.`warning-hint`

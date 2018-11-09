@@ -25,70 +25,58 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
+.evan-modal {
+  z-index: 1000;
 
-.evan-label {
-  font-weight: 400;
+  padding-top: 5%;
 
-  padding: 4px 12px 3px;
+  transition: 0.3s ease-out transform;
+  transform: scale(0);
+  text-align: left;
 
-  letter-spacing: 0.05em;
-
-  border-radius: 60px;
-
-  &.label-rouded, &.label-rounded {
-    font-weight: 400;
-
-    padding: 6px 12px 5px;
-
-    border-radius: 60px;
+  &, .backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
-  &.label-info {
-    background-color: $medium-blue;
+  .backdrop {
+    z-index: 1000;
   }
 
-  &.label-warning {
-    background-color: $yellow;
+  &.show-modal {
+    transform: scale(1);
   }
 
-  &.label-success {
-    background-color: $green;
+  evan-loading {
+    position: absolute;
+    z-index: 1001;
+  }
 
-    &, & > span {
-      color: $background-color;
+  .evan-content {
+    position: absolute;
+    z-index: 1001;
+
+    overflow-y: auto;
+
+    max-height: 80%;
+
+    @media (max-width: 768px) {
+      width: calc(100% - 25px);
+      margin-left: 8px;
     }
-  }
 
-  &.label-danger {
-    background-color: $red;
-  }
-}
+    .alert-text {
+      font-size: 15px;
 
-.evan-circle {
-  font-size: 14px!important;
-  font-weight: 400;
-  line-height: 1.2;
+      margin: 25px 0;
+      padding: 8px;
+    }
 
-  display: inline-block;
-
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
-  min-height: 40px;
-  padding-top: 12px;
-
-  text-align: center;
-
-  border-radius: 50%;
-  background-color: $background-color-2;
-
-  &.bg-success {
-    background-color: $green;
-  }
-
-  ion-spinner {
-    margin-top: -5px;
-    margin-left: 5px;
+    .button-container {
+      padding: 8px 0;
+    }
   }
 }

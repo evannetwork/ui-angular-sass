@@ -25,22 +25,34 @@
   https://evan.network/license/
 */
 
-ion-slides {
-  ion-slide {
-    width: 100% !important;
+@mixin labelTheme($colors, $theme) {
+  .evan-label {
+    &.label-info {
+      background-color: map-get($colors, medium-blue);
+    }
+
+    &.label-warning {
+      background-color: map-get($colors, alert);
+    }
+
+    &.label-success {
+      background-color: map-get($colors, green);
+
+      &, & > span {
+        color: map-get($theme, background-color);
+      }
+    }
+
+    &.label-danger {
+      background-color: map-get($colors, danger);
+    }
   }
-}
 
-.swiper-pagination {
-  width: 100%;
+  .evan-circle {
+    background-color: map-get($theme, background-color-2);
 
-  text-align: center;
-
-  .swiper-pagination-bullet {
-    margin: 0 5px;
-
-    &.swiper-pagination-bullet-active {
-      background-color: $dark-blue;
+    &.bg-success {
+      background-color: map-get($colors, green);
     }
   }
 }

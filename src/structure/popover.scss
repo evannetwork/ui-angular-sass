@@ -25,8 +25,6 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-
 .evan-popover {
   &.top-right {
     button {
@@ -36,7 +34,6 @@
     }
 
     .popover-content {
-      background-color: $background-color;
       top: 45px;
       right: 5%;
     }
@@ -53,7 +50,6 @@
     cursor: pointer;
 
     opacity: 0.001;
-    background-color: #ffffff;
   }
 
   .popover-content {
@@ -87,22 +83,12 @@
         display: none;
       }
     }
-
-    ion-item {
-      background-color: $background-color-2 !important;
-    }
-
-    ion-item:hover {
-      background-color: $primary !important;
-    }
   }
 
   &.top {
     .popover-content::before {
       top: -20px;
       right: 17%;
-
-      border-bottom: 10px solid $background-color-2;
     }
   }
 
@@ -115,8 +101,6 @@
     .popover-content::before {
       bottom: -20px;
       left: 17%;
-
-      border-top: 10px solid $background-color-2;
     }
   }
 }

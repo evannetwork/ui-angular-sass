@@ -25,19 +25,47 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+ion-split-pane {
+  // Hide ion-navbar menuToggle when split-pane is used
+  @media (min-width: 769px) {
+    & > .split-pane-side {
+      border-right: 0 !important;
+    }
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+    ion-navbar {
+      & > button[menuToggle] {
+        display: none;
+      }
+    }
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+    // Increase size of generated blockie when we are looking at a wide screen
+    ion-menu {
+      z-index: 100;
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+      margin-right: 0;
+
+      border-right: 0;
+    }
+  }
+
+  // add box-shadow for inner shadow on wide screens
+  & > ion-content {
+    & > .scroll-content {
+      & > ion-content {
+        & > .scroll-content {
+          z-index: 12;
+        }
+      }
+    }
+  }
+}
+
+ion-header {
+  ion-navbar {
+    ion-title {
+      .toolbar-title {
+        width: auto;
+      }
+    }
+  }
+}

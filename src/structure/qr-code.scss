@@ -25,51 +25,28 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-
-button {
-  &.button-md {
-    text-transform: unset;
+body.qr-code-scanning {
+  ion-app * {
+    display: none !important;
   }
 
-  &[outline] {
-    &:hover {
-      color: $light !important;
-      background-color: $primary !important;
+  ion-app {
+    button.qr-code-close {
+      position: fixed;
+      right: 0;
+      bottom: 30px;
+      left: 0;
 
-      ion-icon, ion-spinner {
-        color: $light !important;
+      width: 190px;
+      margin: auto;
+
+      &, & * {
+        line-height: 32px;
+
+        display: inline-block !important;
+
+        vertical-align: middle;
       }
     }
-  }
-
-  &[outline][color=danger] {
-    &:hover {
-      color: $light !important;
-      background-color: $red !important;
-
-      ion-icon, ion-spinner {
-        color: $light !important;
-      }
-    }
-  }
-
-  &[color=transparency] {
-    color: $light !important;
-    border-color: $background-color;
-    background-color: rgba(2,56,69,0.3) !important;
-
-    &:hover {
-      color: $light !important;
-      background-color: rgba(2,56,69,0.7) !important;
-
-      ion-icon, ion-spinner {
-        color: $light !important;
-      }
-    }
-  }
-
-  span {
-    color: unset;
   }
 }

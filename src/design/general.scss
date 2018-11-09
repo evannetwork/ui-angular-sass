@@ -1,0 +1,117 @@
+/*
+  Copyright (C) 2018-present evan GmbH.
+
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program. If not, see http://www.gnu.org/licenses/ or
+  write to the Free Software Foundation, Inc., 51 Franklin Street,
+  Fifth Floor, Boston, MA, 02110-1301 USA, or download the license from
+  the following URL: https://evan.network/license/
+
+  You can be released from the requirements of the GNU Affero General Public
+  License by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts
+  of it on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address:
+  https://evan.network/license/
+*/
+
+@mixin generalTheme($colors, $theme) {
+  &.evan-dapp, ion-app.evan-dapp {
+    background: map-get($theme, background-gradient);
+
+    ion-app {
+      background: transparent;
+      background-color: transparent;
+    }
+  }
+
+  ion-content.content-md {
+    color: map-get($theme, text-color);
+    background-color: transparent;
+  }
+
+  *::-webkit-scrollbar {
+    background-color: rgba(map-get($theme, background-color), 0.5);
+  }
+
+  *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:active, *::-webkit-scrollbar-thumb:hover {
+    border: 1px solid map-get($theme, background-color);
+    background-color: map-get($theme, background-color);
+  }
+
+  input::placeholder {
+    color: #cacaca;
+  }
+
+  button {
+    &.block-button {
+      span[color='medium-gray'] {
+        color: $medium-gray;
+      }
+
+      span[color='light'] {
+        color: $light;
+      }
+    }
+  }
+
+  // absolute center
+  .evan-no-elements, evan-empty-dapp {
+    background-color: transparent;
+
+    h1, h2, h3, h4 {
+      color: map-get($theme, text-color);
+    }
+  }
+
+  .evan-seperator {
+    background-color: map-get($theme, background-color-2);
+  }
+
+  .evan-small-seperator {
+    background-color: map-get($theme, background-color-2);
+  }
+
+  h1, h2, h3, h4, span, p {
+    &.evan-gray-text {
+      color: $medium-gray;
+    }
+  }
+
+  ion-item {
+    .item-inner {
+      ion-label {
+        span {
+          color: map-get($theme, text-color);
+        }
+      }
+    }
+  }
+
+  .item-md {
+    background-color: map-get($theme, list-background-color);
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid map-get($theme, border-color);
+  }
+
+  *[margin] {
+    margin: $content-margin !important;
+  }
+
+  *[padding] {
+    padding: $content-margin !important;
+  }
+}

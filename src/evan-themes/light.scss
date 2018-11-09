@@ -25,19 +25,32 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+.evan-light {
+  @import '../theme';
+  @import '../variables/colors-light';
+  @include evanTheme($colors, $evanStyles);
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+  ion-item.item-md.item-block.item-input, .evan-light ion-item.item-md.item-block.item-select {
+    &.semi-transparent {
+      background: map-get($evanStyles, background-color);
+      background-color: map-get($evanStyles, background-color) !important;
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+      ion-icon {
+        background: map-get($evanStyles, color);
+      }
+    }
+  }
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+  ion-item.item-md.item-block {
+    &.item-input, &.item-select {
+      margin-top: 25px;
+      padding: 10px !important;
+
+      background-color: map-get($evanStyles, background-gradient) !important;
+
+      ion-label {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}

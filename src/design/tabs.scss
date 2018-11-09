@@ -25,66 +25,31 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-@import '../variables/positions';
+@mixin tabsTheme($colors, $theme) {
+.evan-tabs {
+  @media (min-width: 768px) {
+    background-color: rgba(map-get($theme, background-color-2), 0.5);
 
-ion-alert {
-  position: fixed;
+    button {
+      color: map-get($theme, text-color);
+      background-color: transparent !important;
 
-  .alert-wrapper {
-    background-color: $background-color !important;
-
-    h2 {
-      color: $light !important;
-    }
-
-    .alert-checkbox-label, .alert-radio-label, .alert-input {
-      color: $light !important;
+      &.active, &.active:hover {
+        color: map-get($theme, text-color);
+        background-color: rgba(map-get($colors, primary), 0.7) !important;
+      }
     }
   }
-}
 
-.alert-md .alert-message {
-  overflow-y: auto;
+  @media (max-width: 768px) {
+    background-color: map-get($theme, background-color) !important;
 
-  max-height: 80% !important;
-
-  color: $light;
-}
-
-.advanced-alert {
-  box-shadow: $grid-list-item-shadow;
-
-  .alert-img-container {
-    margin: 0 !important;
-    padding: 20px 0 20px 0;
-
-    border-bottom: 1px solid gray;
-    background-color: $dark-blue;
-
-    .alert-img {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto;
-
-      border-radius: 50%;
-      background-color: $light-blue;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 70px;
+    button {
+      background-color: transparent !important;
     }
   }
-  .alert-body {
-    padding: 10px;
 
-    &.centered-text {
-      text-align: center;
-    }
-
-    h1, h2, h3, h4 {
-      margin-top: 0;
-
-      color: $light;
-    }
+  ion-row, ion-col, button {
+    color: map-get($theme, text-color);
   }
-}
+}}

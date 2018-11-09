@@ -25,19 +25,39 @@
   https://evan.network/license/
 */
 
-// evan
-@import 'variables/colors';
+@mixin alertTheme($colors, $theme) {
+  ion-alert {
+    .alert-wrapper {
+      background-color: map-get($theme, background-color) !important;
 
-// overwrite ionic styles
-$app-direction: ltr;
-$color-base: $dark-blue;
-$toolbar-background: $background-toolbar-wide;
-$button-ios-outline-border-width: 2px;
-$button-md-outline-border-width: 2px;
+      h2 {
+        color: map-get($theme, text-color) !important;
+      }
 
-// ionic core styles
-@import 'ionic.theme.default';
-@import 'ionic.components';
+      .alert-checkbox-label, .alert-radio-label, .alert-input {
+        color: map-get($theme, text-color) !important;
+      }
+    }
+  }
 
-// tag input styles
-@import 'ionic-tags-input/dist/ion-tags-input';
+  .alert-md .alert-message {
+    color: map-get($theme, text-color);
+  }
+
+  .advanced-alert {
+    box-shadow: map-get($theme, grid-list-item-shadow);
+
+    .alert-img-container {
+      background-color: map-get($theme, background-color);
+
+      .alert-img {
+        background-color: $light-blue;
+      }
+    }
+    .alert-body {
+      h1, h2, h3, h4 {
+        color: map-get($theme,$text-color);
+      }
+    }
+  }
+}

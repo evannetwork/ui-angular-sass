@@ -25,17 +25,6 @@
   https://evan.network/license/
 */
 
-@import '../variables/colors';
-@import '../variables/positions';
-
-/*
-  xs  (min-width: 0)
-  sm  (min-width: 576px)
-  md  (min-width: 769px)
-  lg  (min-width: 993px)
-  xl  (min-width: 1200px)
-*/
-
 ion-list.evan-grid {
   @media (min-width: 769px) {
     margin-top: 25px;
@@ -88,28 +77,10 @@ ion-list.evan-grid {
       }
     }
 
-
-    // @media (min-width: 769px) {
-    //   ion-avatar {
-    //     background-color: rgba($background-color, $background-opacity) !important;
-    //     .evan-avatar-wrapper {
-    //       background-color: transparent !important;
-    //     }
-    //   }
-    // }
-
     @media (max-width: 768px) {
-      &:first-child {
-        border-top: 1px solid $light-gray;
-      }
-
       ion-avatar {
         opacity: 0.7;
-        background-color: transparent !important;
-
         .evan-avatar-wrapper {
-          background-color: transparent !important;
-
           ion-icon {
             font-size: 40px;
 
@@ -133,18 +104,11 @@ ion-list.evan-grid {
       min-width: 250px;
       margin: 10px 20px;
 
-      box-shadow: $grid-list-item-shadow;
-
       ion-fab {
         top: -10px;
         right: -10px;
 
         display: block;
-
-        & > button {
-          background-color: transparent;
-          box-shadow: none;
-        }
       }
 
       ion-item {
@@ -166,8 +130,6 @@ ion-list.evan-grid {
         margin: 0 !important;
         padding: 20px 0 20px 0;
 
-        background-color: $dark-blue;
-
         .evan-avatar-wrapper {
           width: 120px;
           height: 120px;
@@ -175,7 +137,6 @@ ion-list.evan-grid {
           padding: 20px;
 
           border-radius: 50%;
-          background-color: $light-blue;
           background-position: center;
           background-size: 90px;
 
@@ -271,7 +232,7 @@ ion-grid, ion-row, ion-col {
 
   @media (max-width: 768px) {
     &.no-padding, ion-row, ion-col:first-child {
-      padding-right: 0px !important;
+      padding-right: 0 !important;
     }
   }
 }

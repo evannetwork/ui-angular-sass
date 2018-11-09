@@ -1,0 +1,84 @@
+/*
+  Copyright (C) 2018-present evan GmbH.
+
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program. If not, see http://www.gnu.org/licenses/ or
+  write to the Free Software Foundation, Inc., 51 Franklin Street,
+  Fifth Floor, Boston, MA, 02110-1301 USA, or download the license from
+  the following URL: https://evan.network/license/
+
+  You can be released from the requirements of the GNU Affero General Public
+  License by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts
+  of it on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address:
+  https://evan.network/license/
+*/
+
+/**
+ * import design specification
+ */
+@import 'design/alert';
+@import 'design/buttons';
+@import 'design/content';
+@import 'design/dashboard';
+@import 'design/forms';
+@import 'design/general';
+@import 'design/grid';
+@import 'design/label';
+@import 'design/list';
+@import 'design/modal';
+@import 'design/popover';
+@import 'design/qr-code';
+@import 'design/slides';
+@import 'design/table';
+@import 'design/tabs';
+@import 'design/toolbar-menu';
+
+/**
+ * import predefined designs, so they can be iterated
+ */
+@import 'variables/colors';
+$evanStyle: (colors: $colors, evanStyles: $evanStyles);
+@import 'variables/colors-light';
+$lightStyle: (colors: $colors, evanStyles: $evanStyles);
+
+/**
+ * All available themes
+ */
+$evanThemes: (
+  evan: $evanStyle,
+  light: $lightStyle
+);
+
+/**
+ * Define a new theme by passing an evan network design map and ionic color map.
+ */
+@mixin evanTheme($colors, $evanStyles) {
+  @include alertTheme($colors, $evanStyles);
+  @include buttonTheme($colors, $evanStyles);
+  @include contentTheme($colors, $evanStyles);
+  @include dashboardTheme($colors, $evanStyles);
+  @include formsTheme($colors, $evanStyles);
+  @include generalTheme($colors, $evanStyles);
+  @include gridTheme($colors, $evanStyles);
+  @include labelTheme($colors, $evanStyles);
+  @include listTheme($colors, $evanStyles);
+  @include menuTheme($colors, $evanStyles);
+  @include modalTheme($colors, $evanStyles);
+  @include popoverTheme($colors, $evanStyles);
+  @include qrCodeTheme($colors, $evanStyles);
+  @include slidesTheme($colors, $evanStyles);
+  @include tableTheme($colors, $evanStyles);
+  @include tabsTheme($colors, $evanStyles);
+}

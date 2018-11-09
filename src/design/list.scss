@@ -1,0 +1,121 @@
+/*
+  Copyright (C) 2018-present evan GmbH.
+
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program. If not, see http://www.gnu.org/licenses/ or
+  write to the Free Software Foundation, Inc., 51 Franklin Street,
+  Fifth Floor, Boston, MA, 02110-1301 USA, or download the license from
+  the following URL: https://evan.network/license/
+
+  You can be released from the requirements of the GNU Affero General Public
+  License by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts
+  of it on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address:
+  https://evan.network/license/
+*/
+
+@mixin listTheme($colors, $theme) {
+  // remove strange line behavior of list items
+  ion-list {
+    button[ion-item], ion-item {
+      &.active {
+        background-color: map-get($theme, hover) !important;
+
+        &, ion-label {
+          h1, h2, h3, h4, span {
+            color: map-get($theme, hover-color) !important;
+          }
+        }
+      }
+
+      &.item-hover:hover {
+        background-color: map-get($theme, border-color) !important;
+      }
+
+      .item-inner {
+        border-bottom: 0 !important;
+
+        .top-right {
+          color: map-get($theme, text-color);
+        }
+
+        ion-label {
+          & > span {
+            color: map-get($theme, text-color);
+          }
+        }
+      }
+
+      &[padding], &[padding-horizontal] {
+        .item-inner {
+          .top-right {
+            color: gray;
+          }
+        }
+      }
+
+      ion-avatar {
+        ion-icon {
+          color: map-get($theme, text-color);
+        }
+      }
+    }
+  }
+
+  ion-label.label.standalone {
+    &, &[stacked], &[floating] {
+      color: map-get($theme, text-color);
+    }
+  }
+
+  ion-list.list-md {
+    ion-item-sliding {
+      background: transparent;
+    }
+  }
+
+  ion-list.evan-list {
+    ion-item-sliding {
+      &:first-child {
+        border-top: 1px solid map-get($theme, border-color);
+      }
+
+      &.header-list-item {
+        ion-item.item {
+          .header {
+            & {
+              border-bottom: 1px solid map-get($theme, border-color);
+              background-color: map-get($theme, background-color);
+            }
+          }
+        }
+      }
+
+      button[ion-item], ion-item {
+        ion-avatar {
+          img {
+            @media (max-width: 768px) {
+              background-color: map-get($colors, light);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .list-md .item-input:last-child {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+}
