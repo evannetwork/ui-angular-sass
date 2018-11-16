@@ -221,6 +221,8 @@
 }
 
 ion-content {
+  contain: unset;
+
   &.sortable {
     contain: unset;
 

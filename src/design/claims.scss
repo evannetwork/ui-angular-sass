@@ -25,25 +25,47 @@
   https://evan.network/license/
 */
 
-// define the html structure design
-@import 'structure/alert';
-@import 'structure/claims';
-@import 'structure/content';
-@import 'structure/dashboard';
-@import 'structure/forms';
-@import 'structure/general';
-@import 'structure/grid';
-@import 'structure/ios';
-@import 'structure/label';
-@import 'structure/list';
-@import 'structure/modal';
-@import 'structure/popover';
-@import 'structure/qr-code';
-@import 'structure/slides';
-@import 'structure/table';
-@import 'structure/tabs';
-@import 'structure/toolbar-menu';
+@mixin claimTheme($colors, $theme) {
+  .evan-claim {
+    &:hover {
+      background-color: rgba(map-get($theme, background-color), 0.6);
+    }
 
-// load color themes
-@import 'evan-themes/evan';
-@import 'evan-themes/light';
+    &, .claim-icon {
+      border: 3px solid;
+      border-color: map-get($theme, border-color);
+    }
+
+    .claim-icon {
+      background-color: rgba(map-get($theme, background-color), 0.3);
+
+      svg g {
+        fill: rgba(map-get($theme, text-color), 0.5);
+      }
+    }
+  }
+
+  .evan-claim.status--1 {
+    &, .claim-icon {
+      border-color: map-get($colors, danger);
+    }
+  }
+
+  .evan-claim.status-0 {
+    &, .claim-icon {
+      border-color: map-get($colors, alert);
+    }
+  }
+
+  .evan-claim.status-1 {
+    &, .claim-icon {
+      border-color: map-get($colors, success);
+    }
+  }
+
+  .claim-count {
+    &, ion-icon {
+      color: rgba(map-get($theme, text-color), 0.5);
+    }
+  }
+}

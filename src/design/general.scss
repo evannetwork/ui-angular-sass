@@ -114,4 +114,8 @@
   *[padding] {
     padding: $content-margin !important;
   }
+
+  ion-spinner.spinner-md-crescent svg circle {
+    stroke: map-get($theme, text-color);
+  }
 }

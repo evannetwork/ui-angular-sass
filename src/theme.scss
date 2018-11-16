@@ -30,6 +30,7 @@
  */
 @import 'design/alert';
 @import 'design/buttons';
+@import 'design/claims';
 @import 'design/content';
 @import 'design/dashboard';
 @import 'design/forms';
@@ -68,6 +69,7 @@ $evanThemes: (
   @include alertTheme($colors, $evanStyles);
   @include buttonTheme($colors, $evanStyles);
   @include contentTheme($colors, $evanStyles);
+  @include claimTheme($colors, $evanStyles);
   @include dashboardTheme($colors, $evanStyles);
   @include formsTheme($colors, $evanStyles);
   @include generalTheme($colors, $evanStyles);
