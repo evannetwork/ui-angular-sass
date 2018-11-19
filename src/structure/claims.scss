@@ -34,6 +34,7 @@ $claim-height: 55px;
   min-width: 100px;
   max-width: 250px;
   height: $claim-height;
+  margin-right: 10px;
 
   cursor: pointer;
 
@@ -112,5 +113,70 @@ $claim-height: 55px;
 
   .claim-icon {
     margin: -3px -3px -3px -3px;
+  }
+}
+
+.evan-detailed-claim {
+  & > .evan-claim {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  & > .metadata {
+    display: block;
+
+    margin-top: -26px;
+    padding: 40px 25px 25px 25px;
+
+    border-top: 0 !important;
+
+    ion-row > ion-col {
+      & > div {
+        margin-top: 10px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        & > span {
+          display: block;
+          overflow: hidden;
+
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &.evan-claim-tree {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        padding-left: 0 !important;
+
+        @media (max-width: 768px) {
+          margin-top: 25px;
+        }
+
+        & > ion-icon {
+          font-size: 32px;
+
+          position: absolute;
+          z-index: -1;
+          top: -11px;
+        }
+
+        .sub-claim-connector {
+          position: absolute;
+          z-index: -1;
+          top: -5px;
+
+          width: 3px;
+          height: calc(100% + 30px);
+        }
+      }
+    }
   }
 }
