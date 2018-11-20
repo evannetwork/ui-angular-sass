@@ -180,3 +180,13 @@ $claim-height: 55px;
     }
   }
 }
+
+evan-claim > ion-row {
+  & > ion-col {
+    margin-bottom: 25px !important;
+  }
+
+  & > ion-col:nth-child(odd) {
+    padding-left: 0 !important;
+  }
+}
