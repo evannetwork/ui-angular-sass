@@ -49,6 +49,7 @@ $claim-height: 55px;
     position: relative;
 
     width: $claim-height;
+    min-width: $claim-height;
     height: $claim-height;
     margin: -3px 0 -3px -3px;
 
@@ -87,6 +88,13 @@ $claim-height: 55px;
 
     & > div {
       height: 37px;
+    }
+
+    b, p {
+      overflow: hidden;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     b {
@@ -139,7 +147,11 @@ $claim-height: 55px;
           margin-top: 0;
         }
 
-        & > span {
+        & > div {
+          padding: 0;
+        }
+
+        & > div > span, & > span {
           display: block;
           overflow: hidden;
 
@@ -181,12 +193,14 @@ $claim-height: 55px;
   }
 }
 
-evan-claim > ion-row {
-  & > ion-col {
-    margin-bottom: 25px !important;
-  }
+evan-claim {
+  ion-row {
+    & > ion-col {
+      margin-bottom: 25px !important;
+    }
 
-  & > ion-col:nth-child(odd) {
-    padding-left: 0 !important;
+    & > ion-col:nth-child(odd) {
+      padding-left: 0 !important;
+    }
   }
 }

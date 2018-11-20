@@ -2,6 +2,8 @@
 
 ## Next Version
 ### Features
+- add claims design; add claims design to themes
+
 ### Fixes
 ### Deprecations
 

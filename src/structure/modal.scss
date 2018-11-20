@@ -50,6 +50,12 @@
     transform: scale(1);
   }
 
+  &.disable-scrolling {
+    .evan-content {
+      overflow-y: hidden;
+    }
+  }
+
   evan-loading {
     position: absolute;
     z-index: 1001;
