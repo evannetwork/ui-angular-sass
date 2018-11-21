@@ -3,6 +3,7 @@
 ## Next Version
 ### Features
 - add claims design; add claims design to themes
+- add evan-left and evan-right panel
 
 ### Fixes
 ### Deprecations

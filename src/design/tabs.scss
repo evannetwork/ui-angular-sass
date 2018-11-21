@@ -26,30 +26,33 @@
 */
 
 @mixin tabsTheme($colors, $theme) {
-.evan-tabs {
-  @media (min-width: 768px) {
-    background-color: rgba(map-get($theme, background-color-2), 0.5);
-
+  .evan-tabs {
     button {
-      color: map-get($theme, text-color);
-      background-color: transparent !important;
-
       &.active, &.active:hover {
         color: map-get($theme, text-color);
         background-color: rgba(map-get($colors, primary), 0.7) !important;
       }
     }
-  }
 
-  @media (max-width: 768px) {
-    background-color: map-get($theme, background-color) !important;
+    @media (min-width: 768px) {
+      background-color: rgba(map-get($theme, background-color-2), 0.5);
 
-    button {
-      background-color: transparent !important;
+      button {
+        color: map-get($theme, text-color);
+        background-color: transparent !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      background-color: map-get($theme, background-color) !important;
+
+      button {
+        background-color: transparent !important;
+      }
+    }
+
+    ion-row, ion-col, button {
+      color: map-get($theme, text-color);
     }
   }
-
-  ion-row, ion-col, button {
-    color: map-get($theme, text-color);
-  }
-}}
+}
