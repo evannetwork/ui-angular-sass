@@ -272,7 +272,7 @@ ion-list[radio-group] {
     padding-left: 0 !important;
   }
   ion-item, button[ion-item] {
-    &, &.item-md.item-block.item-input, &.item-md.item-block.item-select {
+    &, &.item-md.item-block.item-input, &.item-md.item-block.item-select, &.item-md.item-block.item-toggle {
       margin-top: 0 !important;
       padding: 0 0 0 50px !important;
 

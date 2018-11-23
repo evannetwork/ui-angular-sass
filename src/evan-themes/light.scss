@@ -30,19 +30,21 @@
   @import '../variables/colors-light';
   @include evanTheme($colors, $evanStyles);
 
-  ion-item.item-md.item-block.item-input, .evan-light ion-item.item-md.item-block.item-select {
-    &.semi-transparent {
-      background: map-get($evanStyles, background-color);
-      background-color: map-get($evanStyles, background-color) !important;
+  ion-item.item-md.item-block {
+    &.item-input, &.item-select, &.item-toggle {
+      &.semi-transparent {
+        background: map-get($evanStyles, background-color);
+        background-color: map-get($evanStyles, background-color) !important;
 
-      ion-icon {
-        background: map-get($evanStyles, color);
+        ion-icon {
+          background: map-get($evanStyles, color);
+        }
       }
     }
   }
 
   ion-item.item-md.item-block {
-    &.item-input, &.item-select {
+    &.item-input, &.item-select, &.item-toggle {
       margin-top: 25px;
       padding: 10px !important;
 
@@ -51,6 +53,14 @@
       ion-label {
         margin-top: 0 !important;
       }
+    }
+  }
+
+  .evan-detailed-claim .evan-claim, .evan-claim {
+    background-color: map-get($evanStyles, background-color) !important;
+
+    .metadata {
+      background-color: map-get($evanStyles, background-color) !important;
     }
   }
 }
