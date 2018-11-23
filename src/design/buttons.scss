@@ -78,4 +78,8 @@
       color: unset;
     }
   }
+
+  .icon-md-alert, .icon-md-warning {
+    color: map-get($colors, alert) !important;
+  }
 }

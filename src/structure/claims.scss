@@ -1,0 +1,250 @@
+/*
+  Copyright (C) 2018-present evan GmbH.
+
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program. If not, see http://www.gnu.org/licenses/ or
+  write to the Free Software Foundation, Inc., 51 Franklin Street,
+  Fifth Floor, Boston, MA, 02110-1301 USA, or download the license from
+  the following URL: https://evan.network/license/
+
+  You can be released from the requirements of the GNU Affero General Public
+  License by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts
+  of it on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address:
+  https://evan.network/license/
+*/
+
+$claim-height: 55px;
+
+.evan-claim {
+  display: inline-flex;
+
+  width: auto;
+  min-width: 100px;
+  max-width: 250px;
+  height: $claim-height;
+  margin-right: 10px;
+
+  cursor: pointer;
+
+  border-radius: 50px;
+  background-color: transparent;
+
+  &, .claim-icon {
+    transition: border-color 0.5s ease-out, background-color 0.5s ease-out, width 0.5s ease-out;
+  }
+
+  .claim-icon {
+    position: relative;
+
+    width: $claim-height;
+    min-width: $claim-height;
+    height: $claim-height;
+    margin: -3px 0 -3px -3px;
+
+    text-align: left;
+
+    border-radius: 50%;
+
+    svg, img {
+      max-width: 80%;
+      height: 80%;
+      margin-top: 10%;
+      margin-left: 10%;
+
+      border-radius: 50%;
+    }
+
+    ion-spinner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      margin: auto;
+    }
+  }
+
+  .claim-label, .claim-count {
+    display: flex;
+    align-items: center;
+  }
+
+  .claim-label {
+    flex-grow: 0;
+
+    margin-right: 15px;
+    margin-left: 10px;
+
+    & > div {
+      height: 37px;
+    }
+
+    b, p {
+      overflow: hidden;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    b {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 12px;
+
+      margin: 0;
+    }
+  }
+
+  .claim-count {
+    margin-right: 10px;
+  }
+}
+
+.evan-claim.mode-icon {
+  &, .claim-icon {
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    margin-right: 0;
+
+    border-width: 2px;
+  }
+
+  .claim-icon {
+    margin: -3px;
+  }
+}
+
+.evan-detailed-claim {
+  position: relative;
+
+  & > .evan-claim {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  & > .metadata {
+    margin-top: -25px;
+    padding: 25px 25px 0 25px;
+
+    border-top: 0 !important;
+
+    .status-container > div {
+      font-weight: bold;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      margin: 20px 0;
+
+      ion-icon.status-icon {
+        font-size: 20px;
+        line-height: 26px;
+
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        margin-right: 10px;
+
+        text-align: center;
+
+        border: 2px solid;
+        border-radius: 50%;
+      };
+
+      .claim-chain {
+        display: flex;
+
+        margin-left: 5px;
+
+        & > span {
+          display: flex;
+
+          margin: 0 3px;
+        }
+
+        ion-icon {
+          font-size: 22px;
+
+          margin-right: 3px;
+        }
+      }
+    }
+
+    .subject-container, .origin-container {
+      p {
+        margin: 0;
+      }
+    }
+
+    .subject-container {
+      position: absolute;
+      top: 6px;
+      right: 20px;
+
+      max-width: 50%;
+
+      text-align: right !important;
+
+      p, b {
+        overflow: hidden;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .origin-container {
+      position: absolute;
+      top: 55px;
+      right: 10px;
+      bottom: 10px;
+
+      .evan-claim {
+        margin-top: 5px;
+      }
+
+      @media (max-width: 991px) {
+        position: relative;
+        top: 5px;
+        right: 0;
+        left: 0;
+
+        padding: 10px;
+      }
+    }
+  }
+}
+
+evan-claim {
+  ion-row {
+    & > ion-col {
+      margin-bottom: 25px !important;
+    }
+
+    & > ion-col:nth-child(odd) {
+      padding-left: 0 !important;
+    }
+  }
+}

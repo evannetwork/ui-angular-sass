@@ -1,0 +1,99 @@
+/*
+  Copyright (C) 2018-present evan GmbH.
+
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License, version 3,
+  as published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program. If not, see http://www.gnu.org/licenses/ or
+  write to the Free Software Foundation, Inc., 51 Franklin Street,
+  Fifth Floor, Boston, MA, 02110-1301 USA, or download the license from
+  the following URL: https://evan.network/license/
+
+  You can be released from the requirements of the GNU Affero General Public
+  License by purchasing a commercial license.
+  Buying such a license is mandatory as soon as you use this software or parts
+  of it on other blockchains than evan.network.
+
+  For more information, please contact evan GmbH at this address:
+  https://evan.network/license/
+*/
+
+@mixin claimTheme($colors, $theme) {
+  .evan-claim {
+    &:hover {
+      background-color: rgba(map-get($theme, background-color), 0.6);
+    }
+
+    &, .claim-icon {
+      border: 3px solid;
+      border-color: map-get($theme, border-color);
+    }
+
+    .claim-icon {
+      background-color: rgba(map-get($theme, background-color), 0.3);
+
+      svg g {
+        fill: rgba(map-get($theme, text-color), 0.5);
+      }
+    }
+  }
+
+  .evan-detailed-claim {
+    .evan-claim {
+      background-color: map-get($theme, background-color-2);
+    }
+
+    & > .metadata {
+      background-color: rgba(map-get($theme, background-color-2), 0.3);
+
+      @media (max-width: 991px) {
+        .origin-container {
+          border-bottom: 1px solid map-get($theme, border-color);
+        }
+      }
+    }
+  }
+
+  .evan-claim.status--1 {
+    &, .claim-icon {
+      border-color: map-get($colors, danger);
+    }
+  }
+
+  .evan-claim.status-0 {
+    &, .claim-icon {
+      border-color: map-get($colors, alert);
+    }
+  }
+
+  .evan-claim.status-1 {
+    &, .claim-icon {
+      border-color: map-get($colors, success);
+    }
+  }
+
+  .claim-count {
+    &, ion-icon {
+      color: rgba(map-get($theme, text-color), 0.5);
+    }
+  }
+
+  .evan-detailed-claim.status--1 .metadata {
+    border: 3px solid rgba(map-get($colors, danger), 0.5);
+  }
+
+  .evan-detailed-claim.status-0 .metadata {
+    border: 3px solid rgba(map-get($colors, alert), 0.5);
+  }
+
+  .evan-detailed-claim.status-1 .metadata {
+    border: 3px solid rgba(map-get($colors, success), 0.5);
+  }
+}
