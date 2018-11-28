@@ -28,6 +28,9 @@
 $claim-height: 55px;
 
 .evan-claim {
+  position: relative;
+  z-index: 1;
+
   display: inline-flex;
 
   width: auto;
@@ -133,118 +136,183 @@ $claim-height: 55px;
 }
 
 .evan-detailed-claim {
-  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
 
-  & > .evan-claim {
-    width: 100%;
-    max-width: 100%;
-    margin-right: 0;
+  height: auto;
+  min-height: 500px;
+  padding: 50px 0;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
   }
 
-  & > .metadata {
-    margin-top: -25px;
-    padding: 25px 25px 0 25px;
+  .sub-claims-container {
+    display: flex;
+    align-items: center;
+  }
 
-    border-top: 0 !important;
+  .claim-detail-row {
+    position: relative;
 
-    .status-container > div {
-      font-weight: bold;
+    padding: 0 25px;
 
-      position: relative;
+    transition: height 0.5s ease-out;
 
+    &.static-height {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
 
-      margin: 20px 0;
-
-      ion-icon.status-icon {
-        font-size: 20px;
-        line-height: 26px;
-
-        width: 30px;
-        min-width: 30px;
-        height: 30px;
-        margin-right: 10px;
-
-        text-align: center;
-
-        border: 2px solid;
-        border-radius: 50%;
-      };
-
-      .claim-chain {
-        display: flex;
-
-        margin-left: 5px;
-
-        & > span {
-          display: flex;
-
-          margin: 0 3px;
-        }
-
-        ion-icon {
-          font-size: 22px;
-
-          margin-right: 3px;
-        }
-      }
-    }
-
-    .subject-container, .origin-container {
-      p {
-        margin: 0;
-      }
-    }
-
-    .subject-container {
-      position: absolute;
-      top: 6px;
-      right: 20px;
-
-      max-width: 50%;
-
-      text-align: right !important;
-
-      p, b {
-        overflow: hidden;
-
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-    }
-
-    .origin-container {
-      position: absolute;
-      top: 55px;
-      right: 10px;
-      bottom: 10px;
-
-      .evan-claim {
-        margin-top: 5px;
-      }
-
-      @media (max-width: 991px) {
+      .claim-person {
         position: relative;
-        top: 5px;
+      }
+    }
+
+    &.static-width {
+      width: 300px;
+      min-width: 300px;
+    }
+
+    &.padding-left {
+      padding-left: 50px;
+
+      &.static-width {
+        width: 325px;
+        min-width: 325px;
+      }
+    }
+
+    .evan-claim {
+      margin-right: 0;
+    }
+
+    .claim-person {
+      position: absolute;
+
+      width: 250px;
+      margin: 40px 0;
+
+      cursor: pointer;
+      transition: height 0.5s ease-out, top 0.5s ease-out, left 0.5s ease-out;
+
+      & > ion-icon {
+        font-size: 60px;
+
+        position: absolute;
+        top: -46px;
         right: 0;
         left: 0;
 
-        padding: 10px;
+        margin: auto;
+
+        text-align: center;
+      }
+
+      .claim-person-label {
+        position: relative;
+        z-index: 10;
+
+        padding: 15px 0;
+
+        transition: height 0.5s ease-out;
+        text-align: center;
+
+        b, p {
+          overflow: hidden;
+
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        p {
+          font-size: 12px;
+
+          width: 80%;
+          margin: 0 0 0 10%;
+        }
+      }
+
+      .claim-person-detail {
+        height: 100px;
+        margin-top: 2px;
+        padding: 5px;
+
+        ion-icon {
+          margin-right: 5px;
+        }
+      }
+
+      .claim-people-connector {
+        overflow: hidden;
+
+        height: 0;
+
+        & > div:first-child {
+          position: absolute;
+          top: 30px;
+          left: -25px;
+
+          width: 25px;
+          height: 3px;
+          margin: auto;
+        }
+
+        & > div:nth-child(2) {
+          position: absolute;
+          left: -25px;
+
+          width: 3px;
+          height: 0;
+          margin: auto;
+        }
+
+        &.active {
+          z-index: 10;
+
+          & > div:first-child {
+            height: 5px;
+          }
+
+          & > div:nth-child(2) {
+            width: 5px;
+          }
+        }
       }
     }
-  }
-}
 
-evan-claim {
-  ion-row {
-    & > ion-col {
-      margin-bottom: 25px !important;
-    }
+    .claim-row-connector {
+      div {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -18px;
 
-    & > ion-col:nth-child(odd) {
-      padding-left: 0 !important;
+        width: 45px;
+        height: 3px;
+        margin: auto;
+      }
+
+      &.active {
+        z-index: 10;
+
+        div {
+          height: 5px;
+        }
+      }
+
+      ion-icon {
+        font-size: 40px;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -22px;
+
+        height: 40px;
+        margin: auto;
+      }
     }
   }
 }
