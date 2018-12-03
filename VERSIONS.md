@@ -3,6 +3,9 @@
 ## Next Version
 ### Features
 ### Fixes
+- fix evan-callout scroll styles
+- new claim detail design for displaying horizontal history
+
 ### Deprecations
 
 ## Version 1.5.0

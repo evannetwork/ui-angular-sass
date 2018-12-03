@@ -31,6 +31,15 @@
       background-color: map-get($theme, background-backdrop);
     }
 
+    *::-webkit-scrollbar {
+      background-color: map-get($theme, background-color);
+    }
+
+    *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:active, *::-webkit-scrollbar-thumb:hover {
+      border: 1px solid map-get($theme, background-color-2);
+      background-color: map-get($theme, background-color-2);
+    }
+
     .evan-content {
       background-color: map-get($theme, background-color);
 

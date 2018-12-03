@@ -332,6 +332,7 @@ $claim-height: 55px;
     .claim-row-connector {
       div {
         position: absolute;
+        z-index: 5;
         top: 0;
         bottom: 0;
         left: -18px;
@@ -342,9 +343,9 @@ $claim-height: 55px;
       }
 
       &.active {
-        z-index: 10;
-
         div {
+          z-index: 10;
+
           height: 5px;
         }
       }
@@ -366,4 +367,10 @@ $claim-height: 55px;
 
 .evan-callout.claim-callout {
   margin-left: -233px;
+}
+
+.evan-modal.evan-claim-modal .evan-content {
+  width: 90%;
+  max-height: 90%;
+  margin-left: 5%;
 }
