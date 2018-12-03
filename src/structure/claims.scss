@@ -184,6 +184,14 @@ $claim-height: 55px;
       }
     }
 
+    &.claim-missing {
+      & > ion-icon {
+        font-size: 40px;
+
+        margin-left: 3px;
+      }
+    }
+
     .evan-claim {
       margin-right: 0;
     }
@@ -214,7 +222,7 @@ $claim-height: 55px;
         position: relative;
         z-index: 10;
 
-        padding: 15px 0;
+        padding: 15px 5px 15px 0;
 
         transition: height 0.5s ease-out;
         text-align: center;
@@ -232,15 +240,54 @@ $claim-height: 55px;
           width: 80%;
           margin: 0 0 0 10%;
         }
+
+        & > button, & > ion-select > button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: unset;
+
+          width: 30px;
+          margin: auto;
+        }
       }
 
       .claim-person-detail {
+        overflow: hidden;
+
         height: 100px;
         margin-top: 2px;
         padding: 5px;
 
         ion-icon {
           margin-right: 5px;
+        }
+
+        & > .claim-detail-dates {
+          height: 50px;
+        }
+
+        .detail-desc {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+
+          padding: 5px;
+
+          text-align: center;
+
+          ion-icon {
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+
+            text-align: center;
+
+            border: 2px solid;
+            border-radius: 50%;
+          }
         }
       }
 
@@ -315,4 +362,8 @@ $claim-height: 55px;
       }
     }
   }
+}
+
+.evan-callout.claim-callout {
+  margin-left: -233px;
 }

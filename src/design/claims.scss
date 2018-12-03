@@ -94,6 +94,20 @@
 
         .claim-person-detail {
           background-color: map-get($evanStyles, background-color-2);
+
+          .detail-desc.danger {
+            background-color: map-get($colors, danger);
+          }
+
+          .detail-desc.success {
+            background-color: map-get($colors, success);
+          }
+
+          .display-flex-justify.danger {
+            span, ion-icon {
+              color: map-get($colors, danger);
+            }
+          }
         }
       }
 
