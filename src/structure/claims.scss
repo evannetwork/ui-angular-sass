@@ -228,7 +228,11 @@ $claim-height: 55px;
         text-align: center;
 
         b, p {
+          display: block;
           overflow: hidden;
+
+          width: 80%;
+          margin: 0 0 0 10%;
 
           white-space: nowrap;
           text-overflow: ellipsis;
@@ -236,9 +240,6 @@ $claim-height: 55px;
 
         p {
           font-size: 12px;
-
-          width: 80%;
-          margin: 0 0 0 10%;
         }
 
         & > button, & > ion-select > button {

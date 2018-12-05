@@ -99,6 +99,10 @@
             background-color: map-get($colors, danger);
           }
 
+          .detail-desc.warning {
+            background-color: map-get($colors, warning);
+          }
+
           .detail-desc.success {
             background-color: map-get($colors, success);
           }
