@@ -75,7 +75,7 @@
         background-color: rgba(map-get($theme, background-color), 0.5);
 
         &.status--1 {
-          border: 1px solid rgba(map-get($colors, danger), 0.5);
+          border: 1px solid map-get($colors, danger);
 
           & > ion-icon {
             color: map-get($colors, danger);
@@ -83,7 +83,7 @@
         }
 
         &.status-0 {
-          border: 1px solid rgba(map-get($colors, alert), 0.5);
+          border: 1px solid map-get($colors, alert);
 
           & > ion-icon {
             color: map-get($colors, alert);
@@ -91,7 +91,7 @@
         }
 
         &.status-1 {
-          border: 1px solid rgba(map-get($colors, success), 0.5);
+          border: 1px solid map-get($colors, success);
 
           & > ion-icon {
             color: map-get($colors, success);
