@@ -271,6 +271,12 @@ $claim-detail-height: 120px;
         margin-top: 5px;
         padding: 5px;
 
+        &.ng-animating {
+          position: relative;
+
+          overflow: hidden;
+        }
+
         &.only-interaction {
           height: 37px;
           margin-top: 0;
