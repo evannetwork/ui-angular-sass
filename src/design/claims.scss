@@ -72,16 +72,30 @@
   .evan-detailed-claim {
     .claim-detail-row {
       .claim-person {
-        &.status--1 > ion-icon {
-          color: map-get($colors, danger);
+        background-color: rgba(map-get($theme, background-color), 0.5);
+
+        &.status--1 {
+          border: 1px solid rgba(map-get($colors, danger), 0.5);
+
+          & > ion-icon {
+            color: map-get($colors, danger);
+          }
         }
 
-        &.status-0 > ion-icon {
-          color: map-get($colors, alert);
+        &.status-0 {
+          border: 1px solid rgba(map-get($colors, alert), 0.5);
+
+          & > ion-icon {
+            color: map-get($colors, alert);
+          }
         }
 
-        &.status-1 > ion-icon {
-          color: map-get($colors, success);
+        &.status-1 {
+          border: 1px solid rgba(map-get($colors, success), 0.5);
+
+          & > ion-icon {
+            color: map-get($colors, success);
+          }
         }
 
         .claim-person-label {
