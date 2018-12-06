@@ -26,6 +26,7 @@
 */
 
 $claim-height: 55px;
+$claim-detail-height: 100px;
 
 .evan-claim {
   position: relative;
@@ -202,7 +203,6 @@ $claim-height: 55px;
       width: 250px;
       margin: 40px 0;
 
-      cursor: pointer;
       transition: height 0.5s ease-out, top 0.5s ease-out, left 0.5s ease-out;
 
       & > ion-icon {
@@ -224,6 +224,7 @@ $claim-height: 55px;
 
         padding: 15px 5px 15px 0;
 
+        cursor: pointer;
         transition: height 0.5s ease-out;
         text-align: center;
 
@@ -255,14 +256,20 @@ $claim-height: 55px;
       }
 
       .claim-person-detail {
+        position: relative;
+
         overflow: hidden;
 
-        height: 100px;
+        height: $claim-detail-height;
         margin-top: 2px;
         padding: 5px;
 
         ion-icon {
           margin-right: 5px;
+        }
+
+        button ion-icon {
+          margin-right: 0;
         }
 
         & > .claim-detail-dates {
@@ -289,6 +296,40 @@ $claim-height: 55px;
             border: 2px solid;
             border-radius: 50%;
           }
+        }
+
+        .claim-interaction {
+          position: absolute;
+          z-index: 10;
+          right: 0;
+          bottom: -50px;
+          left: 0;
+
+          display: flex;
+          justify-content: center;
+
+          width: 100%;
+          height: 50px;
+
+          transition: bottom 0.5s ease-out, height 0.5s ease-out;
+
+          & > button {
+            margin: 1px 10px 1px 10px;
+          }
+        }
+
+        &.only-interaction {
+          height: 41px;
+
+          .claim-interaction {
+            bottom: -10px;
+          }
+        }
+      }
+
+      &:hover {
+        .claim-interaction {
+          bottom: -10px;
         }
       }
 

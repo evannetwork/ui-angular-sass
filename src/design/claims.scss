@@ -113,6 +113,12 @@
             }
           }
         }
+
+        &:hover {
+          .claim-interaction {
+            background-color: rgba(map-get($evanStyles, background-color), 0.8);
+          }
+        }
       }
 
       .claim-connector {
