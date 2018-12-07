@@ -248,6 +248,13 @@ ion-content {
   }
 }
 
+@media (max-width: 768px) {
+  .evan-right-panel {
+    left: 0;
+
+    width: 100%;
+  }
+}
 
 @media(min-width: 769px) {
   .evan-left-panel, .evan-right-panel {
@@ -291,15 +298,12 @@ ion-content {
   }
 
   .evan-right-panel {
+    left: calc(30% + 10px);
+
     overflow-y: auto;
 
+    width: calc(70% - 30px);
     max-height: calc(100% - 10px);
-
-    @media (min-width: 769px) {
-      left: calc(30% + 10px);
-
-      width: calc(70% - 30px);
-    }
 
     @media (min-width: 1501px) {
       left: calc(20% + 10px);

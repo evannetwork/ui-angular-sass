@@ -414,6 +414,12 @@ $claim-detail-height: 120px;
         }
       }
 
+      &.large.active.last-connector {
+        div {
+          width: 292px;
+        }
+      }
+
       ion-icon {
         font-size: 40px;
 
