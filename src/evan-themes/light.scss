@@ -63,4 +63,19 @@
       background-color: map-get($evanStyles, background-color) !important;
     }
   }
+
+  .evan-detailed-claim {
+    & > svg {
+      border: 1px solid map-get($evanStyles, border-color);
+      background-color: map-get($colors, white);
+
+      .evan-detail-hover > div {
+        background: map-get($colors, white);
+
+        & > div.body {
+          background-color: map-get($evanStyles, background-color);
+        }
+      }
+    }
+  }
 }

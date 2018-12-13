@@ -41,7 +41,7 @@
     }
 
     .evan-content {
-      background-color: map-get($theme, background-color);
+      background: linear-gradient(map-get($theme, background-color), map-get($theme, background-color-2));
 
       .alert-text {
         background-color: map-get($colors, yellow);

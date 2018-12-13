@@ -61,7 +61,7 @@ $claim-detail-height: 120px;
 
     border-radius: 50%;
 
-    svg, img {
+    & > svg, & > img {
       max-width: 80%;
       height: 80%;
       margin-top: 10%;
@@ -142,11 +142,19 @@ $claim-detail-height: 120px;
 }
 
 .evan-detailed-claim {
-  padding: 50px 0;
+  text-align: center;
 
-  svg {
+  * {
+    text-align: left;
+  }
+
+  & > svg {
     width: 100%;
-    height: 500px;
+    min-height: 500px;
+
+    & > g {
+      transition: 0.3s transform ease-out;
+    }
 
     .tree-container {
       path.link {
@@ -177,24 +185,59 @@ $claim-detail-height: 120px;
       & > div {
         position: absolute;
         z-index: 10;
-        top: 0;
+        top: 30px;
         left: -250px;
 
         width: 500px;
 
-        ion-row {
-          margin-bottom: 10px;
+        &:after, &:before {
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
 
+          width: 0;
+          height: 0;
+
+          content: ' ';
+          pointer-events: none;
+
+          border: solid transparent;
+        }
+
+        &:after {
+          margin-left: -10px;
+
+          border-width: 10px;
+          border-color: rgba(29, 39, 46, 0);
+          border-bottom-color: #1d272e;
+        }
+
+        &:before {
+          margin-left: -13px;
+
+          border-width: 13px;
+          border-color: rgba(194, 225, 245, 0);
+          border-bottom-color: #c2e1f5;
+        }
+
+        ion-row {
           ion-col {
+            margin-bottom: 10px;
             padding-left: 0 !important;
           }
         }
 
-        ion-col, b, p {
-          overflow: hidden;
+        ion-col {
+          &, b, p {
+            overflow: hidden;
 
-          white-space: nowrap;
-          text-overflow: ellipsis;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+
+          p.multiline {
+            white-space: normal;
+          }
         }
 
         p {
@@ -203,6 +246,20 @@ $claim-detail-height: 120px;
 
         & > div {
           padding: 10px;
+
+          &.header {
+            button {
+              position: absolute;
+              top: 5px;
+              right: 5px;
+            }
+          }
+
+          &.body {
+            ion-row.rejected {
+              padding-top: 10px;
+            }
+          }
 
           &.footer {
             display: flex;
