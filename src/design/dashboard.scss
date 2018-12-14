@@ -29,6 +29,7 @@
   dashboard-top-buttons {
     button, button[icon-only] {
       color: map-get($theme, text-color);
+      border-color: $background-color;
       background-color: rgba(map-get($colors, primary), 0.5);
 
       .button-inner {

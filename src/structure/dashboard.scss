@@ -140,6 +140,8 @@ dashboard-top-buttons.queue-button-active-3 {
     ion-menu {
       & > ion-content {
         ion-header {
+          text-align: center;
+
           ion-navbar {
             ion-buttons[start] {
               order: 2;
