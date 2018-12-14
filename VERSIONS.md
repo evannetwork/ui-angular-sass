@@ -4,7 +4,7 @@
 ### Features
 ### Fixes
 - fix evan-callout scroll styles
-- new claim detail design for displaying horizontal history
+- new claim detail design for displaying horizontal history in svg
 
 ### Deprecations
 
