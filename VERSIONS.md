@@ -3,10 +3,12 @@
 ## Next Version
 ### Features
 ### Fixes
+### Deprecations
+
+## Version 1.6.0
+### Fixes
 - fix evan-callout scroll styles
 - new claim detail design for displaying horizontal history in svg
-
-### Deprecations
 
 ## Version 1.5.0
 ### Features
