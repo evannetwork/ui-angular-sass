@@ -277,8 +277,25 @@ $claim-detail-height: 120px;
   margin-left: -233px;
 }
 
-.evan-modal.evan-claim-modal .evan-content {
-  width: 90%;
-  max-height: 90%;
-  margin-left: 5%;
+.evan-modal.evan-claim-modal {
+  .evan-content {
+    width: 90%;
+    max-height: 90%;
+    margin-left: 5%;
+  }
+}
+
+.evan-modal.claim-dbcp-edit {
+  .evan-content {
+    .img-selector {
+      svg, img {
+        max-width: 100%;
+        max-height: 150px;
+      }
+
+      .img-file-select {
+        display: none;
+      }
+    }
+  }
 }
