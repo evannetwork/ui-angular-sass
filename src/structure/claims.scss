@@ -26,8 +26,12 @@
 */
 
 $claim-height: 55px;
+$claim-detail-height: 120px;
 
 .evan-claim {
+  position: relative;
+  z-index: 1;
+
   display: inline-flex;
 
   width: auto;
@@ -57,7 +61,7 @@ $claim-height: 55px;
 
     border-radius: 50%;
 
-    svg, img {
+    & > svg, & > img {
       max-width: 80%;
       height: 80%;
       margin-top: 10%;
@@ -83,12 +87,17 @@ $claim-height: 55px;
   }
 
   .claim-label {
-    flex-grow: 0;
+    overflow: hidden;
+    flex: 1 0;
 
-    margin-right: 15px;
+    margin-right: 10px;
     margin-left: 10px;
 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
     & > div {
+      width: 100%;
       height: 37px;
     }
 
@@ -128,123 +137,165 @@ $claim-height: 55px;
   }
 
   .claim-icon {
-    margin: -3px;
+    margin: -2px;
   }
 }
 
 .evan-detailed-claim {
-  position: relative;
+  text-align: center;
 
-  & > .evan-claim {
-    width: 100%;
-    max-width: 100%;
-    margin-right: 0;
+  * {
+    text-align: left;
   }
 
-  & > .metadata {
-    margin-top: -25px;
-    padding: 25px 25px 0 25px;
+  & > svg {
+    width: 100%;
+    min-height: 500px;
 
-    border-top: 0 !important;
+    & > g {
+      transition: 0.3s transform ease-out;
+    }
 
-    .status-container > div {
-      font-weight: bold;
+    .tree-container {
+      path.link {
+        fill: none;
+        stroke-width: 2px;
+      }
 
-      position: relative;
-
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-
-      margin: 20px 0;
-
-      ion-icon.status-icon {
-        font-size: 20px;
-        line-height: 26px;
-
-        width: 30px;
-        min-width: 30px;
-        height: 30px;
-        margin-right: 10px;
-
-        text-align: center;
-
-        border: 2px solid;
-        border-radius: 50%;
-      };
-
-      .claim-chain {
-        display: flex;
-
-        margin-left: 5px;
-
-        & > span {
-          display: flex;
-
-          margin: 0 3px;
+      g.node {
+        & > circle, & > text {
+          cursor: pointer;
         }
 
-        ion-icon {
-          font-size: 22px;
+        & > circle {
+          stroke: none;
+        }
 
-          margin-right: 3px;
+        foreignobject {
+          .evan-claim {
+            width: 100%;
+          }
         }
       }
     }
 
-    .subject-container, .origin-container {
-      p {
-        margin: 0;
-      }
-    }
+    .evan-detail-hover {
+      transition: 0.5s transform ease-out;
 
-    .subject-container {
-      position: absolute;
-      top: 6px;
-      right: 20px;
+      & > div {
+        position: absolute;
+        z-index: 10;
+        top: 30px;
+        left: -250px;
 
-      max-width: 50%;
+        width: 500px;
 
-      text-align: right !important;
+        &:after, &:before {
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
 
-      p, b {
-        overflow: hidden;
+          width: 0;
+          height: 0;
 
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-    }
+          content: ' ';
+          pointer-events: none;
 
-    .origin-container {
-      position: absolute;
-      top: 55px;
-      right: 10px;
-      bottom: 10px;
+          border: solid transparent;
+        }
 
-      .evan-claim {
-        margin-top: 5px;
-      }
+        &:after {
+          margin-left: -10px;
 
-      @media (max-width: 991px) {
-        position: relative;
-        top: 5px;
-        right: 0;
-        left: 0;
+          border-width: 10px;
+          border-color: rgba(29, 39, 46, 0);
+          border-bottom-color: #1d272e;
+        }
 
-        padding: 10px;
+        &:before {
+          margin-left: -13px;
+
+          border-width: 13px;
+          border-color: rgba(194, 225, 245, 0);
+          border-bottom-color: #c2e1f5;
+        }
+
+        ion-row {
+          ion-col {
+            margin-bottom: 10px;
+            padding-left: 0 !important;
+          }
+        }
+
+        ion-col {
+          &, b, p {
+            overflow: hidden;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+
+          p.multiline {
+            white-space: normal;
+          }
+        }
+
+        p {
+          margin: 0;
+        }
+
+        & > div {
+          padding: 10px;
+
+          &.header {
+            button {
+              position: absolute;
+              top: 5px;
+              right: 5px;
+            }
+          }
+
+          &.body {
+            ion-row.rejected {
+              padding-top: 10px;
+            }
+          }
+
+          &.footer {
+            display: flex;
+            justify-content: space-around;
+
+            min-height: 65px;
+          }
+        }
       }
     }
   }
 }
 
-evan-claim {
-  ion-row {
-    & > ion-col {
-      margin-bottom: 25px !important;
-    }
+.evan-callout.claim-callout {
+  margin-left: -233px;
+}
 
-    & > ion-col:nth-child(odd) {
-      padding-left: 0 !important;
+.evan-modal.evan-claim-modal {
+  .evan-content {
+    width: 90%;
+    max-height: 90%;
+    margin-left: 5%;
+  }
+}
+
+.evan-modal.claim-dbcp-edit {
+  .evan-content {
+    .img-selector {
+      svg, img {
+        max-width: 100%;
+        max-height: 150px;
+      }
+
+      .img-file-select {
+        display: none;
+      }
     }
   }
 }

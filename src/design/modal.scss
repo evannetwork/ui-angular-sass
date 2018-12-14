@@ -31,8 +31,17 @@
       background-color: map-get($theme, background-backdrop);
     }
 
-    .evan-content {
+    *::-webkit-scrollbar {
       background-color: map-get($theme, background-color);
+    }
+
+    *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:active, *::-webkit-scrollbar-thumb:hover {
+      border: 1px solid map-get($theme, background-color-2);
+      background-color: map-get($theme, background-color-2);
+    }
+
+    .evan-content {
+      background: linear-gradient(map-get($theme, background-color), map-get($theme, background-color-2));
 
       .alert-text {
         background-color: map-get($colors, yellow);

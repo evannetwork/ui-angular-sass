@@ -45,23 +45,7 @@
     }
   }
 
-  .evan-detailed-claim {
-    .evan-claim {
-      background-color: map-get($theme, background-color-2);
-    }
-
-    & > .metadata {
-      background-color: rgba(map-get($theme, background-color-2), 0.3);
-
-      @media (max-width: 991px) {
-        .origin-container {
-          border-bottom: 1px solid map-get($theme, border-color);
-        }
-      }
-    }
-  }
-
-  .evan-claim.status--1 {
+  .evan-claim.status--1, .evan-claim.status-2 {
     &, .claim-icon {
       border-color: map-get($colors, danger);
     }
@@ -85,15 +69,115 @@
     }
   }
 
-  .evan-detailed-claim.status--1 .metadata {
-    border: 3px solid rgba(map-get($colors, danger), 0.5);
-  }
+  .evan-detailed-claim {
+    & > svg {
+      background-color: map-get($theme, background-color-opacity);
 
-  .evan-detailed-claim.status-0 .metadata {
-    border: 3px solid rgba(map-get($colors, alert), 0.5);
-  }
+      .evan-claim {
+        background-color: map-get($theme, background-color-2);
+      }
 
-  .evan-detailed-claim.status-1 .metadata {
-    border: 3px solid rgba(map-get($colors, success), 0.5);
+      .tree-container {
+        defs > marker {
+          path.arrow {
+            &.success {
+              fill: map-get($colors, success);
+            }
+
+            &.warning {
+              fill: map-get($colors, alert);
+            }
+
+            &.danger {
+              fill: map-get($colors, danger);
+            }
+          }
+        }
+
+        path.link {
+          &.success {
+            stroke: map-get($colors, success);
+          }
+
+          &.warning {
+            stroke: map-get($colors, alert);
+          }
+
+          &.danger {
+            stroke: map-get($colors, danger);
+          }
+        }
+
+        g.node {
+          & > circle {
+            fill: map-get($theme, background-color);
+
+            &.active {
+              fill: map-get($colors, primary);
+            }
+          }
+
+          & > text {
+            font-weight: bold;
+
+            fill: map-get($theme, text-color);
+          }
+        }
+      }
+
+      .evan-detail-hover {
+        & > div {
+          border: 2px solid map-get($theme, border-color);
+          background: linear-gradient(map-get($theme, background-color), map-get($theme, background-color-2));
+          box-shadow: map-get($theme, grid-list-item-shadow);
+
+          &:after {
+            margin-left: -10px;
+
+            border-width: 10px;
+            border-color: rgba(29, 39, 46, 0);
+            border-bottom-color: map-get($theme, background-color);
+          }
+
+          &:before {
+            margin-left: -13px;
+
+            border-width: 13px;
+            border-color: rgba(194, 225, 245, 0);
+            border-bottom-color: map-get($theme, border-color);
+          }
+
+          & > div {
+            &.header {
+              p {
+                color: map-get($theme, subdued-text-color);
+              }
+            }
+
+            &.body {
+              background-color: rgba(map-get($theme, text-color), 0.2);
+
+              ion-row.rejected {
+                border-top: 1px solid map-get($theme, border-color);
+              }
+
+              p {
+                &.status--1, &.status-2 {
+                  color: map-get($colors, danger);
+                }
+
+                &.status-0 {
+                  color: map-get($colors, alert);
+                }
+
+                &.status-1 {
+                  color: map-get($colors, success);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
