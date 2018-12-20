@@ -152,6 +152,10 @@ $claim-detail-height: 120px;
     width: 100%;
     min-height: 500px;
 
+    * {
+      position: static;
+    }
+
     & > g {
       transition: 0.3s transform ease-out;
     }
@@ -171,19 +175,25 @@ $claim-detail-height: 120px;
           stroke: none;
         }
 
-        foreignobject {
+        foreignObject {
           .evan-claim {
             width: 100%;
+
+            .claim-icon {
+              position: static;
+            }
           }
         }
       }
     }
 
     .evan-detail-hover {
+      overflow: visible;
+
       transition: 0.5s transform ease-out;
 
       & > div {
-        position: absolute;
+        position: static;
         z-index: 10;
         top: 30px;
         left: -250px;
