@@ -125,6 +125,21 @@ $claim-detail-height: 120px;
   }
 }
 
+.evan-person-claim {
+  .evan-claim {
+    border-radius: 0;
+  }
+
+  .claim-person-icon {
+    width: 100%;
+    height: 50px;
+
+    & > ion-icon {
+      font-size: 60px;
+    }
+  }
+}
+
 .evan-claim.mode-icon {
   &, .claim-icon {
     width: 40px;
