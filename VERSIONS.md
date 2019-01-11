@@ -3,12 +3,15 @@
 ## Next Version
 ### Features
 ### Fixes
+### Deprecations
+
+## Version 1.7.0
+### Features
+### Fixes
 - claims
   - Support firefox and safari
   - add claimm detail special initial person claim style
 - fix left / right panel positioning in combination with evan-tabs-container
-
-### Deprecations
 
 ## Version 1.6.0
 ### Fixes
