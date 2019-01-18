@@ -258,6 +258,13 @@ $verification-detail-height: 120px;
 
             white-space: nowrap;
             text-overflow: ellipsis;
+
+            &.break-word {
+              overflow: hidden;
+
+              white-space: pre-line;
+              word-break: break-all;
+            }
           }
 
           p.multiline {
