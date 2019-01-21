@@ -3,6 +3,8 @@
 ## Next Version
 ### Features
 ### Fixes
+- fix ion-tags-input inner size
+
 ### Deprecations
 - rename claims to verifications
 
