@@ -3,10 +3,16 @@
 ## Next Version
 ### Features
 ### Fixes
+### Deprecations
+
+
+## Version 2.0.0
+### Fixes
 - fix ion-tags-input inner size
 
 ### Deprecations
 - rename claims to verifications
+
 
 ## Version 1.7.0
 ### Features
@@ -16,15 +22,18 @@
   - add claimm detail special initial person claim style
 - fix left / right panel positioning in combination with evan-tabs-container
 
+
 ## Version 1.6.0
 ### Fixes
 - fix evan-callout scroll styles
 - new claim detail design for displaying horizontal history in svg
 
+
 ## Version 1.5.0
 ### Features
 - add claims design; add claims design to themes
 - add evan-left and evan-right panel
+
 
 ## Version 1.4.0
 ### Features
@@ -36,6 +45,7 @@
 - fix right side panel background
 - use correct tabs color on small devices
 - remove text-transform uppercase
+
 
 ## Version 1.3.0
 ### Features
@@ -51,10 +61,12 @@
 ### Deprecations
 - remove continuous text
 
+
 ## Version 1.2.0
 ### Features
 - add evan-label label-warning class
 - add transparency button style
+
 
 ##  Version 1.1.0
 ### Features
@@ -64,7 +76,6 @@
 ### Fixes
 - Fix qr code camera on mobile devices
 
-### Deprecations
 
 ## Version 1.0.2
 ### Features
@@ -73,8 +84,6 @@
 - rename ui-angular-sass
 - gradient background styles
 
-### Fixes
-### Deprecations
 
 ## Version 1.0.1
 ### Features
@@ -83,9 +92,11 @@
 - rename *contractus* variables to *evan*
 - add modal transition
 
+
 ## Version 1.0.0
 - DBCP update
 - add styles for iframe wrapped dapps
+
 
 ## Version 0.9.0
 - initial version
