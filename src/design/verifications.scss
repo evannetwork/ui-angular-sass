@@ -25,18 +25,18 @@
   https://evan.network/license/
 */
 
-@mixin claimTheme($colors, $theme) {
-  .evan-claim {
+@mixin verificationTheme($colors, $theme) {
+  .evan-verification {
     &:hover {
       background-color: rgba(map-get($theme, background-color), 0.6);
     }
 
-    &, .claim-icon {
+    &, .verification-icon {
       border: 3px solid;
       border-color: map-get($theme, border-color);
     }
 
-    .claim-icon {
+    .verification-icon {
       background-color: rgba(map-get($theme, background-color), 0.3);
 
       svg g {
@@ -45,35 +45,35 @@
     }
   }
 
-  .evan-claim.status--1, .evan-claim.status-2 {
-    &, .claim-icon {
+  .evan-verification.status--1, .evan-verification.status-2 {
+    &, .verification-icon {
       border-color: map-get($colors, danger);
     }
   }
 
-  .evan-claim.status-0 {
-    &, .claim-icon {
+  .evan-verification.status-0 {
+    &, .verification-icon {
       border-color: map-get($colors, alert);
     }
   }
 
-  .evan-claim.status-1 {
-    &, .claim-icon {
+  .evan-verification.status-1 {
+    &, .verification-icon {
       border-color: map-get($colors, success);
     }
   }
 
-  .claim-count {
+  .verification-count {
     &, ion-icon {
       color: rgba(map-get($theme, text-color), 0.5);
     }
   }
 
-  .evan-detailed-claim {
+  .evan-detailed-verification {
     & > svg {
       background-color: map-get($theme, background-color-opacity);
 
-      .evan-claim {
+      .evan-verification {
         background-color: map-get($theme, background-color-2);
       }
 

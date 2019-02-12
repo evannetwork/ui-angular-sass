@@ -174,10 +174,12 @@ ion-tags-input {
   .ion-tags-input {
     padding: 0;
     padding-bottom: 0;
+    display: flex;
 
     input.iti-input {
       font-size: 17px;
 
+      width: 100%;
       height: 34px;
       padding: 0;
 
@@ -321,4 +323,8 @@ ion-chip.warning-hint {
   max-width: 100%;
 
   border-radius: 0;
+}
+
+.evan-checkbox-label {
+  width: 100%;
 }

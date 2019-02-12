@@ -56,7 +56,7 @@
     }
   }
 
-  .evan-detailed-claim .evan-claim, .evan-claim {
+  .evan-detailed-verification .evan-verification, .evan-verification {
     background-color: map-get($evanStyles, background-color) !important;
 
     .metadata {
@@ -64,7 +64,7 @@
     }
   }
 
-  .evan-detailed-claim {
+  .evan-detailed-verification {
     & > svg {
       border: 1px solid map-get($evanStyles, border-color);
       background-color: map-get($colors, white);

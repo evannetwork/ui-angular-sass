@@ -35,3 +35,4 @@ dist/*
 .playground
 
 documentation/
+yarn.lock
