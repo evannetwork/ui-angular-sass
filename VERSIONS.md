@@ -3,6 +3,8 @@
 ## Next Version
 ### Features
 ### Fixes
+- normalize rem font-size scaling from ionic standart 62.5% to 100%
+
 ### Deprecations
 
 

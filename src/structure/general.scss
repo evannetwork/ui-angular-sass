@@ -24,6 +24,16 @@
   For more information, please contact evan GmbH at this address:
   https://evan.network/license/
 */
+
+ion-app {
+  display: block;
+  overflow: hidden;
+
+  height: 100%;
+
+  background-color: #ffffff;
+}
+
 ion-app.evan-dapp {
   overflow: hidden;
 }
@@ -125,7 +135,7 @@ ion-title {
 
   &.two-lines {
     & {
-      margin-bottom: 1.6rem;
+      margin-bottom: 1rem;
     }
 
     h3 {

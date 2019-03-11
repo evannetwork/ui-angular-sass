@@ -26,188 +26,190 @@
 */
 
 @mixin formsTheme($colors, $theme) {
-  h1, h2, h3, h4, h5, span, p {
-    color: map-get($theme, text-color);
-  }
-
-  ion-label {
-    &, h1, h2, h3, h4, h5, span {
-      color: map-get($theme, text-color) !important;
+  ion-app {
+    h1, h2, h3, h4, h5, span, p {
+      color: map-get($theme, text-color);
     }
-  }
 
-  ::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
-    color: map-get($theme, placeholder-color) !important;
-  }
+    ion-label {
+      &, h1, h2, h3, h4, h5, span {
+        color: map-get($theme, text-color) !important;
+      }
+    }
 
-  ion-item, button[ion-item] {
-    ion-input, ion-select, ion-textarea {
-      *, .select-text, textarea {
+    ::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+      color: map-get($theme, placeholder-color) !important;
+    }
+
+    ion-item, button[ion-item] {
+      ion-input, ion-select, ion-textarea {
+        *, .select-text, textarea {
+          color: map-get($theme, text-color);
+        }
+      }
+
+      ion-datetime {
+        .datetime-text {
+          color: map-get($theme, text-color);
+        }
+      }
+
+      &.item-md.item-block .item-inner {
+        border-bottom: 1px solid;
+        border-bottom-color: map-get($theme, border-color);
+        box-shadow: none !important;
+      }
+    }
+
+    form {
+      & ion-item.item-md, & button[ion-item] {
+        background-color: map-get($theme, list-background-color);
+      }
+
+      ion-list {
+        ion-item.item-md, button[ion-item] {
+          background-color: transparent !important;
+        }
+      }
+
+      .ion-tags-input-container {
+        ion-label {
+          color: map-get($theme, text-color);
+        }
+      }
+    }
+
+    .evan-tag-container {
+      border-bottom: 1px solid map-get($theme, border-color);
+
+      & > span {
         color: map-get($theme, text-color);
       }
     }
 
-    ion-datetime {
-      .datetime-text {
-        color: map-get($theme, text-color);
+    .evan-tag {
+      color: map-get($theme, text-color);
+      border-radius: 20px;
+      background-color: map-get($theme, hover);
+
+      span {
+        color: map-get($theme, text-color) !important;
+      }
+
+      ion-icon {
+        &:hover {
+          color: map-get($colors, danger);
+        }
       }
     }
 
-    &.item-md.item-block .item-inner {
-      border-bottom: 1px solid;
-      border-bottom-color: map-get($theme, border-color);
-      box-shadow: none !important;
-    }
-  }
-
-  form {
-    & ion-item.item-md, & button[ion-item] {
-      background-color: map-get($theme, list-background-color);
+    .input-error {
+      color: map-get($colors, danger);
     }
 
-    ion-list {
-      ion-item.item-md, button[ion-item] {
+    .input-hint {
+      color: map-get($colors, placeholder-color);
+    }
+
+    ion-tags-input {
+      .ion-tags-input {
+        border-bottom: 1px solid map-get($theme, border-color);
+
+        &.active.tit-border-color {
+          border-bottom-color: map-get($colors, primary);
+        }
+
+        input.iti-input {
+          color: map-get($theme, text-color);
+
+          &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
+            color: map-get($theme, placeholder-color);
+          }
+        }
+
+        span.iti-tag {
+          border-radius: 20px !important;
+          background-color: #24545e;
+        }
+      }
+    }
+
+    ion-item.item, button[ion-item] {
+      ion-checkbox {
+        .checkbox-icon {
+          border: 0;
+          background-color: map-get($theme, background-color-2);
+
+          &.checkbox-checked {
+            background-color: map-get($colors, green);
+          }
+        }
+      }
+    }
+
+    ion-item.item.bordered, button[ion-item].bordered {
+      border: 2px solid map-get($theme, border-color);
+
+      .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+    }
+
+    ion-item.item.semi-transparent {
+      background: map-get($theme, background-color-opacity);
+    }
+
+    ion-item.item.no-border {
+      .item-inner {
+        border-bottom: 0 !important;
+      }
+    }
+
+    .group-icon-form {
+      ion-item, button[ion-item] {
+        &.label-left {
+          ion-label {
+            &, & * {
+              color: map-get($colors, primary);
+            }
+          }
+        }
+      }
+    }
+
+    &.evan-dapp, .evan-dapp {
+      .picker-md .picker-wrapper {
+        background: map-get($theme, background-color);
+
+        .picker-opts {
+          button.picker-opt {
+            color: map-get($theme, text-color);
+
+            &.picker-opt-selected {
+              color: map-get($colors, primary);
+            }
+          }
+        }
+      }
+    }
+
+    ion-chip.error-hint {
+      border-radius: 0;
+      background-color: rgba(map-get($colors, danger), 0.5);
+
+      ion-icon {
         background-color: transparent !important;
       }
     }
 
-    .ion-tags-input-container {
-      ion-label {
-        color: map-get($theme, text-color);
+    ion-chip.warning-hint {
+      border-radius: 0;
+      background-color: rgba($yellow, 0.5);
+
+      ion-icon {
+        background-color: transparent !important;
       }
-    }
-  }
-
-  .evan-tag-container {
-    border-bottom: 1px solid map-get($theme, border-color);
-
-    & > span {
-      color: map-get($theme, text-color);
-    }
-  }
-
-  .evan-tag {
-    color: map-get($theme, text-color);
-    border-radius: 20px;
-    background-color: map-get($theme, hover);
-
-    span {
-      color: map-get($theme, text-color) !important;
-    }
-
-    ion-icon {
-      &:hover {
-        color: map-get($colors, danger);
-      }
-    }
-  }
-
-  .input-error {
-    color: map-get($colors, danger);
-  }
-
-  .input-hint {
-    color: map-get($colors, placeholder-color);
-  }
-
-  ion-tags-input {
-    .ion-tags-input {
-      border-bottom: 1px solid map-get($theme, border-color);
-
-      &.active.tit-border-color {
-        border-bottom-color: map-get($colors, primary);
-      }
-
-      input.iti-input {
-        color: map-get($theme, text-color);
-
-        &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
-          color: map-get($theme, placeholder-color);
-        }
-      }
-
-      span.iti-tag {
-        border-radius: 20px !important;
-        background-color: #24545e;
-      }
-    }
-  }
-
-  ion-item.item, button[ion-item] {
-    ion-checkbox {
-      .checkbox-icon {
-        border: 0;
-        background-color: map-get($theme, background-color-2);
-
-        &.checkbox-checked {
-          background-color: map-get($colors, green);
-        }
-      }
-    }
-  }
-
-  ion-item.item.bordered, button[ion-item].bordered {
-    border: 2px solid map-get($theme, border-color);
-
-    .item-inner {
-      border-bottom-color: transparent !important;
-      box-shadow: none !important;
-    }
-  }
-
-  ion-item.item.semi-transparent {
-    background: map-get($theme, background-color-opacity);
-  }
-
-  ion-item.item.no-border {
-    .item-inner {
-      border-bottom: 0 !important;
-    }
-  }
-
-  .group-icon-form {
-    ion-item, button[ion-item] {
-      &.label-left {
-        ion-label {
-          &, & * {
-            color: map-get($colors, primary);
-          }
-        }
-      }
-    }
-  }
-
-  &.evan-dapp, .evan-dapp {
-    .picker-md .picker-wrapper {
-      background: map-get($theme, background-color);
-
-      .picker-opts {
-        button.picker-opt {
-          color: map-get($theme, text-color);
-
-          &.picker-opt-selected {
-            color: map-get($colors, primary);
-          }
-        }
-      }
-    }
-  }
-
-  ion-chip.error-hint {
-    border-radius: 0;
-    background-color: rgba(map-get($colors, danger), 0.5);
-
-    ion-icon {
-      background-color: transparent !important;
-    }
-  }
-
-  ion-chip.warning-hint {
-    border-radius: 0;
-    background-color: rgba($yellow, 0.5);
-
-    ion-icon {
-      background-color: transparent !important;
     }
   }
 }
