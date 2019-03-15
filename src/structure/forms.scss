@@ -172,9 +172,10 @@ ion-tags-input {
   }
 
   .ion-tags-input {
+    display: flex;
+
     padding: 0;
     padding-bottom: 0;
-    display: flex;
 
     input.iti-input {
       font-size: 17px;
@@ -323,6 +324,10 @@ ion-chip.warning-hint {
   max-width: 100%;
 
   border-radius: 0;
+}
+
+.searchbar-md .searchbar-input {
+  font-size: 1rem;
 }
 
 .evan-checkbox-label {
