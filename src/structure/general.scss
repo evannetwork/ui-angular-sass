@@ -341,3 +341,15 @@ hr {
 .display-none {
   display: none;
 }
+
+ion-app {
+  [icon-only] ion-icon {
+    font-size: 1.125rem;
+  }
+
+  .item > ion-icon, .item-inner > ion-icon {
+    font-size: 1.75rem;
+
+    min-height: 1.75rem;
+  }
+}

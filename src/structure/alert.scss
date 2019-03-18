@@ -29,10 +29,16 @@ ion-alert {
   position: fixed;
 }
 
-.alert-md .alert-message {
-  overflow-y: auto;
+.alert-md {
+  .alert-message {
+    overflow-y: auto;
 
-  max-height: 80% !important;
+    max-height: 80% !important;
+  }
+
+  .alert-tappable {
+    min-height: 2.75rem;
+  }
 }
 
 .advanced-alert {
