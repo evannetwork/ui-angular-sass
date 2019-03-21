@@ -25,6 +25,30 @@
   https://evan.network/license/
 */
 
-@import '../theme';
-@import '../variables/colors';
-@include evanTheme($colors, $evanStyles);
+.evan-logo {
+  background-image: url('img/evan-logo.svg');
+}
+
+.evan-logo-favicon {
+  background-image: url('img/evan-favicon.png');
+}
+
+// display initial screen including blue gradient background, evan logo and text
+.evan-beauty-screen {
+  position: fixed;
+
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+  margin: -25px;
+
+  background-image: url('img/evan-background.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+
+  -webkit-filter: blur(15px);
+     -moz-filter: blur(15px);
+      -ms-filter: blur(15px);
+       -o-filter: blur(15px);
+          filter: blur(15px);
+}
