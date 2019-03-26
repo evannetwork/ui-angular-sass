@@ -25,6 +25,7 @@
   https://evan.network/license/
 */
 
+@import '../open-sans';
 @import '../theme';
 @import '../variables/colors';
 @include evanTheme($colors, $evanStyles);
