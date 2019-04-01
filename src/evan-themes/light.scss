@@ -25,7 +25,7 @@
   https://evan.network/license/
 */
 
-.evan-light {
+.evan-angular.evan-light {
   @import '../theme';
   @import '../variables/colors-light';
   @include evanTheme($colors, $evanStyles);
