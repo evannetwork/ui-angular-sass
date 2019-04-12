@@ -2,12 +2,16 @@
 
 ## Next Version
 ### Features
+### Fixes
+### Deprecations
+
+
+## Version 2.1.0
+### Features
 - scope angular and ionic styles to .evan-angular scopes
 
 ### Fixes
 - normalize rem font-size scaling from ionic standart 62.5% to 100%
-
-### Deprecations
 
 
 ## Version 2.0.0
