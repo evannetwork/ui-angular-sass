@@ -25,25 +25,31 @@
   https://evan.network/license/
 */
 
-// define the html structure design
-@import 'structure/alert';
-@import 'structure/verifications';
-@import 'structure/content';
-@import 'structure/dashboard';
-@import 'structure/forms';
-@import 'structure/general';
-@import 'structure/grid';
-@import 'structure/ios';
-@import 'structure/label';
-@import 'structure/list';
-@import 'structure/modal';
-@import 'structure/popover';
-@import 'structure/qr-code';
-@import 'structure/slides';
-@import 'structure/table';
-@import 'structure/tabs';
-@import 'structure/toolbar-menu';
+@import './open-sans';
 
-// load color themes
-@import 'evan-themes/evan';
+.evan-angular {
+  // define the html structure design
+  @import 'structure/alert';
+  @import 'structure/verifications';
+  @import 'structure/content';
+  @import 'structure/dashboard';
+  @import 'structure/forms';
+  @import 'structure/general';
+  @import 'structure/grid';
+  @import 'structure/ios';
+  @import 'structure/label';
+  @import 'structure/list';
+  @import 'structure/modal';
+  @import 'structure/popover';
+  @import 'structure/qr-code';
+  @import 'structure/slides';
+  @import 'structure/table';
+  @import 'structure/tabs';
+  @import 'structure/toolbar-menu';
+  @import 'structure/images';
+
+  // load color themes
+  @import 'evan-themes/evan';
+}
+
 @import 'evan-themes/light';
